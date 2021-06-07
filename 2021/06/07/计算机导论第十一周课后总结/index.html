@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"dylan-cs.github.io","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+
+  <meta name="description" content="第十一周课后总结 在这次的计算机导论课上，首先呢，老师简单的回顾了一下第一次上课的内容，就是有关计算机领域需要的一些能力，其中数学对我们来很重要，然后还有就是有关上次人工智能和深度学习话题的一个再谈谈看法。 这次上课上的主要内容是第一章-信息。包括信息，计算机信息处理，几个例子，最后还讲了一点点图灵机 信息首先，就是信息，有维纳的控制论定义，阿希贝的差异论，钟义信从本体论和认识论角度的认识，香农对">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机导论第十一周课后总结">
+<meta property="og:url" content="https://dylan-cs.github.io/2021/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%8D%81%E4%B8%80%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Dylanの博客">
+<meta property="og:description" content="第十一周课后总结 在这次的计算机导论课上，首先呢，老师简单的回顾了一下第一次上课的内容，就是有关计算机领域需要的一些能力，其中数学对我们来很重要，然后还有就是有关上次人工智能和深度学习话题的一个再谈谈看法。 这次上课上的主要内容是第一章-信息。包括信息，计算机信息处理，几个例子，最后还讲了一点点图灵机 信息首先，就是信息，有维纳的控制论定义，阿希贝的差异论，钟义信从本体论和认识论角度的认识，香农对">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191117225139562.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0R5bGFuMTAyNA==,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2021-06-07T05:31:16.531Z">
+<meta property="article:modified_time" content="2021-06-07T05:44:31.204Z">
+<meta property="article:author" content="Dylan">
+<meta property="article:tag" content="计算机导论">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20191117225139562.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0R5bGFuMTAyNA==,size_16,color_FFFFFF,t_70">
+
+
+<link rel="canonical" href="https://dylan-cs.github.io/2021/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%8D%81%E4%B8%80%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>计算机导论第十一周课后总结 | Dylanの博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Dylanの博客</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">记录生活，记录成长</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93"><span class="nav-number">1.</span> <span class="nav-text">第十一周课后总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF"><span class="nav-number">1.1.</span> <span class="nav-text">信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%90%E8%BF%B7%E5%AE%AB%E5%9C%B0%E5%9B%BE"><span class="nav-number">1.2.</span> <span class="nav-text">随机生成迷宫地图</span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Dylan"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Dylan</p>
+  <div class="site-description" itemprop="description">stay hungry stay foolish</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dylan-cs.github.io/2021/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%8D%81%E4%B8%80%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Dylan">
+      <meta itemprop="description" content="stay hungry stay foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dylanの博客">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          计算机导论第十一周课后总结
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-06-07 13:31:16 / 修改时间：13:44:31" itemprop="dateCreated datePublished" datetime="2021-06-07T13:31:16+08:00">2021-06-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">计算机导论</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="第十一周课后总结"><a href="#第十一周课后总结" class="headerlink" title="第十一周课后总结"></a>第十一周课后总结</h1><p> 在这次的计算机导论课上，首先呢，老师简单的回顾了一下第一次上课的内容，就是有关计算机领域需要的一些能力，其中数学对我们来很重要，然后还有就是有关上次人工智能和深度学习话题的一个再谈谈看法。</p>
+<p>这次上课上的主要内容是第一章-信息。包括信息，计算机信息处理，几个例子，最后还讲了一点点图灵机</p>
+<h2 id="信息"><a href="#信息" class="headerlink" title="信息"></a>信息</h2><p>首先，就是信息，有维纳的控制论定义，阿希贝的差异论，钟义信从本体论和认识论角度的认识，香农对信息的主观性的高度重视，还有种加属定义。</p>
+<p>我个人比较喜欢香农的定义，所以查阅了一些资料，下面这些是一些解释：</p>
+<blockquote>
+<p><em>1948 年，香农提出了“信息熵” 的概念，所以叫香农熵。 香农不是用钱，而是用 “比特”（bit）这个概念来度量信息量。 一个比特是一位二进制数，计算机中的一个字节是八个比特。在上面的例子中，这条消息的信息量是五比特。 信息量的比特数和所有可能情况的对数函数<br>log 有关。 (log32=5, log64=6。） 对于任意一个随机变量 X，它的熵定义如下：<br>变量的不确定性越大，熵也就越大，把它搞清楚所需要的信息量也就越大。<br>有了“熵”这个概念，我们就可以回答本文开始提出的问题，即一本五十万字的中文书平均有多少信息量。我们知道常用的汉字（一级二级国标）大约有<br>7000 字。假如每个字等概率，那么我们大约需要 13 个比特（即 13 位二进制数）表示一个汉字。但汉字的使用是不平衡的。实际上，前<br>10% 的汉字占文本的 95% 以上。因此，即使不考虑上下文的相关性，而只考虑每个汉字的独立的概率，那么，每个汉字的信息熵大约也只有 8-9<br>个比特。如果我们再考虑上下文相关性，每个汉字的信息熵只有5比特左右。所以，一本五十万字的中文书，信息量大约是 250<br>万比特。如果用一个好的算法压缩一下，整本书可以存成一个 320KB 的文件。如果我们直接用两字节的国标编码存储这本书，大约需要 1MB<br>大小，是压缩文件的三倍。这两个数量的差距，在信息论中称作“冗余度”（redundancy)。 需要指出的是我们这里讲的 250<br>万比特是个平均数，同样长度的书，所含的信息量可以差很多。如果一本书重复的内容很多，它的信息量就小，冗余度就大。</em></p>
+</blockquote>
+<p>然后呢，关于计算机信息处理方面，老师讲的比较简略，但是，说实话，我数字逻辑没学好，没咋懂！我真的有点憨！。。。</p>
+<h2 id="随机生成迷宫地图"><a href="#随机生成迷宫地图" class="headerlink" title="随机生成迷宫地图"></a>随机生成迷宫地图</h2><p>我对老师展示的几个例子比较感兴趣，所以在网上看了一下算法， 发现运用我们在数据结构里的知识可以完成，主要是利用最小生成树，下面就贴出来。</p>
+<blockquote>
+<p>绝大多数的编程问题都可以用数学工具解决，当然我们的迷宫生成算法也不例外。 数学中最适合表达迷宫的符号莫过于<br>图，下面两个算法是迷宫生成中应用最普遍的理论之二。首先我们需要将地图转换为便于数学表达的形式。 之前两个算法在处理地图时都是以 方块<br>为单位的，即每一个方块不是墙就是路。 而 图 的基本组成是 点 与 边 ，对于一个待处理的迷宫，我们做如下转换。<br><img src="https://img-blog.csdnimg.cn/20191117225139562.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0R5bGFuMTAyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>迷宫大小10*10，其中白块代表 点，红块代表 边，而黑块代表 虚无，只是填充物质罢了。如果一个 图 中，任意两 点 都能通过 边 组成的路径联通，称之为 连通图。而如果一个 连通图 上没有回路，则我们可以称之为 树，因为没有回路，所以每对点之间有且仅有一条路径联通。可以看到，树 与我们完美迷宫的概念不谋而合，所以现在我们的任务是找到包含所有点的一棵 树。最小生成树生成树，顾名思义，就是从给定的 点,边 集合中生成一棵符合要求的树。<br>下面介绍的两种最小生成树算法都可以胜任。虽然写作最小生成树，但这两个算法其实可以做到“按一定条件生成树”。<br>“最小”是算法的典型描述，即在有权边的集合中找出权值最小的树。原算法使用贪心算法求解。而在这里，我们的条件就是：随机。下面简单介绍一下这两个算法的步骤：两个算法都需要 点 的集合E,与 边 的集合V。对于上图，E代表所有白块，V代表所有红块Kruskal：<br>一开始每个点将自己作为单独的一棵树。从V中随机选出一条边v判断v两端的e1，e2是否属于一棵生成树                    是，无动作否，绘制e1,v,e2并合并树从V中删除v当V不为空，则返回 1. ，V为空则完成ps:判断与合并两点所在树可以使用并查集相关算法，因为最近有点忙（懒），还没研究透，我代码里用了比较笨的全图标记，应该会在近期更新代码到并查集===============Prim：初始V为空，所有e∈E标记为0随机选一个点e将与e相连的边的集合{Ve}并入入V，e标记为1从V中随机选一条边v判断v两端情况                    均为1：无动作一个0一个1：将为0的点e标记为1，绘制v,e,将e连接的边并入V均为0：不可能从V中删除v当所有e∈E均被标记为1，结束，否则返回 3. 。ps:可以维护一个包含所有v∈V的标记表，防止被重复并入V，提高效率以上为算法步骤，建议配合代码食用更佳。</p>
+</blockquote>
+<p>然后其他的图灵机只讲了一点点，就是在讲关于可以无限执行这个特点，就不讲了。</p>
+<p><em><strong>以上就是本周的个人总结</strong></em><br>______________________________________  blog   by  软工zy1801陈宇曦</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/" rel="tag"># 计算机导论</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93/" rel="prev" title="计算机导论第十二周课后总结">
+                  <i class="fa fa-chevron-left"></i> 计算机导论第十二周课后总结
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%8D%81%E4%BA%94%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93/" rel="next" title="计算机导论第十五周课后总结">
+                  计算机导论第十五周课后总结 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+  
+  
+  
+
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">stay hungry.stay foolish.</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

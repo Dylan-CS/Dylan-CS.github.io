@@ -194,9 +194,21 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -230,6 +242,488 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dylan-cs.github.io/2021/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%8D%81%E4%BA%94%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Dylan">
+      <meta itemprop="description" content="stay hungry stay foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dylanの博客">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%8D%81%E4%BA%94%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">计算机导论第十五周课后总结</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-06-07 13:31:16 / 修改时间：13:44:25" itemprop="dateCreated datePublished" datetime="2021-06-07T13:31:16+08:00">2021-06-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">计算机导论</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="计算机导论第十五周课后总结"><a href="#计算机导论第十五周课后总结" class="headerlink" title="计算机导论第十五周课后总结"></a>计算机导论第十五周课后总结</h2><p><strong>4.1程序设计语言简介</strong>  </p>
+<blockquote>
+<p>   定义：程序设计语言是一组用来定义计算机程序的语法规则 （1） 三元素：语法、语义、语用<br>（2）基本成分：数据成分、运算成分、控制成分、传输成分</p>
+</blockquote>
+<p><strong>4.2程序设计语言的分类及编程模式</strong>   </p>
+<blockquote>
+<p> （1）分类：a.机器语言：用二进制代码表示的计算机能直接识别和执行的机器指令的集合<br>                       注意：计算机唯一能识别的语言是机器语言             b.汇编语言：采用助记符来编写程序，是机器语言的符号化。用指令助记符来代替指令的二进制操作码，用符号代替二进制地址码。<br>特点：通用性差，但占用内存空间少，运行速度快 c.高级语言：面向用户，与自然语言更接近，而与硬件功能相分离（彻底脱离了具体的指令系统）<br>高级语言程序的处理过程：<br><img src="https://img-blog.csdnimg.cn/20191216171458548.png" alt="在这里插入图片描述"> 编译程序：<br><img src="https://img-blog.csdnimg.cn/20191216171524159.png" alt="在这里插入图片描述"><br>汇编程序：将编译程序运行得到的目标程序翻译成二进制机器代码 （2）编程模式：a.过程式编程：模块化、结构化    顺序很重要<br>              特征：以函数为中心，用函数来作为划分程序的基本单位<br>               b.面向对象编程：软件系统设计与实现的新方法 封装继承多态<br>               c.函数式编程：输入&gt;&gt;&gt;函数&gt;&gt;&gt;输出<br>               d.说明式编程：依据逻辑推理 </p>
+</blockquote>
+<p><strong>4.3高级编程语言介绍</strong></p>
+<blockquote>
+<p>   BASIC语言：入门语言，其他高级语言的基础    PASCAL语言：一种结构程序设计语言<br>C语言：适用于作为系统描述语言，也是同用的程序设计语言    C++语言：改进了C语言中的不足<br>Java语言：简单，与机硬件无关，具有较强的可移植性、安全性、鲁棒性    Ada语言：美国国防部指定唯一一种可用于军用系统开发的语言<br>Logo语言：绘图是其主要功能    脚本语言：又称扩建的语言或动态语言，以纯文本方式来保存的程序  </p>
+</blockquote>
+<p><strong>4.4并行程序设计</strong></p>
+<blockquote>
+<p>一种用于并行程序设计的语言 （1）分类：a.显式并行语言<br>              b.具有并行编译功能的串行语言<br>    （2）并行编译的过程：词法和语法分析、优化、并行代码生成<br>    （3）并行程序设计语言的编译过程：    <img src="https://img-blog.csdnimg.cn/20191216171540892.png" alt="在这里插入图片描述"></p>
+</blockquote>
+<p><strong>5.1数据</strong></p>
+<blockquote>
+<p>  （1）定义：用文字、数字、图形、图像、声音的方式对人、事件、事物等进行的描的数据是指能输入计算机并能被计算机程序处理的符号的总称<br>（2）形式：数字、文本、音频、图形、视频   （3）与信息的区别：数据是供计算机处理的，信息是供用户使用的   （4）计算机常用的编码方式：<br>       ASCII、扩展ASCII、Unicode、UTF-8、GB-2312、音频编码、图像编码</p>
+</blockquote>
+<p><strong>5.2数据结构：</strong></p>
+<blockquote>
+<p>由元素数据依据某种逻辑联系组织起来的 2（1）分类：逻辑上的数据结构和物理上的逻辑结构<br>（2）主要研究对象：数据表示、数据逻辑结构、数据存储方式、对数据的操作方法 （3）数据的逻辑结构：<br>     a.集合：与数学中集合的概念一致<br>     b.线性结构：数据元素一对一关系<br>     c.树形结构：数据元素一对多关系<br>     d.图形结构：数据元素多对多关系 （4）数据的物理结构：<br>     a.顺序存储：一组地址<br>     b.链式存储：数据存放的没有连续性的要求<br>     c.索引存储：数据元素存储在连续的地址，且需建立索引表 （5）常见的数据结构<br>     a.线性表：顺序存储、链式存储<br>     b.栈：顺序栈、链栈<br>     c.队列：先进先出的线性表<br>     d.树：UINX、DOS许多长荣操作系统的目录结构<br>     e.图：由一组顶点和一组顶点之间的连线构成的一种抽象数据类型</p>
+</blockquote>
+<p><strong>5.3算法</strong>    </p>
+<blockquote>
+<p>  (1）定义：由基本的运算及规定的运算顺序所构成的完整解题步骤<br>  (2）特性：输入、输出、有穷性、确定性、可行性</p>
+</blockquote>
+<p><strong>5.4数据库</strong>  </p>
+<blockquote>
+<p> （1）定义：一个组织内被应用程序使用的逻辑相一致的相关数据的集合<br>（2）特点：数据结构化、数据共享性高，冗余度低，易扩充、数据独立性高、数据由数据库管理系统统一管理和控制<br>（3）体系结构：a.三级模式：一个数据库只有一个内模式<br>                 b.二级映射：外模式/概念模式映射、概念模式内模式映射   （4）数据库模型：a.层次模型<br>                            b.网状模型<br>                   c.关系模型   （5）关系的操作及结构化查询语句   （6）数据库管理系统：是定义、创建、维护数据库得的一种工具     （7）主流数据库   </p>
+</blockquote>
+<p><strong>5.5数据中心</strong></p>
+<blockquote>
+<p>（1）定义：是在一个物理空间内实现数据集中处理、存储、传输、交换、管理的一整套复杂的设施<br>（2）主要目的：通过运行应用程序来处理组织的数据   （3）组成：核心计算机机房和其他支持空间   （4）传统数据中心的困惑<br>（5）新一代数据中心</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dylan-cs.github.io/2021/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%8D%81%E4%B8%80%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Dylan">
+      <meta itemprop="description" content="stay hungry stay foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dylanの博客">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%8D%81%E4%B8%80%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">计算机导论第十一周课后总结</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-06-07 13:31:16 / 修改时间：13:44:31" itemprop="dateCreated datePublished" datetime="2021-06-07T13:31:16+08:00">2021-06-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">计算机导论</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="第十一周课后总结"><a href="#第十一周课后总结" class="headerlink" title="第十一周课后总结"></a>第十一周课后总结</h1><p> 在这次的计算机导论课上，首先呢，老师简单的回顾了一下第一次上课的内容，就是有关计算机领域需要的一些能力，其中数学对我们来很重要，然后还有就是有关上次人工智能和深度学习话题的一个再谈谈看法。</p>
+<p>这次上课上的主要内容是第一章-信息。包括信息，计算机信息处理，几个例子，最后还讲了一点点图灵机</p>
+<h2 id="信息"><a href="#信息" class="headerlink" title="信息"></a>信息</h2><p>首先，就是信息，有维纳的控制论定义，阿希贝的差异论，钟义信从本体论和认识论角度的认识，香农对信息的主观性的高度重视，还有种加属定义。</p>
+<p>我个人比较喜欢香农的定义，所以查阅了一些资料，下面这些是一些解释：</p>
+<blockquote>
+<p><em>1948 年，香农提出了“信息熵” 的概念，所以叫香农熵。 香农不是用钱，而是用 “比特”（bit）这个概念来度量信息量。 一个比特是一位二进制数，计算机中的一个字节是八个比特。在上面的例子中，这条消息的信息量是五比特。 信息量的比特数和所有可能情况的对数函数<br>log 有关。 (log32=5, log64=6。） 对于任意一个随机变量 X，它的熵定义如下：<br>变量的不确定性越大，熵也就越大，把它搞清楚所需要的信息量也就越大。<br>有了“熵”这个概念，我们就可以回答本文开始提出的问题，即一本五十万字的中文书平均有多少信息量。我们知道常用的汉字（一级二级国标）大约有<br>7000 字。假如每个字等概率，那么我们大约需要 13 个比特（即 13 位二进制数）表示一个汉字。但汉字的使用是不平衡的。实际上，前<br>10% 的汉字占文本的 95% 以上。因此，即使不考虑上下文的相关性，而只考虑每个汉字的独立的概率，那么，每个汉字的信息熵大约也只有 8-9<br>个比特。如果我们再考虑上下文相关性，每个汉字的信息熵只有5比特左右。所以，一本五十万字的中文书，信息量大约是 250<br>万比特。如果用一个好的算法压缩一下，整本书可以存成一个 320KB 的文件。如果我们直接用两字节的国标编码存储这本书，大约需要 1MB<br>大小，是压缩文件的三倍。这两个数量的差距，在信息论中称作“冗余度”（redundancy)。 需要指出的是我们这里讲的 250<br>万比特是个平均数，同样长度的书，所含的信息量可以差很多。如果一本书重复的内容很多，它的信息量就小，冗余度就大。</em></p>
+</blockquote>
+<p>然后呢，关于计算机信息处理方面，老师讲的比较简略，但是，说实话，我数字逻辑没学好，没咋懂！我真的有点憨！。。。</p>
+<h2 id="随机生成迷宫地图"><a href="#随机生成迷宫地图" class="headerlink" title="随机生成迷宫地图"></a>随机生成迷宫地图</h2><p>我对老师展示的几个例子比较感兴趣，所以在网上看了一下算法， 发现运用我们在数据结构里的知识可以完成，主要是利用最小生成树，下面就贴出来。</p>
+<blockquote>
+<p>绝大多数的编程问题都可以用数学工具解决，当然我们的迷宫生成算法也不例外。 数学中最适合表达迷宫的符号莫过于<br>图，下面两个算法是迷宫生成中应用最普遍的理论之二。首先我们需要将地图转换为便于数学表达的形式。 之前两个算法在处理地图时都是以 方块<br>为单位的，即每一个方块不是墙就是路。 而 图 的基本组成是 点 与 边 ，对于一个待处理的迷宫，我们做如下转换。<br><img src="https://img-blog.csdnimg.cn/20191117225139562.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0R5bGFuMTAyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>迷宫大小10*10，其中白块代表 点，红块代表 边，而黑块代表 虚无，只是填充物质罢了。如果一个 图 中，任意两 点 都能通过 边 组成的路径联通，称之为 连通图。而如果一个 连通图 上没有回路，则我们可以称之为 树，因为没有回路，所以每对点之间有且仅有一条路径联通。可以看到，树 与我们完美迷宫的概念不谋而合，所以现在我们的任务是找到包含所有点的一棵 树。最小生成树生成树，顾名思义，就是从给定的 点,边 集合中生成一棵符合要求的树。<br>下面介绍的两种最小生成树算法都可以胜任。虽然写作最小生成树，但这两个算法其实可以做到“按一定条件生成树”。<br>“最小”是算法的典型描述，即在有权边的集合中找出权值最小的树。原算法使用贪心算法求解。而在这里，我们的条件就是：随机。下面简单介绍一下这两个算法的步骤：两个算法都需要 点 的集合E,与 边 的集合V。对于上图，E代表所有白块，V代表所有红块Kruskal：<br>一开始每个点将自己作为单独的一棵树。从V中随机选出一条边v判断v两端的e1，e2是否属于一棵生成树                    是，无动作否，绘制e1,v,e2并合并树从V中删除v当V不为空，则返回 1. ，V为空则完成ps:判断与合并两点所在树可以使用并查集相关算法，因为最近有点忙（懒），还没研究透，我代码里用了比较笨的全图标记，应该会在近期更新代码到并查集===============Prim：初始V为空，所有e∈E标记为0随机选一个点e将与e相连的边的集合{Ve}并入入V，e标记为1从V中随机选一条边v判断v两端情况                    均为1：无动作一个0一个1：将为0的点e标记为1，绘制v,e,将e连接的边并入V均为0：不可能从V中删除v当所有e∈E均被标记为1，结束，否则返回 3. 。ps:可以维护一个包含所有v∈V的标记表，防止被重复并入V，提高效率以上为算法步骤，建议配合代码食用更佳。</p>
+</blockquote>
+<p>然后其他的图灵机只讲了一点点，就是在讲关于可以无限执行这个特点，就不讲了。</p>
+<p><em><strong>以上就是本周的个人总结</strong></em><br>______________________________________  blog   by  软工zy1801陈宇曦</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dylan-cs.github.io/2021/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Dylan">
+      <meta itemprop="description" content="stay hungry stay foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dylanの博客">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">计算机导论第十二周课后总结</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-06-07 13:31:16 / 修改时间：13:44:30" itemprop="dateCreated datePublished" datetime="2021-06-07T13:31:16+08:00">2021-06-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">计算机导论</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="第十二周课后总结"><a href="#第十二周课后总结" class="headerlink" title="第十二周课后总结"></a>第十二周课后总结</h1><h2 id="图灵机"><a href="#图灵机" class="headerlink" title="图灵机"></a>图灵机</h2><p>图灵机实质是一个数学模型，包括一条无限长的纸带type，一个读写头Head，控制器（包含控制规则集合以及状态寄存器）<br>图灵机将求解问题的求解方法转换成控制规则，进而一步步解决问题。</p>
+<blockquote>
+<p><em>示例（当前状态，当前数值，改变后的数值，移动方向或者保持，下一步的状态）</em></p>
+</blockquote>
+<h2 id="计算机科学的定义"><a href="#计算机科学的定义" class="headerlink" title="计算机科学的定义"></a>计算机科学的定义</h2><p><strong>计算机学科的基本思路</strong><br>#理论是数学的根本<br>#抽象是自然科学的根本<br>#设计是工程的根本<br><strong>计算机科学的三个学科形态</strong><br> #理论，抽象和设计<br> #计算机科学处于三者的交汇处<br> <strong>计算机科学的含义</strong><br> 计算机科学是处理信息的学科<br> 它是对描述和变换信息的算法过程的系统研究<br> <strong>计算机科学的基本问题</strong>—什么能（有效地）自动进行</p>
+<p>拓展1：信息战<br>拓展2：bing搜索</p>
+<h2 id="个人计算机"><a href="#个人计算机" class="headerlink" title="个人计算机"></a>个人计算机</h2><p><strong>冯·洛伊曼体系</strong></p>
+<blockquote>
+<p>存储程序：<br>#计算机内部采用二进制计数<br>#程序有一列指令构成，程序和数据存放在内存储器中，进行统一编制，并按同样方法存取<br>#采用并行计算原理,对一个字的各位同时进行处理<br>#将编号的程序和原始数据实现存入内储器中，计算机在程序的控制下一步一步处理，直到得出结果。<br><img src="https://img-blog.csdnimg.cn/20191121202023596.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0R5bGFuMTAyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</blockquote>
+<p><strong>个人计算机的硬件子系统</strong></p>
+<blockquote>
+<p>这里是引用<img src="https://img-blog.csdnimg.cn/20191121203533188.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0R5bGFuMTAyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dylan-cs.github.io/2021/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%8D%81%E4%B8%89%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Dylan">
+      <meta itemprop="description" content="stay hungry stay foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dylanの博客">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%8D%81%E4%B8%89%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">计算机导论第十三周课后总结</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-06-07 13:31:14 / 修改时间：13:44:29" itemprop="dateCreated datePublished" datetime="2021-06-07T13:31:14+08:00">2021-06-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">计算机导论</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="第十三周课后总结"><a href="#第十三周课后总结" class="headerlink" title="第十三周课后总结"></a>第十三周课后总结</h2><p><strong>1.计算机系统结构</strong></p>
+<blockquote>
+<p>它是计算机的机器语言程序员或编译程序编写者所看到的外特性。所谓外特性，就是计算机的概念性结构和功能特性，主要研究计算机系统的基本工作原理，以及在硬件、软件界面划分的权衡策略，建立完整的、系统的计算机软硬件整体概念。</p>
+</blockquote>
+<p><strong>2.移动智能终端</strong></p>
+<blockquote>
+<p>它拥有接入互联网能力，通常搭载各种操作系统，可根据用户需求定制化各种功能。生活中常见的智能终端包括移动智能终端、车载智能终端、智能电视、可穿戴设备等。</p>
+</blockquote>
+<p><strong>3.计算机网络</strong></p>
+<blockquote>
+<p> 它是指将地理位置不同的具有独立功能的多台计算机及其外部设备，通过通信线路连接起来，在网络操作系统，网络管理软件及网络通信协议的管理和协调下，实现资源共享和信息传递的计算机系统。<br>#定义：分为按广义，按需求，按连接  #组成：计算机、网络操作系统、传输介质（可以是有形的，也可以是无形的，如无线网络的传输介质就是空间）以及相应的应用软件四部分<br><img src="https://img-blog.csdnimg.cn/20191130213321329.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0R5bGFuMTAyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</blockquote>
+<p><em>4.云计算</em>*</p>
+<blockquote>
+<p>是分布式计算的一种，指的是通过网络“云”将巨大的数据计算处理程序分解成无数个小程序，然后，通过多部服务器组成的系统进行处理和分析这些小程序得到结果并返回给用户。<br>云计算早期，简单地说，就是简单的分布式计算，解决任务分发，并进行计算结果的合并。因而，云计算又称为网格计算。通过这项技术，可以在很短的时间内（几秒种）完成对数以万计的数据的处理，从而达到强大的网络服务。<br>现阶段所说的云服务已经不单单是一种分布式计算，而是分布式计算、效用计算、负载均衡、并行计算、网络存储、热备份冗杂和虚拟化等计算机技术混合演进并跃升的结果</p>
+</blockquote>
+<p><strong>5.物联网</strong></p>
+<blockquote>
+<p>是指通过 各种信息传感器、射频识别技术、    全球定位系统、红外感应器、激光扫描器等各种装置与技术，实时采集任何需要监控、<br>连接、互动的物体或过程，采集其声、光、热、电、力学、化<br>学、生物、位置等各种需要的信息，通过各类可能的网络接入，实现物与物、物与人的泛在连接，实现对物品和过程的智能化感知、识别和管理。物联网是一个基于互联网、传统电信网等的信息承载体，它让所有能够被独立寻址的普通物理对象形成互联互通的网络<br><img src="https://img-blog.csdnimg.cn/20191130213134453.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0R5bGFuMTAyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dylan-cs.github.io/2021/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%8D%81%E5%9B%9B%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Dylan">
+      <meta itemprop="description" content="stay hungry stay foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dylanの博客">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%8D%81%E5%9B%9B%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">计算机导论第十四周课后总结</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-06-07 13:31:14 / 修改时间：13:44:27" itemprop="dateCreated datePublished" datetime="2021-06-07T13:31:14+08:00">2021-06-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">计算机导论</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="第十四周课后总结"><a href="#第十四周课后总结" class="headerlink" title="第十四周课后总结"></a>第十四周课后总结</h2><p><strong>软件的定义</strong></p>
+<blockquote>
+<p>软件是用户与硬件之间的接口    软件=程序+数据+文档<br>软件是计算机系统设计的重要依据，在设计计算机系统时必须统筹规则好软件与硬件的层次关系，兼顾用户的要求。</p>
+</blockquote>
+<p><strong>软件的分类</strong>  </p>
+<blockquote>
+<p>   功能：（1）系统软件 a.操作系统:所有软件运行的基础<br>                                      b.支撑软件<br>（2）应用软件规模：微型、小型、中型、大型、甚大型、极大型<br>必须有软件工程的知识作为指导，遵循一定的开发规范工作方式 （1）实时处理文件：数据采集、分析、输出<br>     （2）分时软件：Windows、Linux<br>     （3）交互式软件：人-机通信<br>  （4）批处理软件</p>
+</blockquote>
+<p><strong>软件构架</strong></p>
+<blockquote>
+<p>（1）定义：软件构架是有关软件整体结构和组件的抽象模式，用于指导大型软件的设计，是一个系统的草图。其描述的对象是直接构成系统的抽象组件。为变化而设计，具有可扩充性和可移植性。</p>
+<p>   （2）分层：降低了层与层之间的耦合度，应用程序专用功能位于高层，跨越运用程序领域位于中层，配置环境专用功能位于底层</p>
+<p>分层标准：可见度，易变性，通用性，层数</p>
+</blockquote>
+<p><strong>操作系统</strong>   </p>
+<blockquote>
+<p>   定义：计算机运行的第一个程序，是应用程序与计算机硬件的“中间人”<br>系统观点：是计算机软件的核心，是计算机系统的大脑，整个系统的控制中心</p>
+<p>   用户观点：命令方式，系统调用，图形界面</p>
+<p>   软件观点：操作系统是直接与硬件相邻的第一层软件   </p>
+<p>（1）Dos：是个人计算机上使用的一种操作系统，通过在命令行方式下输入命令对计算机资源进行管理</p>
+<p>  （2）Windows：采用双模式结构，操作系统核心运行在内核模式，应用程序的代码运行在用户模式</p>
+<p>  （3）UNIX：一个通用的、多任务、交互式的分时操作系统：内核、Shell、文件系统、公用程序<br>结构简洁、功能强、可移植性和兼容性较好 （4）Linux：模块化程度高、源代码公开、广泛的硬件支持、安全性及可靠性好、完整的网络集成<br>（5）Mac OS：基于UNIX   简单易用、稳定可靠   Classic Mac OS及Mac OSX</p>
+</blockquote>
+<p><strong>软件的开发</strong></p>
+<blockquote>
+<p>（1）软件工程：a.软件危机：计算机软件的开发维护过程中所遇到的一系列的严重问题</p>
+<p>   b.学科定义：研究用工程化方法构建和维护有效、实用和高质量软件的学科</p>
+<p>   （2）软件开发过程：问题定义&gt;&gt;&gt;可行性研究&gt;&gt;&gt;需求分析&gt;&gt;&gt;总体设计&gt;&gt;&gt;详细设计&gt;&gt;&gt;程序开发&gt;&gt;&gt;软件测试&gt;&gt;&gt;软件维护</p>
+<p>   （3）用户界面与用户体验：</p>
+<p> a.用户界面：设计三大原则：置界面于用户的控制之下，减少用户的记忆负担，保持界面的一致性</p>
+<p> 设计流程：确认目标用户&gt;&gt;&gt;采集目标用户的习惯交互方式&gt;&gt;&gt;提示和引导用户</p>
+<p>   b.用户体验：目标：有用、易用、友好  </p>
+<p>  c.一致性和可用性原则</p>
+</blockquote>
+<p><strong>软件行业职业简介</strong> </p>
+<blockquote>
+<p>  项目管理类、开发类、测试类、系统类、安全类、维护类、销售类</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://dylan-cs.github.io/2021/06/07/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -259,7 +753,16 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-06-07 13:12:57 / 修改时间：13:26:28" itemprop="dateCreated datePublished" datetime="2021-06-07T13:12:57+08:00">2021-06-07</time>
+      <time title="创建时间：2021-06-07 13:12:57 / 修改时间：13:46:05" itemprop="dateCreated datePublished" datetime="2021-06-07T13:12:57+08:00">2021-06-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
+        </span>
     </span>
 
   

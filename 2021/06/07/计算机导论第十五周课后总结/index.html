@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"dylan-cs.github.io","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+
+  <meta name="description" content="计算机导论第十五周课后总结4.1程序设计语言简介       定义：程序设计语言是一组用来定义计算机程序的语法规则 （1） 三元素：语法、语义、语用（2）基本成分：数据成分、运算成分、控制成分、传输成分  4.2程序设计语言的分类及编程模式      （1）分类：a.机器语言：用二进制代码表示的计算机能直接识别和执行的机器指令的集合                       注意：计算机唯一能识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机导论第十五周课后总结">
+<meta property="og:url" content="https://dylan-cs.github.io/2021/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%8D%81%E4%BA%94%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Dylanの博客">
+<meta property="og:description" content="计算机导论第十五周课后总结4.1程序设计语言简介       定义：程序设计语言是一组用来定义计算机程序的语法规则 （1） 三元素：语法、语义、语用（2）基本成分：数据成分、运算成分、控制成分、传输成分  4.2程序设计语言的分类及编程模式      （1）分类：a.机器语言：用二进制代码表示的计算机能直接识别和执行的机器指令的集合                       注意：计算机唯一能识">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191216171458548.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191216171524159.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191216171540892.png">
+<meta property="article:published_time" content="2021-06-07T05:31:16.537Z">
+<meta property="article:modified_time" content="2021-06-07T05:44:25.011Z">
+<meta property="article:author" content="Dylan">
+<meta property="article:tag" content="计算机导论">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20191216171458548.png">
+
+
+<link rel="canonical" href="https://dylan-cs.github.io/2021/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%8D%81%E4%BA%94%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>计算机导论第十五周课后总结 | Dylanの博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Dylanの博客</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">记录生活，记录成长</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%8D%81%E4%BA%94%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93"><span class="nav-number">1.</span> <span class="nav-text">计算机导论第十五周课后总结</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Dylan"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Dylan</p>
+  <div class="site-description" itemprop="description">stay hungry stay foolish</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dylan-cs.github.io/2021/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%8D%81%E4%BA%94%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Dylan">
+      <meta itemprop="description" content="stay hungry stay foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dylanの博客">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          计算机导论第十五周课后总结
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-06-07 13:31:16 / 修改时间：13:44:25" itemprop="dateCreated datePublished" datetime="2021-06-07T13:31:16+08:00">2021-06-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">计算机导论</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="计算机导论第十五周课后总结"><a href="#计算机导论第十五周课后总结" class="headerlink" title="计算机导论第十五周课后总结"></a>计算机导论第十五周课后总结</h2><p><strong>4.1程序设计语言简介</strong>  </p>
+<blockquote>
+<p>   定义：程序设计语言是一组用来定义计算机程序的语法规则 （1） 三元素：语法、语义、语用<br>（2）基本成分：数据成分、运算成分、控制成分、传输成分</p>
+</blockquote>
+<p><strong>4.2程序设计语言的分类及编程模式</strong>   </p>
+<blockquote>
+<p> （1）分类：a.机器语言：用二进制代码表示的计算机能直接识别和执行的机器指令的集合<br>                       注意：计算机唯一能识别的语言是机器语言             b.汇编语言：采用助记符来编写程序，是机器语言的符号化。用指令助记符来代替指令的二进制操作码，用符号代替二进制地址码。<br>特点：通用性差，但占用内存空间少，运行速度快 c.高级语言：面向用户，与自然语言更接近，而与硬件功能相分离（彻底脱离了具体的指令系统）<br>高级语言程序的处理过程：<br><img src="https://img-blog.csdnimg.cn/20191216171458548.png" alt="在这里插入图片描述"> 编译程序：<br><img src="https://img-blog.csdnimg.cn/20191216171524159.png" alt="在这里插入图片描述"><br>汇编程序：将编译程序运行得到的目标程序翻译成二进制机器代码 （2）编程模式：a.过程式编程：模块化、结构化    顺序很重要<br>              特征：以函数为中心，用函数来作为划分程序的基本单位<br>               b.面向对象编程：软件系统设计与实现的新方法 封装继承多态<br>               c.函数式编程：输入&gt;&gt;&gt;函数&gt;&gt;&gt;输出<br>               d.说明式编程：依据逻辑推理 </p>
+</blockquote>
+<p><strong>4.3高级编程语言介绍</strong></p>
+<blockquote>
+<p>   BASIC语言：入门语言，其他高级语言的基础    PASCAL语言：一种结构程序设计语言<br>C语言：适用于作为系统描述语言，也是同用的程序设计语言    C++语言：改进了C语言中的不足<br>Java语言：简单，与机硬件无关，具有较强的可移植性、安全性、鲁棒性    Ada语言：美国国防部指定唯一一种可用于军用系统开发的语言<br>Logo语言：绘图是其主要功能    脚本语言：又称扩建的语言或动态语言，以纯文本方式来保存的程序  </p>
+</blockquote>
+<p><strong>4.4并行程序设计</strong></p>
+<blockquote>
+<p>一种用于并行程序设计的语言 （1）分类：a.显式并行语言<br>              b.具有并行编译功能的串行语言<br>    （2）并行编译的过程：词法和语法分析、优化、并行代码生成<br>    （3）并行程序设计语言的编译过程：    <img src="https://img-blog.csdnimg.cn/20191216171540892.png" alt="在这里插入图片描述"></p>
+</blockquote>
+<p><strong>5.1数据</strong></p>
+<blockquote>
+<p>  （1）定义：用文字、数字、图形、图像、声音的方式对人、事件、事物等进行的描的数据是指能输入计算机并能被计算机程序处理的符号的总称<br>（2）形式：数字、文本、音频、图形、视频   （3）与信息的区别：数据是供计算机处理的，信息是供用户使用的   （4）计算机常用的编码方式：<br>       ASCII、扩展ASCII、Unicode、UTF-8、GB-2312、音频编码、图像编码</p>
+</blockquote>
+<p><strong>5.2数据结构：</strong></p>
+<blockquote>
+<p>由元素数据依据某种逻辑联系组织起来的 2（1）分类：逻辑上的数据结构和物理上的逻辑结构<br>（2）主要研究对象：数据表示、数据逻辑结构、数据存储方式、对数据的操作方法 （3）数据的逻辑结构：<br>     a.集合：与数学中集合的概念一致<br>     b.线性结构：数据元素一对一关系<br>     c.树形结构：数据元素一对多关系<br>     d.图形结构：数据元素多对多关系 （4）数据的物理结构：<br>     a.顺序存储：一组地址<br>     b.链式存储：数据存放的没有连续性的要求<br>     c.索引存储：数据元素存储在连续的地址，且需建立索引表 （5）常见的数据结构<br>     a.线性表：顺序存储、链式存储<br>     b.栈：顺序栈、链栈<br>     c.队列：先进先出的线性表<br>     d.树：UINX、DOS许多长荣操作系统的目录结构<br>     e.图：由一组顶点和一组顶点之间的连线构成的一种抽象数据类型</p>
+</blockquote>
+<p><strong>5.3算法</strong>    </p>
+<blockquote>
+<p>  (1）定义：由基本的运算及规定的运算顺序所构成的完整解题步骤<br>  (2）特性：输入、输出、有穷性、确定性、可行性</p>
+</blockquote>
+<p><strong>5.4数据库</strong>  </p>
+<blockquote>
+<p> （1）定义：一个组织内被应用程序使用的逻辑相一致的相关数据的集合<br>（2）特点：数据结构化、数据共享性高，冗余度低，易扩充、数据独立性高、数据由数据库管理系统统一管理和控制<br>（3）体系结构：a.三级模式：一个数据库只有一个内模式<br>                 b.二级映射：外模式/概念模式映射、概念模式内模式映射   （4）数据库模型：a.层次模型<br>                            b.网状模型<br>                   c.关系模型   （5）关系的操作及结构化查询语句   （6）数据库管理系统：是定义、创建、维护数据库得的一种工具     （7）主流数据库   </p>
+</blockquote>
+<p><strong>5.5数据中心</strong></p>
+<blockquote>
+<p>（1）定义：是在一个物理空间内实现数据集中处理、存储、传输、交换、管理的一整套复杂的设施<br>（2）主要目的：通过运行应用程序来处理组织的数据   （3）组成：核心计算机机房和其他支持空间   （4）传统数据中心的困惑<br>（5）新一代数据中心</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/" rel="tag"># 计算机导论</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%8D%81%E4%B8%80%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93/" rel="prev" title="计算机导论第十一周课后总结">
+                  <i class="fa fa-chevron-left"></i> 计算机导论第十一周课后总结
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+  
+  
+  
+
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">stay hungry.stay foolish.</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
