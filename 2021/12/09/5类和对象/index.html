@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"dylan-cs.github.io","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+
+  <meta name="description" content="title:5类与对象tags:  Java基础  categories:  #分类 ​           -Java基础 5.1  对象的定义和引用类是对某一类事物的描述，是抽象的、概念上的定义；对象是实际存在的该类事物的每个个体，因而也称实例(instance)。   如果将对象比作汽车，那么类就是汽车的设计图纸。所以面向对象程序设计的重点是类的设计，而不是对象的设计。  5.1.1类的定义">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dylanの博客">
+<meta property="og:url" content="https://dylan-cs.github.io/2021/12/09/5%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/index.html">
+<meta property="og:site_name" content="Dylanの博客">
+<meta property="og:description" content="title:5类与对象tags:  Java基础  categories:  #分类 ​           -Java基础 5.1  对象的定义和引用类是对某一类事物的描述，是抽象的、概念上的定义；对象是实际存在的该类事物的每个个体，因而也称实例(instance)。   如果将对象比作汽车，那么类就是汽车的设计图纸。所以面向对象程序设计的重点是类的设计，而不是对象的设计。  5.1.1类的定义">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:/Users/CYX/AppData/Roaming/Typora/typora-user-images/1637826216025.png">
+<meta property="og:image" content="c:/Users/CYX/AppData/Roaming/Typora/typora-user-images/1637827459701.png">
+<meta property="og:image" content="c:/Users/CYX/AppData/Roaming/Typora/typora-user-images/1637827652328.png">
+<meta property="og:image" content="c:/Users/CYX/AppData/Roaming/Typora/typora-user-images/1637845764556.png">
+<meta property="og:image" content="c:/Users/CYX/AppData/Roaming/Typora/typora-user-images/1637845768109.png">
+<meta property="og:image" content="c:/Users/CYX/AppData/Roaming/Typora/typora-user-images/1637845823315.png">
+<meta property="og:image" content="c:/Users/CYX/AppData/Roaming/Typora/typora-user-images/1637846723427.png">
+<meta property="og:image" content="c:/Users/CYX/AppData/Roaming/Typora/typora-user-images/1637846731896.png">
+<meta property="og:image" content="c:/Users/CYX/AppData/Roaming/Typora/typora-user-images/1637846760042.png">
+<meta property="og:image" content="c:/Users/CYX/AppData/Roaming/Typora/typora-user-images/1637846785714.png">
+<meta property="og:image" content="c:/Users/CYX/AppData/Roaming/Typora/typora-user-images/1638860706101.png">
+<meta property="og:image" content="c:/Users/CYX/AppData/Roaming/Typora/typora-user-images/1639028879008.png">
+<meta property="og:image" content="c:/Users/CYX/AppData/Roaming/Typora/typora-user-images/1639028989724.png">
+<meta property="article:published_time" content="2021-12-09T06:56:30.342Z">
+<meta property="article:modified_time" content="2021-12-09T06:56:17.502Z">
+<meta property="article:author" content="Dylan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/CYX/AppData/Roaming/Typora/typora-user-images/1637826216025.png">
+
+
+<link rel="canonical" href="https://dylan-cs.github.io/2021/12/09/5%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | Dylanの博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Dylanの博客</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">记录生活，记录成长</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E5%BC%95%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">5.1  对象的定义和引用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-1%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">5.1.1类的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-2%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="nav-number">1.2.</span> <span class="nav-text">5.1.2对象的创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-3%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.3.</span> <span class="nav-text">5.1.3对象的初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-4%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.4.</span> <span class="nav-text">5.1.4对象的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-5%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%EF%BC%9A"><span class="nav-number">1.5.</span> <span class="nav-text">5.1.5对象的生命周期：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-6%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-number">1.6.</span> <span class="nav-text">5.1.6对象的比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-7%E5%8C%BF%E5%90%8D%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.7.</span> <span class="nav-text">5.1.7匿名对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-8%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="nav-number">1.8.</span> <span class="nav-text">5.1.8构造方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.8.1.</span> <span class="nav-text">构造方法的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.8.2.</span> <span class="nav-text">构造方法的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%BD%BD"><span class="nav-number">1.8.3.</span> <span class="nav-text">构造方法的重载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%86%E8%8A%82"><span class="nav-number">1.8.4.</span> <span class="nav-text">构造方法的一些细节</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90"><span class="nav-number">2.</span> <span class="nav-text">5.2  案例分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-%E9%9D%99%E6%80%81%E6%88%90%E5%91%98%E4%B8%8E%E5%AE%9E%E4%BE%8B%E6%88%90%E5%91%98"><span class="nav-number">3.</span> <span class="nav-text">5.3  静态成员与实例成员</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-1%E9%9D%99%E6%80%81%E5%B1%9E%E6%80%A7%E4%B8%8E%E5%AE%9E%E4%BE%8B%E5%B1%9E%E6%80%A7%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-number">3.1.</span> <span class="nav-text">5.3.1静态属性与实例属性的比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-2%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95"><span class="nav-number">3.2.</span> <span class="nav-text">5.3.2静态方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-3%E7%90%86%E8%A7%A3main%E6%96%B9%E6%B3%95%E7%9A%84%E8%AF%AD%E6%B3%95"><span class="nav-number">3.3.</span> <span class="nav-text">5.3.3理解main方法的语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-4%E9%9D%99%E6%80%81%E6%88%90%E5%91%98%E7%9A%84%E5%8A%A0%E6%B3%95"><span class="nav-number">3.4.</span> <span class="nav-text">5.3.4静态成员的加法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-4%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-number">3.5.</span> <span class="nav-text">5.3.4静态代码块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-5this%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">3.6.</span> <span class="nav-text">5.3.5this是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-6%E9%80%9A%E8%BF%87this%E6%9D%A5%E5%BC%95%E7%94%A8%E6%88%90%E5%91%98%E6%96%B9%E6%B3%95"><span class="nav-number">3.7.</span> <span class="nav-text">5.3.6通过this来引用成员方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-7this%E5%BC%95%E7%94%A8%E5%8F%A5%E6%9F%84%E7%9A%84%E5%AD%98%E6%94%BE%E4%BD%8D%E7%BD%AE"><span class="nav-number">3.8.</span> <span class="nav-text">5.3.7this引用句柄的存放位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-8this%E5%BC%95%E7%94%A8%E5%8F%A5%E6%9F%84%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">3.9.</span> <span class="nav-text">5.3.8this引用句柄的应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%BD%BD"><span class="nav-number">4.</span> <span class="nav-text">5.4  方法的重载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E5%91%98%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="nav-number">4.1.</span> <span class="nav-text">成员方法重载的例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-5-%E7%B1%BB%E7%9A%84%E5%B0%81%E8%A3%85%E4%B8%8E%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6"><span class="nav-number">5.</span> <span class="nav-text">5.5  类的封装与访问控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5-1%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">5.1.</span> <span class="nav-text">5.5.1访问权限修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5-2%E5%AE%9E%E7%8E%B0%E7%B1%BB%E7%9A%84%E5%B0%81%E8%A3%85%E6%80%A7"><span class="nav-number">5.2.</span> <span class="nav-text">5.5.2实现类的封装性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-3%E7%B1%BB%E7%9A%84%E5%B0%81%E8%A3%85%E6%89%80%E5%B8%A6%E6%9D%A5%E7%9A%84%E4%BC%98%E7%82%B9"><span class="nav-number">5.3.</span> <span class="nav-text">5.3.3类的封装所带来的优点</span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Dylan"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Dylan</p>
+  <div class="site-description" itemprop="description">stay hungry stay foolish</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dylan-cs.github.io/2021/12/09/5%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Dylan">
+      <meta itemprop="description" content="stay hungry stay foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dylanの博客">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-12-09 14:56:30 / 修改时间：14:56:17" itemprop="dateCreated datePublished" datetime="2021-12-09T14:56:30+08:00">2021-12-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>title:5类与对象<br>tags:</p>
+<ul>
+<li>Java基础</li>
+</ul>
+<p>categories:  #分类</p>
+<p>​           -Java基础</p>
+<h2 id="5-1-对象的定义和引用"><a href="#5-1-对象的定义和引用" class="headerlink" title="5.1  对象的定义和引用"></a>5.1  对象的定义和引用</h2><p>类是对某一类事物的描述，是抽象的、概念上的定义；对象是实际存在的该类事物的每个个体，因而也称实例(instance)。 </p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1637826216025.png" alt="1637826216025"></p>
+<p>如果将对象比作汽车，那么类就是汽车的设计图纸。所以面向对象程序设计的重点是类的设计，而不是对象的设计。 </p>
+<h3 id="5-1-1类的定义"><a href="#5-1-1类的定义" class="headerlink" title="5.1.1类的定义"></a>5.1.1类的定义</h3><p>class Person<br>{    int age;<br>    void shout()<br>    {System.out.println(“oh,my god! I am “ + age);}<br>}<br>age是类的属性 ，也叫类成员变量 。<br>shout是方法也叫类的成员函数。<br>shout方法可以直接访问同一个类中的age变量 ，如果一个方法中有与成员变量同名的局部变量，该方法中对这个变量名的访问是局部变量，而不再是成员变量。  </p>
+<h3 id="5-1-2对象的创建"><a href="#5-1-2对象的创建" class="headerlink" title="5.1.2对象的创建"></a>5.1.2对象的创建</h3><p>Person p1 = new Person();</p>
+<p>执行完后的内存状态</p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1637827459701.png" alt="1637827459701"></p>
+<h3 id="5-1-3对象的初始化"><a href="#5-1-3对象的初始化" class="headerlink" title="5.1.3对象的初始化"></a>5.1.3对象的初始化</h3><p>当一个对象被创建时，会通过构造方法对其中各种类型的成员变量自动进行初始化赋值，如果类没有定义构造函数，就使用缺省构造方法，缺省构造函数对不同类型的成员变量赋不同的初值。</p>
+<h3 id="5-1-4对象的使用"><a href="#5-1-4对象的使用" class="headerlink" title="5.1.4对象的使用"></a>5.1.4对象的使用</h3><p>创建新的对象之后,我们就可以使用“ 对象名.对象成员 ”的格式，来访问对象的成员（包括属性和方法）<br>class TestPerson<br>{    public static void main(String[] args)<br>    {     Person p1 = new Person();<br>        Person p2 =new Person();<br>        p1.age = -30;<br>        p1.shout();<br>        p2.shout();<br>    }<br>}</p>
+<p>程序的内存布局：</p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1637827652328.png" alt="1637827652328"></p>
+<h3 id="5-1-5对象的生命周期："><a href="#5-1-5对象的生命周期：" class="headerlink" title="5.1.5对象的生命周期："></a>5.1.5对象的生命周期：</h3><p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1637845764556.png" alt="1637845764556"></p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1637845768109.png" alt="1637845768109"></p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1637845823315.png" alt="1637845823315"></p>
+<h3 id="5-1-6对象的比较"><a href="#5-1-6对象的比较" class="headerlink" title="5.1.6对象的比较"></a>5.1.6对象的比较</h3><p>“==”运算符与equals()方法的区别<br>==:同一个对象，equals():对象的内容相同</p>
+<h3 id="5-1-7匿名对象"><a href="#5-1-7匿名对象" class="headerlink" title="5.1.7匿名对象"></a>5.1.7匿名对象</h3><p>我们也可以不定义对象的句柄，而直接调用这个对象的方法。这样的对象叫做匿名对象， 如：new Person().shout();<br>如果对一个对象只需要进行一次方法调用，那么就可以使用匿名对象。<br>我们经常将匿名对象作为实参传递给一个函数调用。 </p>
+<h3 id="5-1-8构造方法"><a href="#5-1-8构造方法" class="headerlink" title="5.1.8构造方法"></a>5.1.8构造方法</h3><h4 id="构造方法的定义"><a href="#构造方法的定义" class="headerlink" title="构造方法的定义"></a>构造方法的定义</h4><p>它具有与类相同的名称；<br>它不含返回值；<br>它不能在方法中用return语句返回一个值<br>注意：在构造方法里不含返回值的概念是不同于“void”的，在定义构造方法时加了“void”，结果这个方法就不再被自动调用了。</p>
+<h4 id="构造方法的作用"><a href="#构造方法的作用" class="headerlink" title="构造方法的作用"></a>构造方法的作用</h4><p>当一个类的实例对象刚产生时，这个类的构造方法就会被自动调用，我们可以在这个方法中加入要完成初始化工作的代码。这就好像我们规定每个“人”一出生就必须先洗澡，我们就可以在“人”的构造方法中加入完成“洗澡”的程序代码，于是每个“人”一出生就会自动完成“洗澡”，程序就不必再在每个人刚出生时一个一个地告诉他们要“洗澡”了。</p>
+<h4 id="构造方法的重载"><a href="#构造方法的重载" class="headerlink" title="构造方法的重载"></a>构造方法的重载</h4><p>1.和一般的方法重载一样，重载的构造方法具有不同个数或不同类型的参数，编译器就可以根据这一点判断出用new 关键字产生对象时，该调用哪个构造方法了。产生对象的格式是：new 类名(参数列表)  ；<br>2.重载构造方法可以完成不同初始化的操作， 如：p3=new Person(“Tom”,18);语句，会做这样几件事：创建指定类的新实例对象，在堆内存中为实例对象分配内存空间，并调用指定类的构造方法，最后将实例对象的首地址赋值给引用变量p3。  </p>
+<p>p1=new Person(“Tom”,18) 的内存状态变化过程分析</p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1637846723427.png" alt="1637846723427"></p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1637846731896.png" alt="1637846731896"></p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1637846760042.png" alt="1637846760042"></p>
+<p>!1637846774172](C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1637846774172.png)</p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1637846785714.png" alt="1637846785714"></p>
+<h4 id="构造方法的一些细节"><a href="#构造方法的一些细节" class="headerlink" title="构造方法的一些细节"></a>构造方法的一些细节</h4><p>•在java每个类里都至少有一个构造方法，如果程序员没有在一个类里定义构造方法，系统会自动为这个类产生一个默认的构造方法，这个默认构造方法没有参数，在其方法体中也没有任何代码，即什么也不做。 </p>
+<p>•由于系统提供的默认构造方法往往不能满足编程者的需求，我们可以自己定义类的构造方法，来满足我们的需要，一旦编程者为该类定义了构造方法，系统就不再提供默认的构造方法了。 </p>
+<p>•声明构造方法，如无特殊需要，应使用public关键字。</p>
+<h2 id="5-2-案例分析"><a href="#5-2-案例分析" class="headerlink" title="5.2  案例分析"></a>5.2  案例分析</h2><p>银行账户对象的创建，要求能够存放用户的账号、户名、密码、和个人账户余额等信息，并包含存款、取款、查询余额和修改账户密码等操作，类名为Cust，并利用Cust类类创建对象，对象的账号为100，户名为Tom，密码1111，账户余额10000.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Class Cust&#123;</span><br><span class="line">    String name;</span><br><span class="line">    int ID;</span><br><span class="line">    String PWD;</span><br><span class="line">    int Money;</span><br><span class="line">    Cust(String newName,int newID,String newPWD,int newMoney)&#123;</span><br><span class="line">      name=newName;</span><br><span class="line">      ID=newID;</span><br><span class="line">      PWD=newPWD;</span><br><span class="line">      money=newMoney;</span><br><span class="line">       &#125;</span><br><span class="line">    void getMoney(int newMoney)&#123;</span><br><span class="line">         money=money-newMoney&#125;  </span><br><span class="line">    void setMoney(int newMoney)&#123;</span><br><span class="line">         money=money+newMoney;  </span><br><span class="line">      &#125;</span><br><span class="line">    void search()&#123;</span><br><span class="line">      System.out.println(“户名：”+name)；</span><br><span class="line">      System.out.println(“账号：”+name)；</span><br><span class="line">      System.out.println(“账户余额：”+name)；</span><br><span class="line">    &#125;</span><br><span class="line">    void changePWD(String newPWD)&#123;</span><br><span class="line">       PWD=newPWD;</span><br><span class="line">     &#125;</span><br><span class="line">     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Class MainDemo&#123;</span><br><span class="line">   public static void main(String[] args)&#123;</span><br><span class="line">    Cust myCust= newCust(“Tom”,100,”1111”,1000);</span><br><span class="line">   myCust.setMoney(5000);</span><br><span class="line">   myCust.getMoney(3000);</span><br><span class="line">   myCust.changePWD(“Tom”);</span><br><span class="line">   myCust.search();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="5-3-静态成员与实例成员"><a href="#5-3-静态成员与实例成员" class="headerlink" title="5.3  静态成员与实例成员"></a>5.3  静态成员与实例成员</h2><p>当我们编写一个类时，其实就是在描述其对象的属性和行为，而并没有产生实质上的对象，只有通过new关键字才会产生出对象，这时系统才会分配内存空间给对象，其方法才可以供外部调用。我们有时候希望无论是否产生了对象或无论产生了多少对象的情况下，某些特定的数据在内存空间里只有一份，例如所有的中国人都有个国家名称，每一个中国人都共享这个国家名称，不必在每一个中国人的实例对象中都单独分配一个用于代表国家名称的变量。</p>
+<p>   静态成员(类成员)：类的所有对象共享的成员，拥有有一个固定的存储 空间，每个对象都可以访问该成员，但通常只通过类名来访问，静态成员用static修饰符来修饰。</p>
+<p>​    实例成员(对象成员)：类的每个对象所独有的成员，不同对象的同一实例成员分别存储于不同的位置，只有通过具体的对象才能访问属于该对象的实例成员，实例成员没有static修饰符。</p>
+<h3 id="5-3-1静态属性与实例属性的比较"><a href="#5-3-1静态属性与实例属性的比较" class="headerlink" title="5.3.1静态属性与实例属性的比较"></a>5.3.1静态属性与实例属性的比较</h3><p>在Cust类中，增加属性bankName代表账户所属的银行，因为它是每个账户所共有的，将其定义为静态属性。再创建一个账户总数(或总编号)allNum，它代表当前一共创建了多少个账户，也不属于任何一个账户对象，而是属于Cust类的，也将其定义为静态属性。最后定义一个流水编号，它是对象所独有的，应该定义为实例属性。</p>
+<h3 id="5-3-2静态方法"><a href="#5-3-2静态方法" class="headerlink" title="5.3.2静态方法"></a>5.3.2静态方法</h3><p>•在静态方法里只能直接调用同类中其它的静态成员（包括变量和方法），而不能直接访问类中的非静态成员。这是因为，对于非静态的方法和变量，需要先创建类的实例对象后才可使用，而静态方法在使用前不用创建任何对象。</p>
+<p>• 静态方法不能以任何方式引用this和super关键字（super关键字在下一章讲解）。与上面的道理一样，因为静态方法在使用前不用创建任何实例对象，当静态方法被调用时，this所引用的对象根本就没有产生。 </p>
+<p>•main()方法是静态的，因此JVM在执行main方法时不创建main方法所在的类的实例对象，因而在main()方法中，我们不能直接访问该类中的非静态成员，必须创建该类的一个实例对象后，才能通过这个对象去访问类中的非静态成员，这种情况，我们在以后的例子中会多次碰到。</p>
+<h3 id="5-3-3理解main方法的语法"><a href="#5-3-3理解main方法的语法" class="headerlink" title="5.3.3理解main方法的语法"></a>5.3.3理解main方法的语法</h3><p>由于java虚拟机需要调用类的main()方法，所以该方法的访问权限必须是public，又因为java虚拟机在执行main()方法时不必创建对象，所以该方法必须是static的，该方法接收一个String类型的数组参数，该数组中保存执行java命令时传递给所运行的类的参数。</p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1638860706101.png" alt="1638860706101"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Public class StaticDemo&#123;</span><br><span class="line">  static double pi=3.14;     //pi为静态变量</span><br><span class="line">  double pix=3.14;            //pix为实例变量</span><br><span class="line">  double getArea()&#123;return pi*3*3;&#125;</span><br><span class="line">      //实例方法访问类变量，合法</span><br><span class="line">  static double getArea1()&#123;return pi*3*3;&#125;</span><br><span class="line">      //类方法访问类变量，合法</span><br><span class="line">  double getArea2()&#123;return pix*3*3;&#125;</span><br><span class="line">      //实例方法访问实例变量，合法</span><br><span class="line">   static double getArea1()&#123;return pix*3*3;&#125;</span><br><span class="line">      //类方法访问实例变量，非法</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-3-4静态成员的加法"><a href="#5-3-4静态成员的加法" class="headerlink" title="5.3.4静态成员的加法"></a>5.3.4静态成员的加法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Class HasStatic&#123;</span><br><span class="line">    private static int x=100;</span><br><span class="line">    public static void main(String args[]&#123;</span><br><span class="line">    HasStatic hs1=new HasStatic();</span><br><span class="line">    HasStatic hs2=new HasStatic();</span><br><span class="line">    hs1.x++;</span><br><span class="line">    hs2.x++;</span><br><span class="line">    hs1.x++;</span><br><span class="line">    System.out.println(“x=“+x);</span><br><span class="line">&#125;&#125;</span><br><span class="line">X=103</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-3-4静态代码块"><a href="#5-3-4静态代码块" class="headerlink" title="5.3.4静态代码块"></a>5.3.4静态代码块</h3><p>•一个类中可以使用不包含在任何方法体中的静态代码块(static block )，当类被载入时，静态代码块被执行，且只被执行一次，静态块经常用来进行类属性的初始化。 </p>
+<p>•类中的静态代码块被自动执行，尽管我们产生了类的多个实例对象，但其中的静态代码块只被执行了一次。当一个程序中用到了其他的类，类是在第一次被使用的时候才被装载，而不是在程序启动时就装载程序中所有可能要用到的类。 </p>
+<h3 id="5-3-5this是什么？"><a href="#5-3-5this是什么？" class="headerlink" title="5.3.5this是什么？"></a>5.3.5this是什么？</h3><p>除了匿名对象外，任何一个对象一经创建，就会创建一个对该对象的引用——对象名；任何一个对象名都可以通过this来代替，通过”this.成员名”的方式，可以访问该对象的每个成员方法和成员变量。有时，这个this是必不可少的。</p>
+<p>例子：实例变量与成员变量同名</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public class SimpleClassToShowThis&#123;</span><br><span class="line">    public int a;</span><br><span class="line">    public void test()&#123;</span><br><span class="line">      int a=50;</span><br><span class="line">      this.a=a+5;</span><br><span class="line">      System.out.println(a);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Public class TestThis&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">     SimpleClass simple=new SimpleClass();</span><br><span class="line">     simple.test();</span><br><span class="line">     System.out.print(“simple对象中a的值为:”)；</span><br><span class="line">     System.out.println(simple.a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>由于Java将局部变量与成员变量同名时的变量优先视为局部变量，所以，在成员函数test()中想要访问成员变量a就可以通过this.a来实现。如下例。</p>
+<h3 id="5-3-6通过this来引用成员方法"><a href="#5-3-6通过this来引用成员方法" class="headerlink" title="5.3.6通过this来引用成员方法"></a>5.3.6通过this来引用成员方法</h3><p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1639028879008.png" alt="1639028879008"></p>
+<p>如果func2方法被调用 ，一定是事先已经有了一个存在的对象，func2被作为那个对象的方法被使用。 </p>
+<p>在func2内部能引用别的对象 ，同样也能引用func2所属的那个对象。</p>
+<p>在func2中，自己所属的那个对象的引用名称是什么呢？ 答案就是this！ this关键字在java程序里的作用和它的词义很接近，它在函数内部就是这个函数所属的对象的引用变量。  </p>
+<h3 id="5-3-7this引用句柄的存放位置"><a href="#5-3-7this引用句柄的存放位置" class="headerlink" title="5.3.7this引用句柄的存放位置"></a>5.3.7this引用句柄的存放位置</h3><p>每个成员方法内部，都有一个this引用变量，指向调用这个方法的对象，类中的成员方法与this之间的关系如图</p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1639028989724.png" alt="1639028989724"></p>
+<h3 id="5-3-8this引用句柄的应用"><a href="#5-3-8this引用句柄的应用" class="headerlink" title="5.3.8this引用句柄的应用"></a>5.3.8this引用句柄的应用</h3><p>•一个类中的成员方法可以直接调用同类中的其他成员，其实我们在一个方法内部使用“this.其他成员”的引用方式和直接使用“其他成员”的效果是一样的，那this还有多大的作用呢？在有些情况下，我们还是非得用this关键字不可的 。</p>
+<p>•让类的成员变量名和对其进行赋值的成员方法的形参变量同名是必要的，这样的代码谁看了都能明白这两个变量是彼此相关的，老手看到函数的定义，就能揣摩出函数中的代码，大大节省了别人和自己日后阅读程序的时间。 </p>
+<p>•假设我们有一个容器类和一个部件类，在容器类的某个方法中要创建部件类的实例对象，而部件类的构造方法要接收一个代表其所在容器的参数。</p>
+<p>•构造方法是在产生对象时被java系统自动调用的，我们不能在程序中象调用其他方法一样去调用构造方法。但我们可以在一个构造方法里调用其他重载的构造方法，不是用构造方法名，而是用this(参数列表)的形式，根据其中的参数列表，选择相应的构造方法。 </p>
+<h2 id="5-4-方法的重载"><a href="#5-4-方法的重载" class="headerlink" title="5.4  方法的重载"></a>5.4  方法的重载</h2><pre><code>方法的签名：由方法名和方法的参数类型组成，Java通过方法签名而不是方法名来区分一个方法,这意味着可以有方法名相同但参数类型不同的方法。例如，Cust类的方法签名如下：
+Cust（String，int，String，int )
+getMoney(int)
+setMoney(int)
+search()
+changePWD(String)    
+</code></pre>
+<h3 id="成员方法重载的例子"><a href="#成员方法重载的例子" class="headerlink" title="成员方法重载的例子"></a>成员方法重载的例子</h3><p>   如果声明了两个或两个以上同名但参数类型不同的方法，这就称为方法的重载。例如，可以为Cust类的取款方法getMoney重载，考虑取款上限为Limited元，构造如下方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">void getMoney(int newMoney,int Limited)</span><br><span class="line">&#123;</span><br><span class="line">   if(newMoney&lt;Limited)</span><br><span class="line">    &#123;money=money-newMoney&#125;</span><br><span class="line">   else  &#123;money=money-Limited&#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="5-5-类的封装与访问控制"><a href="#5-5-类的封装与访问控制" class="headerlink" title="5.5  类的封装与访问控制"></a>5.5  类的封装与访问控制</h2><p>•如果外面的程序可以随意修改一个类的成员变量，会造成不可预料的程序错误，就象一个人的身高，不能被外部随意修改，只能通过各种摄取营养的方法去修改这个属性。 </p>
+<p>•在定义一个类的成员（包括变量和方法）时，使用private关键字说明这个成员的访问权限，这个成员成了类的私有成员，只能被这个类的其他成员方法调用，而不能被其他的类中的方法所调用。 </p>
+<h3 id="5-5-1访问权限修饰符"><a href="#5-5-1访问权限修饰符" class="headerlink" title="5.5.1访问权限修饰符"></a>5.5.1访问权限修饰符</h3><p>public: 定义者和使用者可以位于不同的包（存放.class文件的文件夹）中<br>default: 定义者和使用者可以位于相同的包（存放.class文件的文件夹）中<br>private: 定义者和使用者可以位于同一个类中<br>protected: 定义者和使用者可以位于当前类或当前类的所有子类中</p>
+<p><strong>Java访问控制总结：</strong></p>
+<table>
+<thead>
+<tr>
+<th>访问权限</th>
+<th>同一个类</th>
+<th>同一个包</th>
+<th>子类</th>
+<th>跨包访问</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>private</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>default</td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>prrotected</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+</tr>
+<tr>
+<td>public</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+</tbody></table>
+<h3 id="5-5-2实现类的封装性"><a href="#5-5-2实现类的封装性" class="headerlink" title="5.5.2实现类的封装性"></a>5.5.2实现类的封装性</h3><p>   为了实现良好的封装性，我们通常将类的成员变量声明为private，再通过public的方法来对这个变量进行访问。对一个变量的操作，一般都有读取和赋值操作，我们分别定义两个方法来实现这两种操作，一个是getXxx()（Xxx表示要访问的成员变量的名字），用来读取这个成员变量操作，另外一个是setXxx()用来对这个成员变量赋值。</p>
+<p>一个类通常就是一个小的模块，我们应该让模块仅仅公开必须要让外界知道的内容，而隐藏其它一切内容。我们在进行程序的详细设计时，应尽量避免一个模块直接修改或操作另一个模块的数据，模块设计追求强内聚（许多功能尽量在类的内部独立完成，不让外面干预），弱耦合（提供给外部尽量少的方法调用）。用总统指挥一支军队的例子来说明这种效果。</p>
+<h3 id="5-3-3类的封装所带来的优点"><a href="#5-3-3类的封装所带来的优点" class="headerlink" title="5.3.3类的封装所带来的优点"></a>5.3.3类的封装所带来的优点</h3><p>•隐藏类的实现细节；</p>
+<p>•让使用者只能通过事先定制好的方法来访问数据，可以方便地加入控制逻辑，限制对属性的不合理操作；</p>
+<p>•便于修改，增强代码的可维护性；</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/12/09/4%E6%95%B0%E7%BB%84/" rel="prev" title="">
+                  <i class="fa fa-chevron-left"></i> 
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+  
+  
+  
+
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">stay hungry.stay foolish.</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

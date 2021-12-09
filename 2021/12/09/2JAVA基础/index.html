@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"dylan-cs.github.io","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+
+  <meta name="description" content="title:2Java基础tags:   Java基础  categories:  #分类 ​           -Java基础 2.1面向对象的基础概念是一种程序设计方法和设计规范。从对象出发来构造软件系统，并在系统架构过程中京可能的运用热泪的自然思维方式。 2.1.1类和对象•把相似的对象划归成一个类。 •在软件中，类就是一个模板，定义了通用于一个特定种类的所有对象的状态（变量）和行为（方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dylanの博客">
+<meta property="og:url" content="https://dylan-cs.github.io/2021/12/09/2JAVA%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Dylanの博客">
+<meta property="og:description" content="title:2Java基础tags:   Java基础  categories:  #分类 ​           -Java基础 2.1面向对象的基础概念是一种程序设计方法和设计规范。从对象出发来构造软件系统，并在系统架构过程中京可能的运用热泪的自然思维方式。 2.1.1类和对象•把相似的对象划归成一个类。 •在软件中，类就是一个模板，定义了通用于一个特定种类的所有对象的状态（变量）和行为（方法">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:/Users/CYX/AppData/Roaming/Typora/typora-user-images/1636185590914.png">
+<meta property="og:image" content="c:/Users/CYX/AppData/Roaming/Typora/typora-user-images/1636185760593.png">
+<meta property="og:image" content="c:/Users/CYX/AppData/Roaming/Typora/typora-user-images/1636185849650.png">
+<meta property="article:published_time" content="2021-12-09T06:56:30.326Z">
+<meta property="article:modified_time" content="2021-12-09T06:55:04.001Z">
+<meta property="article:author" content="Dylan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/CYX/AppData/Roaming/Typora/typora-user-images/1636185590914.png">
+
+
+<link rel="canonical" href="https://dylan-cs.github.io/2021/12/09/2JAVA%E5%9F%BA%E7%A1%80/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | Dylanの博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Dylanの博客</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">记录生活，记录成长</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">2.1面向对象的基础概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.1.</span> <span class="nav-text">2.1.1类和对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">2.1.2属性和方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-3%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%BB%A7%E6%89%BF"><span class="nav-number">1.3.</span> <span class="nav-text">2.1.3对象的继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-4%E5%AF%B9%E8%B1%A1%E7%9A%84%E9%87%8D%E7%94%A8"><span class="nav-number">1.4.</span> <span class="nav-text">2.1.4对象的重用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-5%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B0%81%E8%A3%85"><span class="nav-number">1.5.</span> <span class="nav-text">2.1.5对象的封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-6%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%A4%9A%E6%80%81%E6%80%A7"><span class="nav-number">1.6.</span> <span class="nav-text">2.1.6对象的多态性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2Java%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">2.</span> <span class="nav-text">2.2Java语言中类的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1%E7%B1%BB%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="nav-number">2.1.</span> <span class="nav-text">2.2.1类的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2%E7%B1%BB%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">2.2.2类的方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3%E5%B8%B8%E9%87%8F%E4%B8%8E%E5%8F%98%E9%87%8F"><span class="nav-number">3.</span> <span class="nav-text">2.3常量与变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-%E5%B8%B8%E9%87%8F"><span class="nav-number">3.1.</span> <span class="nav-text">2.3.1  常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-%E5%8F%98%E9%87%8F"><span class="nav-number">3.2.</span> <span class="nav-text">2.3.2  变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-3-%E6%A0%87%E8%AF%86%E7%AC%A6%E4%B8%8E%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">3.3.</span> <span class="nav-text">2.3.3 标识符与关键字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">4.</span> <span class="nav-text">2.4数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-1%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">4.1.</span> <span class="nav-text">2.4.1基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Java%E4%B8%AD%E5%AE%9A%E4%B9%89%E4%BA%86%E5%9B%9B%E7%B1%BB-%E5%85%AB%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">4.1.1.</span> <span class="nav-text">Java中定义了四类&#x2F;八种基本数据类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-2%E5%90%84%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="nav-number">4.2.</span> <span class="nav-text">2.4.2各类型之间的相互转换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">5.</span> <span class="nav-text">2.5运算符和表达式</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Dylan"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Dylan</p>
+  <div class="site-description" itemprop="description">stay hungry stay foolish</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dylan-cs.github.io/2021/12/09/2JAVA%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Dylan">
+      <meta itemprop="description" content="stay hungry stay foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dylanの博客">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-12-09 14:56:30 / 修改时间：14:55:04" itemprop="dateCreated datePublished" datetime="2021-12-09T14:56:30+08:00">2021-12-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>title:2Java基础<br>tags:</p>
+<ul>
+<li> Java基础</li>
+</ul>
+<p>categories:  #分类</p>
+<p>​           -Java基础</p>
+<h2 id="2-1面向对象的基础概念"><a href="#2-1面向对象的基础概念" class="headerlink" title="2.1面向对象的基础概念"></a>2.1面向对象的基础概念</h2><p>是一种程序设计方法和设计规范。从对象出发来构造软件系统，并在系统架构过程中京可能的运用热泪的自然思维方式。</p>
+<h3 id="2-1-1类和对象"><a href="#2-1-1类和对象" class="headerlink" title="2.1.1类和对象"></a>2.1.1类和对象</h3><p>•把相似的对象划归成一个类。</p>
+<p>•在软件中，类就是一个模板，定义了通用于一个特定种类的所有对象的状态（变量）和行为（方法）。对象是实际存在的该类事物的每个个体。</p>
+<p>•类是创建对象的模板，对象是类的实例。</p>
+<h3 id="2-1-2属性和方法"><a href="#2-1-2属性和方法" class="headerlink" title="2.1.2属性和方法"></a>2.1.2属性和方法</h3><h3 id="2-1-3对象的继承"><a href="#2-1-3对象的继承" class="headerlink" title="2.1.3对象的继承"></a>2.1.3对象的继承</h3><p>•理解继承是理解面向对象程序设计的关键。</p>
+<p>•在Java中，通过关键字extends继承一个已有的类，被继承的类称为父类（超类，基类），新的类称为子类（派生类）。</p>
+<p>•在Java中，不允许多继承。</p>
+<h3 id="2-1-4对象的重用"><a href="#2-1-4对象的重用" class="headerlink" title="2.1.4对象的重用"></a>2.1.4对象的重用</h3><p>1.创建新对象的时候，应该以继承现有对象为前提，而不是创建新对象</p>
+<p>2.尽量以现有对象来架构程序。</p>
+<h3 id="2-1-5对象的封装"><a href="#2-1-5对象的封装" class="headerlink" title="2.1.5对象的封装"></a>2.1.5对象的封装</h3><p>Java中通过将数据封装、声明为私有的(private),再提供一个或多个公开的(public)方法实现对该属性的操作，以实现下述目的:</p>
+<p>1.隐藏一个类的实现细节；</p>
+<p>2.使用者只能通过事先定制好的方法来访问数据，可以方便地加入控制逻辑，限制对属性的不合理操作；</p>
+<p>3.便于修改，增强代码的可维护性；</p>
+<h3 id="2-1-6对象的多态性"><a href="#2-1-6对象的多态性" class="headerlink" title="2.1.6对象的多态性"></a>2.1.6对象的多态性</h3><p>在一般类中定义的属性或者方法被特殊类继承后，可以具有不同的数据类型或者表现出不同的行为。</p>
+<h2 id="2-2Java语言中类的定义"><a href="#2-2Java语言中类的定义" class="headerlink" title="2.2Java语言中类的定义"></a>2.2Java语言中类的定义</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class Person </span><br><span class="line">&#123;</span><br><span class="line">	public int age ;</span><br><span class="line">	public String name;</span><br><span class="line">	public String sex;</span><br><span class="line"></span><br><span class="line">	public void show()</span><br><span class="line">	&#123;</span><br><span class="line">	System.out.println(&quot;name=&quot;+name);</span><br><span class="line">	System.out.println(&quot;age=&quot;+age);</span><br><span class="line">	System.out.println(&quot;sex=&quot;+sex);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-1类的属性"><a href="#2-2-1类的属性" class="headerlink" title="2.2.1类的属性"></a>2.2.1类的属性</h3><p>属性成员是具有某种数据类型的变量或者常量，当创建一个对象是，它会包含类中定义的所有变量。</p>
+<h3 id="2-2-2类的方法"><a href="#2-2-2类的方法" class="headerlink" title="2.2.2类的方法"></a>2.2.2类的方法</h3><p>1.方法的定义</p>
+<p>2.main()方法，包含主方法的类称为主类，它是程序执行的入口点。<strong>java文件中，可以有多个类，但只能有一个public类，且与java文件同名。</strong></p>
+<p>3.方法的调用</p>
+<h2 id="2-3常量与变量"><a href="#2-3常量与变量" class="headerlink" title="2.3常量与变量"></a>2.3常量与变量</h2><h3 id="2-3-1-常量"><a href="#2-3-1-常量" class="headerlink" title="2.3.1  常量"></a>2.3.1  常量</h3><p>在程序运行过程中其值保持不变的量，如1，true,  “WHUT”,  6.5等等。</p>
+<p><strong>1.用final定义的符号常量位于方法定义之内，只能在方法内使用，</strong></p>
+<p><strong>2.如果希望一个符号常量被本类的其他方法使用，就必须用static</strong><br><strong>final声明，并将声明语句放到main()方法外部。</strong></p>
+<p><strong>3.如果用public static final 来声明，该符号常量还可以被其他类使用</strong></p>
+<h3 id="2-3-2-变量"><a href="#2-3-2-变量" class="headerlink" title="2.3.2  变量"></a>2.3.2  变量</h3><p>①<strong>定义</strong>：变量(Variable)用于表示其值在程序运行过程中可以改变的数据。变量就是系统为程序分配的一块内存单元，用来存储各种类型的数据。根据所存储的数据类型的不同，有各种不同类型的变量。变量名代表这块内存中的数据。</p>
+<p>②<strong>分类：</strong></p>
+<p>1.按所属数据类型划分：基本类型变量和引用类型变量</p>
+<p>2.按声明的位置划分：</p>
+<p>  局部变量——方法或语句块内部定义的变量</p>
+<p>  成员变量——方法外部、类的内部定义的变量</p>
+<p>③<strong>变量的生存期</strong></p>
+<p><u>局部变量的生存期就是其所在方法或语句块单次执行的期间——在程序每一次调用方法或运行进入到一个语句块中时，其中的局部变量才被创建并可用，随方法/语句块的退出，局部变量将被销毁。</u></p>
+<p><u>成员变量的生存期与其所属的对象相同，随着对象的创建而创建、随对象的销毁而销毁。</u></p>
+<h3 id="2-3-3-标识符与关键字"><a href="#2-3-3-标识符与关键字" class="headerlink" title="2.3.3 标识符与关键字"></a>2.3.3 标识符与关键字</h3><p>java中的包、类、方法、参数和变量的名字，可由任意顺序的大小写字母、数字、下划线(_)和美元符号($)组成，但标识符不能以数字开头，不能是关键字。</p>
+<h2 id="2-4数据类型"><a href="#2-4数据类型" class="headerlink" title="2.4数据类型"></a>2.4数据类型</h2><h3 id="2-4-1基本数据类型"><a href="#2-4-1基本数据类型" class="headerlink" title="2.4.1基本数据类型"></a>2.4.1基本数据类型</h3><h4 id="Java中定义了四类-八种基本数据类型"><a href="#Java中定义了四类-八种基本数据类型" class="headerlink" title="Java中定义了四类/八种基本数据类型"></a>Java中定义了四类/八种基本数据类型</h4><p>Ø逻辑型 – boolean</p>
+<p>Ø文本型 – char</p>
+<p>Ø整数型 – byte, short, int, long</p>
+<p>Ø浮点型 – float, double</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">//整数拓展： 二进制0b 八进制0 十进制 十六进制0x</span><br><span class="line">int i = 10;</span><br><span class="line">int i2 = 010; //八进制0</span><br><span class="line">int i3 = 0x10;  //十六进制0x</span><br><span class="line">10</span><br><span class="line">8</span><br><span class="line">16</span><br><span class="line"></span><br><span class="line">//浮点数拓展：银行业务怎么表示</span><br><span class="line">//使用BigDecimal 数学工具类</span><br><span class="line"></span><br><span class="line">//float 有限 离散 舍入误差 大约 接近但不等于</span><br><span class="line">//double</span><br><span class="line">//最好完全避免使用浮点数进行比较</span><br><span class="line"></span><br><span class="line">float f = 0.1f; //0.1</span><br><span class="line">double d = 0.1; //0.1</span><br><span class="line">System.out.println(f==d); // false</span><br><span class="line">float d1 = 23131312312312313f;</span><br><span class="line">float d2 = d1 + 1;</span><br><span class="line">System.out.println(d1==d2); //True</span><br><span class="line"></span><br><span class="line">//字符拓展</span><br><span class="line">char c1 = &#x27;a&#x27;;</span><br><span class="line">char c2 = &#x27;中&#x27;;</span><br><span class="line">System.out.println(c1);   //a</span><br><span class="line">System.out.println((int)c1); //97</span><br><span class="line">System.out.println(c2);   //中</span><br><span class="line">System.out.println((int)c2);  //20013</span><br><span class="line">//所有的字符本质还是数字</span><br><span class="line">//编码 Unicode 表：（97=a  65=A） 2字节 65536</span><br><span class="line">char c3 =&#x27;\u0061&#x27;;</span><br><span class="line">//char c3 =&#x27;\141&#x27;;</span><br><span class="line">System.out.println(c3); //a</span><br><span class="line"></span><br><span class="line">//转义字符</span><br><span class="line">//八进制转义序列：\ + 1到3位5数字；范围&#x27;\000&#x27;~&#x27;\377&#x27;    \0：空字符</span><br><span class="line">//Unicode转义字符：\u + 四个十六进制数字；0~65535   \u0000：空字符</span><br><span class="line">//  \t制表符  \n 换行</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-4-2各类型之间的相互转换"><a href="#2-4-2各类型之间的相互转换" class="headerlink" title="2.4.2各类型之间的相互转换"></a>2.4.2各类型之间的相互转换</h3><p>自动类型转换：在某种条件下，系统自动完成类型转换</p>
+<p>1.两种类型兼容              •例如：int 和 double 兼容</p>
+<p>2.目标类型大于源类型          •例如：double 型 大于 int 型 </p>
+<p>强制类型转换：（target_type）value</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int a:</span><br><span class="line">byte b;</span><br><span class="line">b=(byte)a;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-5运算符和表达式"><a href="#2-5运算符和表达式" class="headerlink" title="2.5运算符和表达式"></a>2.5运算符和表达式</h2><p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1636185590914.png" alt="1636185590914"></p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1636185760593.png" alt="1636185760593"></p>
+<p>运算符的优先级：</p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1636185849650.png" alt="1636185849650"></p>
+<p>区别：执行顺序不同</p>
+<p>int a=2; int b= a + 3 * a++;      8</p>
+<p>int a=2; int b= (a ++)+ 3 * a;         11</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/12/09/1JAVA%E7%AE%80%E4%BB%8B/" rel="prev" title="">
+                  <i class="fa fa-chevron-left"></i> 
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/12/09/3%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" rel="next" title="">
+                   <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+  
+  
+  
+
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">stay hungry.stay foolish.</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"dylan-cs.github.io","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+
+  <meta name="description" content="title:4数组tags:  Java基础  categories:  #分类 ​           -Java基础 •数组是多个相同类型数据的组合，实现对这些数据的统一管理 •数组属引用类型，数组型数据是对象(object)，数组中的每个元素相当于该对象的成员变量 •数组中的元素可以是任何数据类型，包括基本类型和引用类型 4.1  一维数组 &lt;类型&gt;  var[];     或">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dylanの博客">
+<meta property="og:url" content="https://dylan-cs.github.io/2021/12/09/4%E6%95%B0%E7%BB%84/index.html">
+<meta property="og:site_name" content="Dylanの博客">
+<meta property="og:description" content="title:4数组tags:  Java基础  categories:  #分类 ​           -Java基础 •数组是多个相同类型数据的组合，实现对这些数据的统一管理 •数组属引用类型，数组型数据是对象(object)，数组中的每个元素相当于该对象的成员变量 •数组中的元素可以是任何数据类型，包括基本类型和引用类型 4.1  一维数组 &lt;类型&gt;  var[];     或">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:/Users/CYX/AppData/Roaming/Typora/typora-user-images/1636356184774.png">
+<meta property="og:image" content="c:/Users/CYX/AppData/Roaming/Typora/typora-user-images/1636356198780.png">
+<meta property="og:image" content="c:/Users/CYX/AppData/Roaming/Typora/typora-user-images/1636356215120.png">
+<meta property="article:published_time" content="2021-12-09T06:56:30.330Z">
+<meta property="article:modified_time" content="2021-12-09T06:55:52.787Z">
+<meta property="article:author" content="Dylan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/CYX/AppData/Roaming/Typora/typora-user-images/1636356184774.png">
+
+
+<link rel="canonical" href="https://dylan-cs.github.io/2021/12/09/4%E6%95%B0%E7%BB%84/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | Dylanの博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Dylanの博客</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">记录生活，记录成长</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number">1.</span> <span class="nav-text">4.1  一维数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number">2.</span> <span class="nav-text">4.2  多维数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-1%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">2.1.</span> <span class="nav-text">4.2.1多维数组初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-2%E6%95%B0%E7%BB%84%E7%9A%84%E6%9E%9A%E4%B8%BE"><span class="nav-number">2.2.</span> <span class="nav-text">4.2.2数组的枚举</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-3%E6%95%B0%E7%BB%84%E6%8B%B7%E8%B4%9D"><span class="nav-number">2.3.</span> <span class="nav-text">4.2.3数组拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-4-Instanceof"><span class="nav-number">2.4.</span> <span class="nav-text">4.2.4 Instanceof</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-5%E6%95%B0%E7%BB%84%E5%88%9D%E5%A7%8B%E5%8C%96%E6%80%BB%E7%BB%93"><span class="nav-number">2.5.</span> <span class="nav-text">4.2.5数组初始化总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-6-Array%E7%B1%BB"><span class="nav-number">2.6.</span> <span class="nav-text">4.2.6 Array类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84"><span class="nav-number">3.</span> <span class="nav-text">4.3  字符数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-1%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%A3%B0%E6%98%8E%E4%B8%8E%E5%88%9B%E5%BB%BA"><span class="nav-number">3.1.</span> <span class="nav-text">4.3.1字符串的声明与创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-2%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9C%89%E5%85%B3%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">3.2.</span> <span class="nav-text">4.3.2与字符串有关的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A1%AE%E5%AE%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E9%95%BF%E5%BA%A6-%EF%BC%9A"><span class="nav-number">3.2.1.</span> <span class="nav-text">确定字符串的长度 ：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%96%E5%BE%97%E5%AD%97%E7%AC%A6%EF%BC%9A"><span class="nav-number">3.2.2.</span> <span class="nav-text">取得字符：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%96%E5%BE%97%E5%AD%90%E4%B8%B2%EF%BC%9A"><span class="nav-number">3.2.3.</span> <span class="nav-text">取得子串：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%86%85%E5%AE%B9%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-number">3.2.4.</span> <span class="nav-text">字符串内容的比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9E%E6%8E%A5"><span class="nav-number">3.2.5.</span> <span class="nav-text">字符串连接:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A3%80%E7%B4%A2"><span class="nav-number">3.2.6.</span> <span class="nav-text">字符串检索:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">3.2.7.</span> <span class="nav-text">字符数组转换为字符串:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84"><span class="nav-number">3.2.8.</span> <span class="nav-text">字符串转换为字符数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%86%E5%85%B6%E4%BB%96%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">3.2.9.</span> <span class="nav-text">将其他数据类型转换为字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%A7%E5%B0%8F%E5%86%99%E8%BD%AC%E6%8D%A2"><span class="nav-number">3.2.10.</span> <span class="nav-text">字符串大小写转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%86%85%E5%AE%B9%E7%9A%84%E6%9B%BF%E6%8D%A2%EF%BC%9A"><span class="nav-number">3.2.11.</span> <span class="nav-text">字符串内容的替换：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%89%8D%E5%AF%BC%E7%A9%BA%E7%99%BD%E5%92%8C%E5%B0%BE%E9%83%A8%E7%A9%BA%E7%99%BD%EF%BC%9A"><span class="nav-number">3.2.12.</span> <span class="nav-text">删除字符串的前导空白和尾部空白：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-3%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BC%93%E5%86%B2%E5%8C%BA"><span class="nav-number">3.3.</span> <span class="nav-text">4.3.3字符串缓冲区</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#StringBuffer%E7%9A%84%E6%9E%84%E9%80%A0"><span class="nav-number">3.3.1.</span> <span class="nav-text">StringBuffer的构造</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String%E4%B8%8EStringBuffer%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.3.2.</span> <span class="nav-text">String与StringBuffer的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E5%9B%9E%E6%96%87%E5%AF%B9%E8%81%94"><span class="nav-number">3.3.3.</span> <span class="nav-text">判断回文对联</span></a></li></ol></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Dylan"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Dylan</p>
+  <div class="site-description" itemprop="description">stay hungry stay foolish</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dylan-cs.github.io/2021/12/09/4%E6%95%B0%E7%BB%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Dylan">
+      <meta itemprop="description" content="stay hungry stay foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dylanの博客">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-12-09 14:56:30 / 修改时间：14:55:52" itemprop="dateCreated datePublished" datetime="2021-12-09T14:56:30+08:00">2021-12-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>title:4数组<br>tags:</p>
+<ul>
+<li>Java基础</li>
+</ul>
+<p>categories:  #分类</p>
+<p>​           -Java基础</p>
+<p>•数组是多个相同类型数据的组合，实现对这些数据的统一管理</p>
+<p>•数组属引用类型，数组型数据是对象(object)，数组中的每个元素相当于该对象的成员变量</p>
+<p>•数组中的元素可以是任何数据类型，包括基本类型和引用类型</p>
+<h2 id="4-1-一维数组"><a href="#4-1-一维数组" class="headerlink" title="4.1  一维数组"></a>4.1  一维数组</h2><p> &lt;类型&gt;  var[];     或 &lt;类型&gt; []  var;</p>
+<p>eg:  int[] a;    double d[];    String[] args;      Person p[];</p>
+<p> Java语言中声明数组类型的变量时不允许指定数组的长度(数组中元素的个数)</p>
+<p>如：int a[3]   //非法</p>
+<p>创建并使用数组：</p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1636356184774.png" alt="1636356184774"></p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1636356198780.png" alt="1636356198780"></p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1636356215120.png" alt="1636356215120"></p>
+<h2 id="4-2-多维数组"><a href="#4-2-多维数组" class="headerlink" title="4.2  多维数组"></a>4.2  多维数组</h2><p>多维数组可以理解为由若干个低维数组所组成的数组。</p>
+<p>•Java中多维数组的声明和初始化应按从高维到低维的顺序进行。</p>
+<p>•Java中多维数组不必须是规则矩阵形式。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">eg:  int  a[][]= &#123;&#123;1,2&#125;,&#123;3,4,0,9&#125;,&#123;5,6,7&#125;&#125;;</span><br><span class="line">     int[][] a = new int[3][4];	</span><br><span class="line">     int[][] t = new int[3][];</span><br><span class="line">     t[0] = new int[4];</span><br><span class="line">     t[1] = new int[2];</span><br><span class="line">     int[][] b = new int[][4];   </span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-1多维数组初始化"><a href="#4-2-1多维数组初始化" class="headerlink" title="4.2.1多维数组初始化"></a>4.2.1多维数组初始化</h3><p>静态初始化</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int a[][] = &#123;&#123;1,2&#125;,&#123;2,3&#125;,&#123;3,4,5&#125;&#125;;</span><br><span class="line">int b[3][2] = &#123;&#123;1,2&#125;,&#123;2,3&#125;,&#123;4,5&#125;&#125;;  	//非法</span><br></pre></td></tr></table></figure>
+
+<p>动态初始化</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int a = new int[3][]; </span><br><span class="line">a[0] = new int[2];</span><br><span class="line">a[1] = new int[4];</span><br><span class="line">a[2] = new int[3];</span><br><span class="line">a[0][0] = 45;</span><br><span class="line">a[0][1] = 87;</span><br><span class="line">……</span><br><span class="line">a[2][2] = 99;</span><br></pre></td></tr></table></figure>
+
+<p>实例1</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class test</span><br><span class="line">&#123;	public static void main(String args[])</span><br><span class="line">	&#123; int[][] myArray=new int[3][];</span><br><span class="line">	  myArray[0]=new int[3];</span><br><span class="line">	  myArray[1]=new int[2];</span><br><span class="line">	  myArray[2]=new int[3];       </span><br><span class="line">     myArray[0][0]=1;myArray[0][1]=2;</span><br><span class="line">     myArray[0][2]=3;</span><br><span class="line">     myArray[1][0]=1;myArray[1][1]=2;	        </span><br><span class="line">     myArray[2][0]=1;myArray[2][1]=2;</span><br><span class="line">     myArray[2][2]=3;</span><br><span class="line">     for(int i=0;i&lt;3;i++)</span><br><span class="line">     &#123;for(int j=0;j&lt;myArray[i].length;j++)	     	    </span><br><span class="line">      &#123;System.out.print(myArray[i][j]+&quot;  &quot;);  &#125;</span><br><span class="line">	   System.out.println();     //换行；</span><br><span class="line">&#125;&#125;&#125;</span><br><span class="line"></span><br><span class="line">1 2 3 </span><br><span class="line">1 2 </span><br><span class="line">1 2 3</span><br></pre></td></tr></table></figure>
+
+<p>实例2</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class test</span><br><span class="line">&#123;	public static void main(String args[])</span><br><span class="line">	&#123;   char[] s=&#123;&#x27;A&#x27;,&#x27;B&#x27;,&#x27;C&#x27;,&#x27;D&#x27;&#125;;</span><br><span class="line">	    for (int i=0; i&lt;s.length; i++ ) </span><br><span class="line">	    &#123;	System.out.print(s[i]+&quot;  &quot;);  &#125;</span><br><span class="line">       System.out.println();    </span><br><span class="line">	    int [][] dd;</span><br><span class="line">	    dd=new int[][]&#123;&#123;1,2&#125;,&#123;1,2,3&#125;,&#123;1,2,3&#125;&#125;;	    </span><br><span class="line">	    for(int i=0;i&lt;dd.length;i++)</span><br><span class="line">	    &#123;for(int j=0;j&lt;dd[i].length;j++)</span><br><span class="line">	    	&#123;System.out.print(dd[i][j]+&quot;  &quot;); &#125;</span><br><span class="line">	      System.out.println();</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">A B C D</span><br><span class="line">1 2 </span><br><span class="line">1 2 3</span><br><span class="line">1 2 3</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-2数组的枚举"><a href="#4-2-2数组的枚举" class="headerlink" title="4.2.2数组的枚举"></a>4.2.2数组的枚举</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class foreachdemo</span><br><span class="line">&#123;public static void main(String args[])</span><br><span class="line">  &#123; String[] s;</span><br><span class="line">    s = new String[]&#123;&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;&#125;;</span><br><span class="line">   //以上两行同String s[]=&#123;&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;&#125;;</span><br><span class="line">    for(String c :  s )   &#123;System.out.print(c+&quot;  &quot;);  &#125;	   </span><br><span class="line">    System.out.println();    </span><br><span class="line">	    int [][] dd;</span><br><span class="line">	    dd=new int[][]&#123;&#123;1,2&#125;,&#123;1,2,3&#125;,&#123;1,2,3&#125;&#125;;	    </span><br><span class="line">	    for(int[] p : dd)</span><br><span class="line">	    &#123; for(int obj : p)&#123; System.out.print(obj+&quot;  &quot;); &#125;</span><br><span class="line">	      System.out.println();</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">A B C D</span><br><span class="line">1 2 </span><br><span class="line">2 3</span><br><span class="line">1 2 3</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-3数组拷贝"><a href="#4-2-3数组拷贝" class="headerlink" title="4.2.3数组拷贝"></a>4.2.3数组拷贝</h3><p>java.lang.System类的arraycopy()方法提供了数组元素复制功能——将一个数组的连续多个元素的值批量复制到另一个数组中。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int source[] = &#123; 1, 2, 3, 4, 5, 6 &#125;;  //源数组</span><br><span class="line">int dest[] = &#123; 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 &#125;;</span><br><span class="line">// 目的数组</span><br><span class="line">System.arraycopy(source, 0, dest, 0, 3);</span><br><span class="line">// 复制源数组中从下标0开始的3个元素</span><br><span class="line">//到数组，从下标0的位置开始存储。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class test</span><br><span class="line">&#123;	public static void main(String args[])</span><br><span class="line">	&#123;int source[] = &#123; 1, 2, 3, 4, 5, 6 &#125;; //源数组</span><br><span class="line">    int newarray[]=source;        // 目标数组</span><br><span class="line">    int dest[] = &#123; 0, 0, 0, 0, 6, 5, 4, 3, 2, 1 &#125;; </span><br><span class="line">	 System.arraycopy(source, 0, dest, 0,      </span><br><span class="line">                                                      source.length); </span><br><span class="line">    for(int i=0;i&lt;dest.length;i++)</span><br><span class="line">     &#123; System.out.print(&quot;  &quot; + dest[i]); &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">1 2 3 4 5 6 4 3 2 1</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-4-Instanceof"><a href="#4-2-4-Instanceof" class="headerlink" title="4.2.4 Instanceof"></a>4.2.4 Instanceof</h3><p>instanceof是Java中的二元运算符，左边是对象，右边是类；当对象是右边类或子类所创建对象时，返回true；否则，返回false。</p>
+<p>这里说明下：</p>
+<p>1.类的实例包含本身的实例，以及所有直接或间接子类的实例</p>
+<p>2.instanceof左边显式声明的类型与右边操作元必须是同种类或存在继承关系，也就是说需要位于同一个继承树，否则会编译错误</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class instancedemo</span><br><span class="line">&#123;	  public static void main(String args[])</span><br><span class="line">	  &#123;  int[] a=new int[5];</span><br><span class="line">	  	int[] b=new int[4];</span><br><span class="line">	  	int[][] c=new int[2][3];</span><br><span class="line">	     System.out.println(a instanceof Object);</span><br><span class="line">	     System.out.println(a instanceof int[]);</span><br><span class="line">	     System.out.println(c instanceof int[][]);</span><br><span class="line">	     System.out.println(c[0] instanceof int[]);</span><br><span class="line">	  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-5数组初始化总结"><a href="#4-2-5数组初始化总结" class="headerlink" title="4.2.5数组初始化总结"></a>4.2.5数组初始化总结</h3><p><strong>一维数组</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> 1)  int[] a;   //声明,没有初始化</span><br><span class="line"> 2)  int[] a=new int[5];   //初始化为默认值,int型为0</span><br><span class="line"> 3)  int[] a=&#123;1,2,3,4,5&#125;;  //初始化为给定值 </span><br><span class="line"></span><br><span class="line"> 4)  int[] a=new int[]&#123;1,2,3,4,5&#125;;  //同(3)  </span><br><span class="line">     int[] a=new int[5]&#123;1,2,3,4,5&#125;; //错误,如果提供了数组初始化操作，则不能定义维表达式 </span><br><span class="line"></span><br><span class="line">  5) int[] a;   </span><br><span class="line">     a=new int[5];    //正确,同(2)一样</span><br><span class="line">​    int[] a;     </span><br><span class="line">     a=&#123;1,2,3,4,5&#125;;   //错误,数组常量只能在初始化操作中使用，如（3）</span><br><span class="line"> 6)  int a[];</span><br><span class="line">     a[0]=1;   //错误,因为数组没有初始化,不能赋值</span><br><span class="line">     a[1]=2; </span><br></pre></td></tr></table></figure>
+
+<p><strong>二维数组</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">1)  int[][] a;  //声明,没有初始化</span><br><span class="line"></span><br><span class="line">2)  int[][] a=new int[2][3];    //初始化为默认值,int型为0</span><br><span class="line"></span><br><span class="line">3)  int[][] a=&#123;&#123;1,2&#125;,&#123;2,3&#125;,&#123;3,4&#125;&#125;;   //初始化为给定值 </span><br><span class="line">      int[][] a=&#123;&#123;1,2&#125;,&#123;2,3&#125;,&#123;3,4,5&#125;&#125;;//没有错,数组空间不是连//续分配的，所以不要求每一维的大小相同</span><br><span class="line"></span><br><span class="line">4)   int[][] a=new int[2][];</span><br><span class="line">      a[0]=new int[3];  //a[0]其实就是一个数组</span><br><span class="line">      a[1]=new int[4];  //每一维的大小可以不一样;</span><br><span class="line">5) int[][] a=new int[][]&#123;&#123;1,2&#125;,&#123;2,3&#125;,&#123;3,4,5&#125;&#125;;   //同(3)    int[] a=new int[5]&#123;&#123;1,2&#125;,&#123;2,3&#125;,&#123;3,4,5&#125;&#125;;  //错误,如果提供了数组初始化操作，则不能定义维表达式 </span><br><span class="line">   int[][] a=new int[2][];     </span><br><span class="line">   a[0]=&#123;1,2,3,4,5&#125;;   //错误,数组常量只能在初始 //化操作中使用</span><br><span class="line">6) int[][] a=new int[2][];    </span><br><span class="line">    a[0][1]=1;   //错误,第二维没有初始化,不能赋值,java.lang.NullPointerException异常</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-6-Array类"><a href="#4-2-6-Array类" class="headerlink" title="4.2.6 Array类"></a>4.2.6 Array类</h3><p>该类提供了很多对数组进行操作的方法，如：</p>
+<p>equals(): 比较两个数组是否相同，只有两个数组容量相同，且每个对应元素都一样时，才为true。</p>
+<p>fill():  向数组中填充数据。 </p>
+<p>sort(): 将数组元素按升序排列。</p>
+<p>binarySearch(): 在数组中各元素已经按升序排列的条件下，从数组中查找指定的元素。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line">public class ArrayDemo</span><br><span class="line">&#123; public static void main(String args[])</span><br><span class="line">	&#123;String[] s1=&#123;&quot;zhangsan&quot;,&quot;lisi&quot;,&quot;wangwu&quot;,&quot;liliu&quot;,&quot;yaoqi&quot;&#125;;</span><br><span class="line">    String[] s2=&#123;&quot;zhangsan&quot;,&quot;lisi&quot;,&quot;wangwu&quot;,&quot;liliu&quot;,&quot;yaoqi&quot;&#125;;</span><br><span class="line">	 System.out.println(Arrays.equals(s1,s2));</span><br><span class="line">	 Arrays.sort(s1);</span><br><span class="line">	 for(int i=0;i&lt;s1.length;i++)</span><br><span class="line">	  &#123;System.out.println(s1[i]); &#125;</span><br><span class="line">	  &#125;</span><br><span class="line">&#125;</span><br><span class="line">True</span><br><span class="line">Liliu</span><br><span class="line">Lisi</span><br><span class="line">Wangwu</span><br><span class="line">Yaoqi</span><br><span class="line">zhangsan</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-3-字符数组"><a href="#4-3-字符数组" class="headerlink" title="4.3  字符数组"></a>4.3  字符数组</h2><h3 id="4-3-1字符串的声明与创建"><a href="#4-3-1字符串的声明与创建" class="headerlink" title="4.3.1字符串的声明与创建"></a>4.3.1字符串的声明与创建</h3><p>声明字符串的格式是：String stringName； </p>
+<p>字符串的创建格式： stringName = new String（字符串常量）;</p>
+<p>或者   stringName =字符串常量;</p>
+<p>举例：str= new String ( “student” ); </p>
+<p>​            str= “student”   // 内存位置在专用的字符串区内</p>
+<p>用一个已创建的字符串创建另外一个字符串：</p>
+<p>s=“abc123”;</p>
+<p>String t=String(s);</p>
+<p>用字符数组创建：</p>
+<p>char  a[]={“W”,”H”,”U”,”T”};  </p>
+<p>String b=new String(a);</p>
+<h3 id="4-3-2与字符串有关的方法"><a href="#4-3-2与字符串有关的方法" class="headerlink" title="4.3.2与字符串有关的方法"></a>4.3.2与字符串有关的方法</h3><h4 id="确定字符串的长度-："><a href="#确定字符串的长度-：" class="headerlink" title="确定字符串的长度 ："></a><strong>确定字符串的长度 ：</strong></h4><p>public int length()</p>
+<h4 id="取得字符："><a href="#取得字符：" class="headerlink" title="取得字符："></a><strong>取得字符：</strong></h4><p>public char charAt(int index) </p>
+<h4 id="取得子串："><a href="#取得子串：" class="headerlink" title="取得子串："></a><strong>取得子串：</strong></h4><p>public String substring(int beginIndex)</p>
+<p>public String substring(int beginIndex,int endIndex)</p>
+<h4 id="字符串内容的比较"><a href="#字符串内容的比较" class="headerlink" title="字符串内容的比较"></a><strong>字符串内容的比较</strong></h4><p>public int compareTo(String stringName2)</p>
+<p>public int compareToIgnoreCase(String stringName2)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String args[])&#123;</span><br><span class="line">		String s = new String(&quot;武汉理工大学计算机学院&quot;);</span><br><span class="line">		System.out.println(s + &quot; 的长度：&quot; + s.length());</span><br><span class="line">		System.out.println(s + &quot; 第三个字：&quot; + s.charAt(2) );</span><br><span class="line">		System.out.println(s + &quot; 的子串： &quot; + s.substring(6));</span><br><span class="line">		String s1 = new String(&quot;ABCDE&quot;);</span><br><span class="line">		String s2 = new String(&quot;ABCED&quot;);</span><br><span class="line">		System.out.println(&quot;\&quot;ABCDE\&quot;和\&quot;ABCED\&quot;比较结果：&quot;+s1.compareTo(s2));</span><br><span class="line">	   &#125;</span><br><span class="line">武汉理工大学计算机学院 的长度：11</span><br><span class="line">武汉理工大学计算机学院 第三个字：理</span><br><span class="line">武汉理工大学计算机学院 的子串： 计算机学院</span><br><span class="line">&quot;ABCDE&quot;和&quot;ABCED&quot;比较结果：-1</span><br></pre></td></tr></table></figure>
+
+<h4 id="字符串连接"><a href="#字符串连接" class="headerlink" title="字符串连接:"></a><strong>字符串连接:</strong></h4><p>public String concat(String stringName2) </p>
+<h4 id="字符串检索"><a href="#字符串检索" class="headerlink" title="字符串检索:"></a><strong>字符串检索:</strong></h4><p>​    public int indexOf(int ch)<br>​    public int indexOf(int ch,int fromIndex)<br>​    public int indexOf(String stringName2)<br>​    public int indexOf(String stringName2,int fromIndex)</p>
+<h4 id="字符数组转换为字符串"><a href="#字符数组转换为字符串" class="headerlink" title="字符数组转换为字符串:"></a><strong>字符数组转换为字符串:</strong></h4><p>​    public static String copyValueOf(char []ch1)<br>​    public static String copyValueOf(char []ch1,int cBegin,int cCount) </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">	public static void main(String args[])&#123;</span><br><span class="line">	    String s = new String(&quot;武汉理工大学计算机学院&quot;);</span><br><span class="line">	    String s1 = &quot;09级软件工程&quot;;</span><br><span class="line">	    String s2 = s.concat(s1);</span><br><span class="line">	    System.out.println(s + &quot; 追加 &quot; + s1 + &quot; 是: &quot;);</span><br><span class="line">	    System.out.println(s2);</span><br><span class="line">	    </span><br><span class="line">	    System.out.println(s2+&quot;首次出现‘学’字符的位置&quot;+s2.indexOf(&quot;学&quot;));</span><br><span class="line">	    </span><br><span class="line">	    char[] Str1 = &#123;&#x27;h&#x27;, &#x27;e&#x27;, &#x27;l&#x27;, &#x27;l&#x27;, &#x27;o&#x27;, &#x27; &#x27;, &#x27;r&#x27;, &#x27;u&#x27;, &#x27;n&#x27;, &#x27;o&#x27;, &#x27;o&#x27;, &#x27;b&#x27;&#125;;</span><br><span class="line">        String Str2 = &quot;&quot;;</span><br><span class="line">        Str2 = Str2.copyValueOf( Str1 );</span><br><span class="line">        System.out.println(&quot;返回结果：&quot; + Str2);</span><br><span class="line">        Str2 = Str2.copyValueOf( Str1, 2, 6 );</span><br><span class="line">        System.out.println(&quot;返回结果（偏移量2,长度6）：&quot; + Str2);</span><br><span class="line">	   &#125;</span><br><span class="line">武汉理工大学计算机学院 追加 09级软件工程 是: </span><br><span class="line">武汉理工大学计算机学院09级软件工程</span><br><span class="line">武汉理工大学计算机学院09级软件工程首次出现‘学’字符的位置5</span><br><span class="line">返回结果：hello runoob</span><br><span class="line">返回结果（偏移量2,长度6）：llo ru	   </span><br></pre></td></tr></table></figure>
+
+<h4 id="字符串转换为字符数组"><a href="#字符串转换为字符数组" class="headerlink" title="字符串转换为字符数组"></a><strong>字符串转换为字符数组</strong></h4><p>public char[] toCharArray() </p>
+<h4 id="将其他数据类型转换为字符串"><a href="#将其他数据类型转换为字符串" class="headerlink" title="将其他数据类型转换为字符串"></a><strong>将其他数据类型转换为字符串</strong></h4><p>public static String valueOf(boolean b)<br>public static String valueOf(char c)<br>public static String valueOf(int i)<br>public static String valueOf(long L)<br>public static String valueOf(float f)<br>public static String valueOf(double d) </p>
+<h4 id="字符串大小写转换"><a href="#字符串大小写转换" class="headerlink" title="字符串大小写转换"></a><strong>字符串大小写转换</strong></h4><p>public String toUpperCase()<br>public String toLowerCase()</p>
+<h4 id="字符串内容的替换："><a href="#字符串内容的替换：" class="headerlink" title="字符串内容的替换："></a><strong>字符串内容的替换：</strong></h4><p>public String replace(char oldChar,char newChar) </p>
+<h4 id="删除字符串的前导空白和尾部空白："><a href="#删除字符串的前导空白和尾部空白：" class="headerlink" title="删除字符串的前导空白和尾部空白："></a><strong>删除字符串的前导空白和尾部空白：</strong></h4><p>  public String trim() </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String args[])&#123;</span><br><span class="line">	    String s = new String(&quot;武汉理工大学计算机学院&quot;);</span><br><span class="line">	    String s1 = &quot;&quot;;</span><br><span class="line">	    String s2 = &quot;ABCDEFG&quot;;</span><br><span class="line">	    char a[] = s.toCharArray() ;</span><br><span class="line">	    int i =1000;</span><br><span class="line">	    System.out.println(&quot;字符串转换为字符数组并输出第一位:  &quot;+a[0]);</span><br><span class="line">	    System.out.println(s1.valueOf(i));</span><br><span class="line">	    System.out.println(s2.toLowerCase());</span><br><span class="line">	   &#125;</span><br><span class="line">字符串转换为字符数组并输出第一位:  武</span><br><span class="line">1000</span><br><span class="line">abcdefg</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-3字符串缓冲区"><a href="#4-3-3字符串缓冲区" class="headerlink" title="4.3.3字符串缓冲区"></a>4.3.3字符串缓冲区</h3><h4 id="StringBuffer的构造"><a href="#StringBuffer的构造" class="headerlink" title="StringBuffer的构造"></a><strong>StringBuffer的构造</strong></h4><p>public StringBuffer() </p>
+<p>构造一个其中不带字符的字符串缓冲区，其初始容量为 16 个字符。 </p>
+<p>public StringBuffer(int capacity) </p>
+<p>构造一个不带字符，但具有指定初始容量的字符串缓冲区。 </p>
+<p>public StringBuffer(String str)<br>构造一个字符串缓冲区，并将其内容初始化为指定的字符串内容。该字符串的初始容量为 16 加上字符串参数的长度。 </p>
+<p><strong>有关方法：</strong></p>
+<p>字符串缓冲区数据转换为字符串：public String toString() </p>
+<p>添加字符：public StringBuffer append(int iv)</p>
+<p>插入字符：public StringBuffer insert(int insertP,char cv)</p>
+<p>替换字符：public StringBuffer replace(int start, int end, String stringv)</p>
+<p>删除字符：public StringBuffer delete(int start,int end)<br>                    public StringBuffer deleteCharAt(int index)<br>清空字符串：public void setLength(int newLength)<br>取子串：1.public String substring(int start)</p>
+<p>返回一个新的 String，它包含此字符序列当前所包含的字符子序列。该子字符串始于指定索引处的字符，一直到此字符串末尾。<br>2.public String substring(int start, int end)</p>
+<p>返回一个新的 String，它包含此序列当前所包含的字符子序列。该子字符串从指定的 start 处开始，一直到索引 end - 1 处的字符。 </p>
+<p>字符串反转：public StringBuffer reverse() </p>
+<h4 id="String与StringBuffer的区别"><a href="#String与StringBuffer的区别" class="headerlink" title="String与StringBuffer的区别"></a><strong>String与StringBuffer的区别</strong></h4><p>String:<br>是对象不是原始类型.<br>为不可变对象,一旦被创建,就不能修改它的值.<br>对于已经存在的String对象的修改都是重新创建一个新的对象,然后把新的值保存进去.<br>String 是final类,即不能被继承.</p>
+<p>StringBuffer:<br>是一个可变对象,当对他进行修改的时候不会像String那样重新建立对象<br>它只能通过构造函数来建立,<br>StringBuffer sb = new StringBuffer();<br>不能通过赋值符号对他进行赋值.<br>sb = “welcome to here!”;//error<br>对象被建立以后,在内存中就会分配内存空间,并初始保存一个null.向StringBuffer中赋值的时候可以通过它的append方法sb.append(“hello”);</p>
+<p>字符串连接操作中StringBuffer的效率要比String高。String的连接操作就比StringBuffer多出了一些附加操作,效率低一些.</p>
+<p>由于String 对象是不可变对象,每次操作Sting 都会重新建立新的对象来保存新的值.这样原来的对象就没用了,就要被垃圾回收.这也是要影响性能的. </p>
+<h4 id="判断回文对联"><a href="#判断回文对联" class="headerlink" title="判断回文对联"></a>判断回文对联</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import javax.swing.JOptionPane;</span><br><span class="line"></span><br><span class="line">public class Hello &#123;</span><br><span class="line">	static boolean palindromeCouplet (String s)   &#123;</span><br><span class="line">		   StringBuffer s1 = new StringBuffer(s);</span><br><span class="line">		   return((s.compareTo(new String(s1.reverse()))==0) ? true :false)  ;</span><br><span class="line">		 &#125;	</span><br><span class="line">	public static void main(String[] args) &#123;	</span><br><span class="line">	 	while(true)&#123;</span><br><span class="line">	    String str=JOptionPane.showInputDialog( null,  </span><br><span class="line">		&quot;请输入一行汉字！\n结束程序按取消。&quot;,</span><br><span class="line">		&quot;判断是否可作回文联&quot;,</span><br><span class="line">		JOptionPane.QUESTION_MESSAGE);    </span><br><span class="line">	    </span><br><span class="line">		if (str == null) &#123;</span><br><span class="line">	    	System.out.println(&quot;再见！&quot;);</span><br><span class="line">	    	break;</span><br><span class="line">	    	&#125; </span><br><span class="line">	System.out.println(&quot;是否可作回文联：&quot; +palindromeCouplet(str));</span><br><span class="line">	     &#125;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/12/09/3%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" rel="prev" title="">
+                  <i class="fa fa-chevron-left"></i> 
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/12/09/5%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/" rel="next" title="">
+                   <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+  
+  
+  
+
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">stay hungry.stay foolish.</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

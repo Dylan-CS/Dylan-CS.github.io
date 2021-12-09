@@ -194,7 +194,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -242,6 +242,691 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dylan-cs.github.io/2021/12/09/5%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Dylan">
+      <meta itemprop="description" content="stay hungry stay foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dylanの博客">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/09/5%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-12-09 14:56:30 / 修改时间：14:56:17" itemprop="dateCreated datePublished" datetime="2021-12-09T14:56:30+08:00">2021-12-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>title:5类与对象<br>tags:</p>
+<ul>
+<li>Java基础</li>
+</ul>
+<p>categories:  #分类</p>
+<p>​           -Java基础</p>
+<h2 id="5-1-对象的定义和引用"><a href="#5-1-对象的定义和引用" class="headerlink" title="5.1  对象的定义和引用"></a>5.1  对象的定义和引用</h2><p>类是对某一类事物的描述，是抽象的、概念上的定义；对象是实际存在的该类事物的每个个体，因而也称实例(instance)。 </p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1637826216025.png" alt="1637826216025"></p>
+<p>如果将对象比作汽车，那么类就是汽车的设计图纸。所以面向对象程序设计的重点是类的设计，而不是对象的设计。 </p>
+<h3 id="5-1-1类的定义"><a href="#5-1-1类的定义" class="headerlink" title="5.1.1类的定义"></a>5.1.1类的定义</h3><p>class Person<br>{    int age;<br>    void shout()<br>    {System.out.println(“oh,my god! I am “ + age);}<br>}<br>age是类的属性 ，也叫类成员变量 。<br>shout是方法也叫类的成员函数。<br>shout方法可以直接访问同一个类中的age变量 ，如果一个方法中有与成员变量同名的局部变量，该方法中对这个变量名的访问是局部变量，而不再是成员变量。  </p>
+<h3 id="5-1-2对象的创建"><a href="#5-1-2对象的创建" class="headerlink" title="5.1.2对象的创建"></a>5.1.2对象的创建</h3><p>Person p1 = new Person();</p>
+<p>执行完后的内存状态</p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1637827459701.png" alt="1637827459701"></p>
+<h3 id="5-1-3对象的初始化"><a href="#5-1-3对象的初始化" class="headerlink" title="5.1.3对象的初始化"></a>5.1.3对象的初始化</h3><p>当一个对象被创建时，会通过构造方法对其中各种类型的成员变量自动进行初始化赋值，如果类没有定义构造函数，就使用缺省构造方法，缺省构造函数对不同类型的成员变量赋不同的初值。</p>
+<h3 id="5-1-4对象的使用"><a href="#5-1-4对象的使用" class="headerlink" title="5.1.4对象的使用"></a>5.1.4对象的使用</h3><p>创建新的对象之后,我们就可以使用“ 对象名.对象成员 ”的格式，来访问对象的成员（包括属性和方法）<br>class TestPerson<br>{    public static void main(String[] args)<br>    {     Person p1 = new Person();<br>        Person p2 =new Person();<br>        p1.age = -30;<br>        p1.shout();<br>        p2.shout();<br>    }<br>}</p>
+<p>程序的内存布局：</p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1637827652328.png" alt="1637827652328"></p>
+<h3 id="5-1-5对象的生命周期："><a href="#5-1-5对象的生命周期：" class="headerlink" title="5.1.5对象的生命周期："></a>5.1.5对象的生命周期：</h3><p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1637845764556.png" alt="1637845764556"></p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1637845768109.png" alt="1637845768109"></p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1637845823315.png" alt="1637845823315"></p>
+<h3 id="5-1-6对象的比较"><a href="#5-1-6对象的比较" class="headerlink" title="5.1.6对象的比较"></a>5.1.6对象的比较</h3><p>“==”运算符与equals()方法的区别<br>==:同一个对象，equals():对象的内容相同</p>
+<h3 id="5-1-7匿名对象"><a href="#5-1-7匿名对象" class="headerlink" title="5.1.7匿名对象"></a>5.1.7匿名对象</h3><p>我们也可以不定义对象的句柄，而直接调用这个对象的方法。这样的对象叫做匿名对象， 如：new Person().shout();<br>如果对一个对象只需要进行一次方法调用，那么就可以使用匿名对象。<br>我们经常将匿名对象作为实参传递给一个函数调用。 </p>
+<h3 id="5-1-8构造方法"><a href="#5-1-8构造方法" class="headerlink" title="5.1.8构造方法"></a>5.1.8构造方法</h3><h4 id="构造方法的定义"><a href="#构造方法的定义" class="headerlink" title="构造方法的定义"></a>构造方法的定义</h4><p>它具有与类相同的名称；<br>它不含返回值；<br>它不能在方法中用return语句返回一个值<br>注意：在构造方法里不含返回值的概念是不同于“void”的，在定义构造方法时加了“void”，结果这个方法就不再被自动调用了。</p>
+<h4 id="构造方法的作用"><a href="#构造方法的作用" class="headerlink" title="构造方法的作用"></a>构造方法的作用</h4><p>当一个类的实例对象刚产生时，这个类的构造方法就会被自动调用，我们可以在这个方法中加入要完成初始化工作的代码。这就好像我们规定每个“人”一出生就必须先洗澡，我们就可以在“人”的构造方法中加入完成“洗澡”的程序代码，于是每个“人”一出生就会自动完成“洗澡”，程序就不必再在每个人刚出生时一个一个地告诉他们要“洗澡”了。</p>
+<h4 id="构造方法的重载"><a href="#构造方法的重载" class="headerlink" title="构造方法的重载"></a>构造方法的重载</h4><p>1.和一般的方法重载一样，重载的构造方法具有不同个数或不同类型的参数，编译器就可以根据这一点判断出用new 关键字产生对象时，该调用哪个构造方法了。产生对象的格式是：new 类名(参数列表)  ；<br>2.重载构造方法可以完成不同初始化的操作， 如：p3=new Person(“Tom”,18);语句，会做这样几件事：创建指定类的新实例对象，在堆内存中为实例对象分配内存空间，并调用指定类的构造方法，最后将实例对象的首地址赋值给引用变量p3。  </p>
+<p>p1=new Person(“Tom”,18) 的内存状态变化过程分析</p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1637846723427.png" alt="1637846723427"></p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1637846731896.png" alt="1637846731896"></p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1637846760042.png" alt="1637846760042"></p>
+<p>!1637846774172](C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1637846774172.png)</p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1637846785714.png" alt="1637846785714"></p>
+<h4 id="构造方法的一些细节"><a href="#构造方法的一些细节" class="headerlink" title="构造方法的一些细节"></a>构造方法的一些细节</h4><p>•在java每个类里都至少有一个构造方法，如果程序员没有在一个类里定义构造方法，系统会自动为这个类产生一个默认的构造方法，这个默认构造方法没有参数，在其方法体中也没有任何代码，即什么也不做。 </p>
+<p>•由于系统提供的默认构造方法往往不能满足编程者的需求，我们可以自己定义类的构造方法，来满足我们的需要，一旦编程者为该类定义了构造方法，系统就不再提供默认的构造方法了。 </p>
+<p>•声明构造方法，如无特殊需要，应使用public关键字。</p>
+<h2 id="5-2-案例分析"><a href="#5-2-案例分析" class="headerlink" title="5.2  案例分析"></a>5.2  案例分析</h2><p>银行账户对象的创建，要求能够存放用户的账号、户名、密码、和个人账户余额等信息，并包含存款、取款、查询余额和修改账户密码等操作，类名为Cust，并利用Cust类类创建对象，对象的账号为100，户名为Tom，密码1111，账户余额10000.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Class Cust&#123;</span><br><span class="line">    String name;</span><br><span class="line">    int ID;</span><br><span class="line">    String PWD;</span><br><span class="line">    int Money;</span><br><span class="line">    Cust(String newName,int newID,String newPWD,int newMoney)&#123;</span><br><span class="line">      name=newName;</span><br><span class="line">      ID=newID;</span><br><span class="line">      PWD=newPWD;</span><br><span class="line">      money=newMoney;</span><br><span class="line">       &#125;</span><br><span class="line">    void getMoney(int newMoney)&#123;</span><br><span class="line">         money=money-newMoney&#125;  </span><br><span class="line">    void setMoney(int newMoney)&#123;</span><br><span class="line">         money=money+newMoney;  </span><br><span class="line">      &#125;</span><br><span class="line">    void search()&#123;</span><br><span class="line">      System.out.println(“户名：”+name)；</span><br><span class="line">      System.out.println(“账号：”+name)；</span><br><span class="line">      System.out.println(“账户余额：”+name)；</span><br><span class="line">    &#125;</span><br><span class="line">    void changePWD(String newPWD)&#123;</span><br><span class="line">       PWD=newPWD;</span><br><span class="line">     &#125;</span><br><span class="line">     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Class MainDemo&#123;</span><br><span class="line">   public static void main(String[] args)&#123;</span><br><span class="line">    Cust myCust= newCust(“Tom”,100,”1111”,1000);</span><br><span class="line">   myCust.setMoney(5000);</span><br><span class="line">   myCust.getMoney(3000);</span><br><span class="line">   myCust.changePWD(“Tom”);</span><br><span class="line">   myCust.search();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="5-3-静态成员与实例成员"><a href="#5-3-静态成员与实例成员" class="headerlink" title="5.3  静态成员与实例成员"></a>5.3  静态成员与实例成员</h2><p>当我们编写一个类时，其实就是在描述其对象的属性和行为，而并没有产生实质上的对象，只有通过new关键字才会产生出对象，这时系统才会分配内存空间给对象，其方法才可以供外部调用。我们有时候希望无论是否产生了对象或无论产生了多少对象的情况下，某些特定的数据在内存空间里只有一份，例如所有的中国人都有个国家名称，每一个中国人都共享这个国家名称，不必在每一个中国人的实例对象中都单独分配一个用于代表国家名称的变量。</p>
+<p>   静态成员(类成员)：类的所有对象共享的成员，拥有有一个固定的存储 空间，每个对象都可以访问该成员，但通常只通过类名来访问，静态成员用static修饰符来修饰。</p>
+<p>​    实例成员(对象成员)：类的每个对象所独有的成员，不同对象的同一实例成员分别存储于不同的位置，只有通过具体的对象才能访问属于该对象的实例成员，实例成员没有static修饰符。</p>
+<h3 id="5-3-1静态属性与实例属性的比较"><a href="#5-3-1静态属性与实例属性的比较" class="headerlink" title="5.3.1静态属性与实例属性的比较"></a>5.3.1静态属性与实例属性的比较</h3><p>在Cust类中，增加属性bankName代表账户所属的银行，因为它是每个账户所共有的，将其定义为静态属性。再创建一个账户总数(或总编号)allNum，它代表当前一共创建了多少个账户，也不属于任何一个账户对象，而是属于Cust类的，也将其定义为静态属性。最后定义一个流水编号，它是对象所独有的，应该定义为实例属性。</p>
+<h3 id="5-3-2静态方法"><a href="#5-3-2静态方法" class="headerlink" title="5.3.2静态方法"></a>5.3.2静态方法</h3><p>•在静态方法里只能直接调用同类中其它的静态成员（包括变量和方法），而不能直接访问类中的非静态成员。这是因为，对于非静态的方法和变量，需要先创建类的实例对象后才可使用，而静态方法在使用前不用创建任何对象。</p>
+<p>• 静态方法不能以任何方式引用this和super关键字（super关键字在下一章讲解）。与上面的道理一样，因为静态方法在使用前不用创建任何实例对象，当静态方法被调用时，this所引用的对象根本就没有产生。 </p>
+<p>•main()方法是静态的，因此JVM在执行main方法时不创建main方法所在的类的实例对象，因而在main()方法中，我们不能直接访问该类中的非静态成员，必须创建该类的一个实例对象后，才能通过这个对象去访问类中的非静态成员，这种情况，我们在以后的例子中会多次碰到。</p>
+<h3 id="5-3-3理解main方法的语法"><a href="#5-3-3理解main方法的语法" class="headerlink" title="5.3.3理解main方法的语法"></a>5.3.3理解main方法的语法</h3><p>由于java虚拟机需要调用类的main()方法，所以该方法的访问权限必须是public，又因为java虚拟机在执行main()方法时不必创建对象，所以该方法必须是static的，该方法接收一个String类型的数组参数，该数组中保存执行java命令时传递给所运行的类的参数。</p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1638860706101.png" alt="1638860706101"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Public class StaticDemo&#123;</span><br><span class="line">  static double pi=3.14;     //pi为静态变量</span><br><span class="line">  double pix=3.14;            //pix为实例变量</span><br><span class="line">  double getArea()&#123;return pi*3*3;&#125;</span><br><span class="line">      //实例方法访问类变量，合法</span><br><span class="line">  static double getArea1()&#123;return pi*3*3;&#125;</span><br><span class="line">      //类方法访问类变量，合法</span><br><span class="line">  double getArea2()&#123;return pix*3*3;&#125;</span><br><span class="line">      //实例方法访问实例变量，合法</span><br><span class="line">   static double getArea1()&#123;return pix*3*3;&#125;</span><br><span class="line">      //类方法访问实例变量，非法</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-3-4静态成员的加法"><a href="#5-3-4静态成员的加法" class="headerlink" title="5.3.4静态成员的加法"></a>5.3.4静态成员的加法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Class HasStatic&#123;</span><br><span class="line">    private static int x=100;</span><br><span class="line">    public static void main(String args[]&#123;</span><br><span class="line">    HasStatic hs1=new HasStatic();</span><br><span class="line">    HasStatic hs2=new HasStatic();</span><br><span class="line">    hs1.x++;</span><br><span class="line">    hs2.x++;</span><br><span class="line">    hs1.x++;</span><br><span class="line">    System.out.println(“x=“+x);</span><br><span class="line">&#125;&#125;</span><br><span class="line">X=103</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-3-4静态代码块"><a href="#5-3-4静态代码块" class="headerlink" title="5.3.4静态代码块"></a>5.3.4静态代码块</h3><p>•一个类中可以使用不包含在任何方法体中的静态代码块(static block )，当类被载入时，静态代码块被执行，且只被执行一次，静态块经常用来进行类属性的初始化。 </p>
+<p>•类中的静态代码块被自动执行，尽管我们产生了类的多个实例对象，但其中的静态代码块只被执行了一次。当一个程序中用到了其他的类，类是在第一次被使用的时候才被装载，而不是在程序启动时就装载程序中所有可能要用到的类。 </p>
+<h3 id="5-3-5this是什么？"><a href="#5-3-5this是什么？" class="headerlink" title="5.3.5this是什么？"></a>5.3.5this是什么？</h3><p>除了匿名对象外，任何一个对象一经创建，就会创建一个对该对象的引用——对象名；任何一个对象名都可以通过this来代替，通过”this.成员名”的方式，可以访问该对象的每个成员方法和成员变量。有时，这个this是必不可少的。</p>
+<p>例子：实例变量与成员变量同名</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public class SimpleClassToShowThis&#123;</span><br><span class="line">    public int a;</span><br><span class="line">    public void test()&#123;</span><br><span class="line">      int a=50;</span><br><span class="line">      this.a=a+5;</span><br><span class="line">      System.out.println(a);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Public class TestThis&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">     SimpleClass simple=new SimpleClass();</span><br><span class="line">     simple.test();</span><br><span class="line">     System.out.print(“simple对象中a的值为:”)；</span><br><span class="line">     System.out.println(simple.a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>由于Java将局部变量与成员变量同名时的变量优先视为局部变量，所以，在成员函数test()中想要访问成员变量a就可以通过this.a来实现。如下例。</p>
+<h3 id="5-3-6通过this来引用成员方法"><a href="#5-3-6通过this来引用成员方法" class="headerlink" title="5.3.6通过this来引用成员方法"></a>5.3.6通过this来引用成员方法</h3><p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1639028879008.png" alt="1639028879008"></p>
+<p>如果func2方法被调用 ，一定是事先已经有了一个存在的对象，func2被作为那个对象的方法被使用。 </p>
+<p>在func2内部能引用别的对象 ，同样也能引用func2所属的那个对象。</p>
+<p>在func2中，自己所属的那个对象的引用名称是什么呢？ 答案就是this！ this关键字在java程序里的作用和它的词义很接近，它在函数内部就是这个函数所属的对象的引用变量。  </p>
+<h3 id="5-3-7this引用句柄的存放位置"><a href="#5-3-7this引用句柄的存放位置" class="headerlink" title="5.3.7this引用句柄的存放位置"></a>5.3.7this引用句柄的存放位置</h3><p>每个成员方法内部，都有一个this引用变量，指向调用这个方法的对象，类中的成员方法与this之间的关系如图</p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1639028989724.png" alt="1639028989724"></p>
+<h3 id="5-3-8this引用句柄的应用"><a href="#5-3-8this引用句柄的应用" class="headerlink" title="5.3.8this引用句柄的应用"></a>5.3.8this引用句柄的应用</h3><p>•一个类中的成员方法可以直接调用同类中的其他成员，其实我们在一个方法内部使用“this.其他成员”的引用方式和直接使用“其他成员”的效果是一样的，那this还有多大的作用呢？在有些情况下，我们还是非得用this关键字不可的 。</p>
+<p>•让类的成员变量名和对其进行赋值的成员方法的形参变量同名是必要的，这样的代码谁看了都能明白这两个变量是彼此相关的，老手看到函数的定义，就能揣摩出函数中的代码，大大节省了别人和自己日后阅读程序的时间。 </p>
+<p>•假设我们有一个容器类和一个部件类，在容器类的某个方法中要创建部件类的实例对象，而部件类的构造方法要接收一个代表其所在容器的参数。</p>
+<p>•构造方法是在产生对象时被java系统自动调用的，我们不能在程序中象调用其他方法一样去调用构造方法。但我们可以在一个构造方法里调用其他重载的构造方法，不是用构造方法名，而是用this(参数列表)的形式，根据其中的参数列表，选择相应的构造方法。 </p>
+<h2 id="5-4-方法的重载"><a href="#5-4-方法的重载" class="headerlink" title="5.4  方法的重载"></a>5.4  方法的重载</h2><pre><code>方法的签名：由方法名和方法的参数类型组成，Java通过方法签名而不是方法名来区分一个方法,这意味着可以有方法名相同但参数类型不同的方法。例如，Cust类的方法签名如下：
+Cust（String，int，String，int )
+getMoney(int)
+setMoney(int)
+search()
+changePWD(String)    
+</code></pre>
+<h3 id="成员方法重载的例子"><a href="#成员方法重载的例子" class="headerlink" title="成员方法重载的例子"></a>成员方法重载的例子</h3><p>   如果声明了两个或两个以上同名但参数类型不同的方法，这就称为方法的重载。例如，可以为Cust类的取款方法getMoney重载，考虑取款上限为Limited元，构造如下方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">void getMoney(int newMoney,int Limited)</span><br><span class="line">&#123;</span><br><span class="line">   if(newMoney&lt;Limited)</span><br><span class="line">    &#123;money=money-newMoney&#125;</span><br><span class="line">   else  &#123;money=money-Limited&#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="5-5-类的封装与访问控制"><a href="#5-5-类的封装与访问控制" class="headerlink" title="5.5  类的封装与访问控制"></a>5.5  类的封装与访问控制</h2><p>•如果外面的程序可以随意修改一个类的成员变量，会造成不可预料的程序错误，就象一个人的身高，不能被外部随意修改，只能通过各种摄取营养的方法去修改这个属性。 </p>
+<p>•在定义一个类的成员（包括变量和方法）时，使用private关键字说明这个成员的访问权限，这个成员成了类的私有成员，只能被这个类的其他成员方法调用，而不能被其他的类中的方法所调用。 </p>
+<h3 id="5-5-1访问权限修饰符"><a href="#5-5-1访问权限修饰符" class="headerlink" title="5.5.1访问权限修饰符"></a>5.5.1访问权限修饰符</h3><p>public: 定义者和使用者可以位于不同的包（存放.class文件的文件夹）中<br>default: 定义者和使用者可以位于相同的包（存放.class文件的文件夹）中<br>private: 定义者和使用者可以位于同一个类中<br>protected: 定义者和使用者可以位于当前类或当前类的所有子类中</p>
+<p><strong>Java访问控制总结：</strong></p>
+<table>
+<thead>
+<tr>
+<th>访问权限</th>
+<th>同一个类</th>
+<th>同一个包</th>
+<th>子类</th>
+<th>跨包访问</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>private</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>default</td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>prrotected</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+</tr>
+<tr>
+<td>public</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+</tbody></table>
+<h3 id="5-5-2实现类的封装性"><a href="#5-5-2实现类的封装性" class="headerlink" title="5.5.2实现类的封装性"></a>5.5.2实现类的封装性</h3><p>   为了实现良好的封装性，我们通常将类的成员变量声明为private，再通过public的方法来对这个变量进行访问。对一个变量的操作，一般都有读取和赋值操作，我们分别定义两个方法来实现这两种操作，一个是getXxx()（Xxx表示要访问的成员变量的名字），用来读取这个成员变量操作，另外一个是setXxx()用来对这个成员变量赋值。</p>
+<p>一个类通常就是一个小的模块，我们应该让模块仅仅公开必须要让外界知道的内容，而隐藏其它一切内容。我们在进行程序的详细设计时，应尽量避免一个模块直接修改或操作另一个模块的数据，模块设计追求强内聚（许多功能尽量在类的内部独立完成，不让外面干预），弱耦合（提供给外部尽量少的方法调用）。用总统指挥一支军队的例子来说明这种效果。</p>
+<h3 id="5-3-3类的封装所带来的优点"><a href="#5-3-3类的封装所带来的优点" class="headerlink" title="5.3.3类的封装所带来的优点"></a>5.3.3类的封装所带来的优点</h3><p>•隐藏类的实现细节；</p>
+<p>•让使用者只能通过事先定制好的方法来访问数据，可以方便地加入控制逻辑，限制对属性的不合理操作；</p>
+<p>•便于修改，增强代码的可维护性；</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dylan-cs.github.io/2021/12/09/4%E6%95%B0%E7%BB%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Dylan">
+      <meta itemprop="description" content="stay hungry stay foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dylanの博客">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/09/4%E6%95%B0%E7%BB%84/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-12-09 14:56:30 / 修改时间：14:55:52" itemprop="dateCreated datePublished" datetime="2021-12-09T14:56:30+08:00">2021-12-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>title:4数组<br>tags:</p>
+<ul>
+<li>Java基础</li>
+</ul>
+<p>categories:  #分类</p>
+<p>​           -Java基础</p>
+<p>•数组是多个相同类型数据的组合，实现对这些数据的统一管理</p>
+<p>•数组属引用类型，数组型数据是对象(object)，数组中的每个元素相当于该对象的成员变量</p>
+<p>•数组中的元素可以是任何数据类型，包括基本类型和引用类型</p>
+<h2 id="4-1-一维数组"><a href="#4-1-一维数组" class="headerlink" title="4.1  一维数组"></a>4.1  一维数组</h2><p> &lt;类型&gt;  var[];     或 &lt;类型&gt; []  var;</p>
+<p>eg:  int[] a;    double d[];    String[] args;      Person p[];</p>
+<p> Java语言中声明数组类型的变量时不允许指定数组的长度(数组中元素的个数)</p>
+<p>如：int a[3]   //非法</p>
+<p>创建并使用数组：</p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1636356184774.png" alt="1636356184774"></p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1636356198780.png" alt="1636356198780"></p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1636356215120.png" alt="1636356215120"></p>
+<h2 id="4-2-多维数组"><a href="#4-2-多维数组" class="headerlink" title="4.2  多维数组"></a>4.2  多维数组</h2><p>多维数组可以理解为由若干个低维数组所组成的数组。</p>
+<p>•Java中多维数组的声明和初始化应按从高维到低维的顺序进行。</p>
+<p>•Java中多维数组不必须是规则矩阵形式。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">eg:  int  a[][]= &#123;&#123;1,2&#125;,&#123;3,4,0,9&#125;,&#123;5,6,7&#125;&#125;;</span><br><span class="line">     int[][] a = new int[3][4];	</span><br><span class="line">     int[][] t = new int[3][];</span><br><span class="line">     t[0] = new int[4];</span><br><span class="line">     t[1] = new int[2];</span><br><span class="line">     int[][] b = new int[][4];   </span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-1多维数组初始化"><a href="#4-2-1多维数组初始化" class="headerlink" title="4.2.1多维数组初始化"></a>4.2.1多维数组初始化</h3><p>静态初始化</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int a[][] = &#123;&#123;1,2&#125;,&#123;2,3&#125;,&#123;3,4,5&#125;&#125;;</span><br><span class="line">int b[3][2] = &#123;&#123;1,2&#125;,&#123;2,3&#125;,&#123;4,5&#125;&#125;;  	//非法</span><br></pre></td></tr></table></figure>
+
+<p>动态初始化</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int a = new int[3][]; </span><br><span class="line">a[0] = new int[2];</span><br><span class="line">a[1] = new int[4];</span><br><span class="line">a[2] = new int[3];</span><br><span class="line">a[0][0] = 45;</span><br><span class="line">a[0][1] = 87;</span><br><span class="line">……</span><br><span class="line">a[2][2] = 99;</span><br></pre></td></tr></table></figure>
+
+<p>实例1</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class test</span><br><span class="line">&#123;	public static void main(String args[])</span><br><span class="line">	&#123; int[][] myArray=new int[3][];</span><br><span class="line">	  myArray[0]=new int[3];</span><br><span class="line">	  myArray[1]=new int[2];</span><br><span class="line">	  myArray[2]=new int[3];       </span><br><span class="line">     myArray[0][0]=1;myArray[0][1]=2;</span><br><span class="line">     myArray[0][2]=3;</span><br><span class="line">     myArray[1][0]=1;myArray[1][1]=2;	        </span><br><span class="line">     myArray[2][0]=1;myArray[2][1]=2;</span><br><span class="line">     myArray[2][2]=3;</span><br><span class="line">     for(int i=0;i&lt;3;i++)</span><br><span class="line">     &#123;for(int j=0;j&lt;myArray[i].length;j++)	     	    </span><br><span class="line">      &#123;System.out.print(myArray[i][j]+&quot;  &quot;);  &#125;</span><br><span class="line">	   System.out.println();     //换行；</span><br><span class="line">&#125;&#125;&#125;</span><br><span class="line"></span><br><span class="line">1 2 3 </span><br><span class="line">1 2 </span><br><span class="line">1 2 3</span><br></pre></td></tr></table></figure>
+
+<p>实例2</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class test</span><br><span class="line">&#123;	public static void main(String args[])</span><br><span class="line">	&#123;   char[] s=&#123;&#x27;A&#x27;,&#x27;B&#x27;,&#x27;C&#x27;,&#x27;D&#x27;&#125;;</span><br><span class="line">	    for (int i=0; i&lt;s.length; i++ ) </span><br><span class="line">	    &#123;	System.out.print(s[i]+&quot;  &quot;);  &#125;</span><br><span class="line">       System.out.println();    </span><br><span class="line">	    int [][] dd;</span><br><span class="line">	    dd=new int[][]&#123;&#123;1,2&#125;,&#123;1,2,3&#125;,&#123;1,2,3&#125;&#125;;	    </span><br><span class="line">	    for(int i=0;i&lt;dd.length;i++)</span><br><span class="line">	    &#123;for(int j=0;j&lt;dd[i].length;j++)</span><br><span class="line">	    	&#123;System.out.print(dd[i][j]+&quot;  &quot;); &#125;</span><br><span class="line">	      System.out.println();</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">A B C D</span><br><span class="line">1 2 </span><br><span class="line">1 2 3</span><br><span class="line">1 2 3</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-2数组的枚举"><a href="#4-2-2数组的枚举" class="headerlink" title="4.2.2数组的枚举"></a>4.2.2数组的枚举</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class foreachdemo</span><br><span class="line">&#123;public static void main(String args[])</span><br><span class="line">  &#123; String[] s;</span><br><span class="line">    s = new String[]&#123;&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;&#125;;</span><br><span class="line">   //以上两行同String s[]=&#123;&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;&#125;;</span><br><span class="line">    for(String c :  s )   &#123;System.out.print(c+&quot;  &quot;);  &#125;	   </span><br><span class="line">    System.out.println();    </span><br><span class="line">	    int [][] dd;</span><br><span class="line">	    dd=new int[][]&#123;&#123;1,2&#125;,&#123;1,2,3&#125;,&#123;1,2,3&#125;&#125;;	    </span><br><span class="line">	    for(int[] p : dd)</span><br><span class="line">	    &#123; for(int obj : p)&#123; System.out.print(obj+&quot;  &quot;); &#125;</span><br><span class="line">	      System.out.println();</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">A B C D</span><br><span class="line">1 2 </span><br><span class="line">2 3</span><br><span class="line">1 2 3</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-3数组拷贝"><a href="#4-2-3数组拷贝" class="headerlink" title="4.2.3数组拷贝"></a>4.2.3数组拷贝</h3><p>java.lang.System类的arraycopy()方法提供了数组元素复制功能——将一个数组的连续多个元素的值批量复制到另一个数组中。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int source[] = &#123; 1, 2, 3, 4, 5, 6 &#125;;  //源数组</span><br><span class="line">int dest[] = &#123; 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 &#125;;</span><br><span class="line">// 目的数组</span><br><span class="line">System.arraycopy(source, 0, dest, 0, 3);</span><br><span class="line">// 复制源数组中从下标0开始的3个元素</span><br><span class="line">//到数组，从下标0的位置开始存储。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class test</span><br><span class="line">&#123;	public static void main(String args[])</span><br><span class="line">	&#123;int source[] = &#123; 1, 2, 3, 4, 5, 6 &#125;; //源数组</span><br><span class="line">    int newarray[]=source;        // 目标数组</span><br><span class="line">    int dest[] = &#123; 0, 0, 0, 0, 6, 5, 4, 3, 2, 1 &#125;; </span><br><span class="line">	 System.arraycopy(source, 0, dest, 0,      </span><br><span class="line">                                                      source.length); </span><br><span class="line">    for(int i=0;i&lt;dest.length;i++)</span><br><span class="line">     &#123; System.out.print(&quot;  &quot; + dest[i]); &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">1 2 3 4 5 6 4 3 2 1</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-4-Instanceof"><a href="#4-2-4-Instanceof" class="headerlink" title="4.2.4 Instanceof"></a>4.2.4 Instanceof</h3><p>instanceof是Java中的二元运算符，左边是对象，右边是类；当对象是右边类或子类所创建对象时，返回true；否则，返回false。</p>
+<p>这里说明下：</p>
+<p>1.类的实例包含本身的实例，以及所有直接或间接子类的实例</p>
+<p>2.instanceof左边显式声明的类型与右边操作元必须是同种类或存在继承关系，也就是说需要位于同一个继承树，否则会编译错误</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class instancedemo</span><br><span class="line">&#123;	  public static void main(String args[])</span><br><span class="line">	  &#123;  int[] a=new int[5];</span><br><span class="line">	  	int[] b=new int[4];</span><br><span class="line">	  	int[][] c=new int[2][3];</span><br><span class="line">	     System.out.println(a instanceof Object);</span><br><span class="line">	     System.out.println(a instanceof int[]);</span><br><span class="line">	     System.out.println(c instanceof int[][]);</span><br><span class="line">	     System.out.println(c[0] instanceof int[]);</span><br><span class="line">	  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-5数组初始化总结"><a href="#4-2-5数组初始化总结" class="headerlink" title="4.2.5数组初始化总结"></a>4.2.5数组初始化总结</h3><p><strong>一维数组</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> 1)  int[] a;   //声明,没有初始化</span><br><span class="line"> 2)  int[] a=new int[5];   //初始化为默认值,int型为0</span><br><span class="line"> 3)  int[] a=&#123;1,2,3,4,5&#125;;  //初始化为给定值 </span><br><span class="line"></span><br><span class="line"> 4)  int[] a=new int[]&#123;1,2,3,4,5&#125;;  //同(3)  </span><br><span class="line">     int[] a=new int[5]&#123;1,2,3,4,5&#125;; //错误,如果提供了数组初始化操作，则不能定义维表达式 </span><br><span class="line"></span><br><span class="line">  5) int[] a;   </span><br><span class="line">     a=new int[5];    //正确,同(2)一样</span><br><span class="line">​    int[] a;     </span><br><span class="line">     a=&#123;1,2,3,4,5&#125;;   //错误,数组常量只能在初始化操作中使用，如（3）</span><br><span class="line"> 6)  int a[];</span><br><span class="line">     a[0]=1;   //错误,因为数组没有初始化,不能赋值</span><br><span class="line">     a[1]=2; </span><br></pre></td></tr></table></figure>
+
+<p><strong>二维数组</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">1)  int[][] a;  //声明,没有初始化</span><br><span class="line"></span><br><span class="line">2)  int[][] a=new int[2][3];    //初始化为默认值,int型为0</span><br><span class="line"></span><br><span class="line">3)  int[][] a=&#123;&#123;1,2&#125;,&#123;2,3&#125;,&#123;3,4&#125;&#125;;   //初始化为给定值 </span><br><span class="line">      int[][] a=&#123;&#123;1,2&#125;,&#123;2,3&#125;,&#123;3,4,5&#125;&#125;;//没有错,数组空间不是连//续分配的，所以不要求每一维的大小相同</span><br><span class="line"></span><br><span class="line">4)   int[][] a=new int[2][];</span><br><span class="line">      a[0]=new int[3];  //a[0]其实就是一个数组</span><br><span class="line">      a[1]=new int[4];  //每一维的大小可以不一样;</span><br><span class="line">5) int[][] a=new int[][]&#123;&#123;1,2&#125;,&#123;2,3&#125;,&#123;3,4,5&#125;&#125;;   //同(3)    int[] a=new int[5]&#123;&#123;1,2&#125;,&#123;2,3&#125;,&#123;3,4,5&#125;&#125;;  //错误,如果提供了数组初始化操作，则不能定义维表达式 </span><br><span class="line">   int[][] a=new int[2][];     </span><br><span class="line">   a[0]=&#123;1,2,3,4,5&#125;;   //错误,数组常量只能在初始 //化操作中使用</span><br><span class="line">6) int[][] a=new int[2][];    </span><br><span class="line">    a[0][1]=1;   //错误,第二维没有初始化,不能赋值,java.lang.NullPointerException异常</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-6-Array类"><a href="#4-2-6-Array类" class="headerlink" title="4.2.6 Array类"></a>4.2.6 Array类</h3><p>该类提供了很多对数组进行操作的方法，如：</p>
+<p>equals(): 比较两个数组是否相同，只有两个数组容量相同，且每个对应元素都一样时，才为true。</p>
+<p>fill():  向数组中填充数据。 </p>
+<p>sort(): 将数组元素按升序排列。</p>
+<p>binarySearch(): 在数组中各元素已经按升序排列的条件下，从数组中查找指定的元素。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line">public class ArrayDemo</span><br><span class="line">&#123; public static void main(String args[])</span><br><span class="line">	&#123;String[] s1=&#123;&quot;zhangsan&quot;,&quot;lisi&quot;,&quot;wangwu&quot;,&quot;liliu&quot;,&quot;yaoqi&quot;&#125;;</span><br><span class="line">    String[] s2=&#123;&quot;zhangsan&quot;,&quot;lisi&quot;,&quot;wangwu&quot;,&quot;liliu&quot;,&quot;yaoqi&quot;&#125;;</span><br><span class="line">	 System.out.println(Arrays.equals(s1,s2));</span><br><span class="line">	 Arrays.sort(s1);</span><br><span class="line">	 for(int i=0;i&lt;s1.length;i++)</span><br><span class="line">	  &#123;System.out.println(s1[i]); &#125;</span><br><span class="line">	  &#125;</span><br><span class="line">&#125;</span><br><span class="line">True</span><br><span class="line">Liliu</span><br><span class="line">Lisi</span><br><span class="line">Wangwu</span><br><span class="line">Yaoqi</span><br><span class="line">zhangsan</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-3-字符数组"><a href="#4-3-字符数组" class="headerlink" title="4.3  字符数组"></a>4.3  字符数组</h2><h3 id="4-3-1字符串的声明与创建"><a href="#4-3-1字符串的声明与创建" class="headerlink" title="4.3.1字符串的声明与创建"></a>4.3.1字符串的声明与创建</h3><p>声明字符串的格式是：String stringName； </p>
+<p>字符串的创建格式： stringName = new String（字符串常量）;</p>
+<p>或者   stringName =字符串常量;</p>
+<p>举例：str= new String ( “student” ); </p>
+<p>​            str= “student”   // 内存位置在专用的字符串区内</p>
+<p>用一个已创建的字符串创建另外一个字符串：</p>
+<p>s=“abc123”;</p>
+<p>String t=String(s);</p>
+<p>用字符数组创建：</p>
+<p>char  a[]={“W”,”H”,”U”,”T”};  </p>
+<p>String b=new String(a);</p>
+<h3 id="4-3-2与字符串有关的方法"><a href="#4-3-2与字符串有关的方法" class="headerlink" title="4.3.2与字符串有关的方法"></a>4.3.2与字符串有关的方法</h3><h4 id="确定字符串的长度-："><a href="#确定字符串的长度-：" class="headerlink" title="确定字符串的长度 ："></a><strong>确定字符串的长度 ：</strong></h4><p>public int length()</p>
+<h4 id="取得字符："><a href="#取得字符：" class="headerlink" title="取得字符："></a><strong>取得字符：</strong></h4><p>public char charAt(int index) </p>
+<h4 id="取得子串："><a href="#取得子串：" class="headerlink" title="取得子串："></a><strong>取得子串：</strong></h4><p>public String substring(int beginIndex)</p>
+<p>public String substring(int beginIndex,int endIndex)</p>
+<h4 id="字符串内容的比较"><a href="#字符串内容的比较" class="headerlink" title="字符串内容的比较"></a><strong>字符串内容的比较</strong></h4><p>public int compareTo(String stringName2)</p>
+<p>public int compareToIgnoreCase(String stringName2)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String args[])&#123;</span><br><span class="line">		String s = new String(&quot;武汉理工大学计算机学院&quot;);</span><br><span class="line">		System.out.println(s + &quot; 的长度：&quot; + s.length());</span><br><span class="line">		System.out.println(s + &quot; 第三个字：&quot; + s.charAt(2) );</span><br><span class="line">		System.out.println(s + &quot; 的子串： &quot; + s.substring(6));</span><br><span class="line">		String s1 = new String(&quot;ABCDE&quot;);</span><br><span class="line">		String s2 = new String(&quot;ABCED&quot;);</span><br><span class="line">		System.out.println(&quot;\&quot;ABCDE\&quot;和\&quot;ABCED\&quot;比较结果：&quot;+s1.compareTo(s2));</span><br><span class="line">	   &#125;</span><br><span class="line">武汉理工大学计算机学院 的长度：11</span><br><span class="line">武汉理工大学计算机学院 第三个字：理</span><br><span class="line">武汉理工大学计算机学院 的子串： 计算机学院</span><br><span class="line">&quot;ABCDE&quot;和&quot;ABCED&quot;比较结果：-1</span><br></pre></td></tr></table></figure>
+
+<h4 id="字符串连接"><a href="#字符串连接" class="headerlink" title="字符串连接:"></a><strong>字符串连接:</strong></h4><p>public String concat(String stringName2) </p>
+<h4 id="字符串检索"><a href="#字符串检索" class="headerlink" title="字符串检索:"></a><strong>字符串检索:</strong></h4><p>​    public int indexOf(int ch)<br>​    public int indexOf(int ch,int fromIndex)<br>​    public int indexOf(String stringName2)<br>​    public int indexOf(String stringName2,int fromIndex)</p>
+<h4 id="字符数组转换为字符串"><a href="#字符数组转换为字符串" class="headerlink" title="字符数组转换为字符串:"></a><strong>字符数组转换为字符串:</strong></h4><p>​    public static String copyValueOf(char []ch1)<br>​    public static String copyValueOf(char []ch1,int cBegin,int cCount) </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">	public static void main(String args[])&#123;</span><br><span class="line">	    String s = new String(&quot;武汉理工大学计算机学院&quot;);</span><br><span class="line">	    String s1 = &quot;09级软件工程&quot;;</span><br><span class="line">	    String s2 = s.concat(s1);</span><br><span class="line">	    System.out.println(s + &quot; 追加 &quot; + s1 + &quot; 是: &quot;);</span><br><span class="line">	    System.out.println(s2);</span><br><span class="line">	    </span><br><span class="line">	    System.out.println(s2+&quot;首次出现‘学’字符的位置&quot;+s2.indexOf(&quot;学&quot;));</span><br><span class="line">	    </span><br><span class="line">	    char[] Str1 = &#123;&#x27;h&#x27;, &#x27;e&#x27;, &#x27;l&#x27;, &#x27;l&#x27;, &#x27;o&#x27;, &#x27; &#x27;, &#x27;r&#x27;, &#x27;u&#x27;, &#x27;n&#x27;, &#x27;o&#x27;, &#x27;o&#x27;, &#x27;b&#x27;&#125;;</span><br><span class="line">        String Str2 = &quot;&quot;;</span><br><span class="line">        Str2 = Str2.copyValueOf( Str1 );</span><br><span class="line">        System.out.println(&quot;返回结果：&quot; + Str2);</span><br><span class="line">        Str2 = Str2.copyValueOf( Str1, 2, 6 );</span><br><span class="line">        System.out.println(&quot;返回结果（偏移量2,长度6）：&quot; + Str2);</span><br><span class="line">	   &#125;</span><br><span class="line">武汉理工大学计算机学院 追加 09级软件工程 是: </span><br><span class="line">武汉理工大学计算机学院09级软件工程</span><br><span class="line">武汉理工大学计算机学院09级软件工程首次出现‘学’字符的位置5</span><br><span class="line">返回结果：hello runoob</span><br><span class="line">返回结果（偏移量2,长度6）：llo ru	   </span><br></pre></td></tr></table></figure>
+
+<h4 id="字符串转换为字符数组"><a href="#字符串转换为字符数组" class="headerlink" title="字符串转换为字符数组"></a><strong>字符串转换为字符数组</strong></h4><p>public char[] toCharArray() </p>
+<h4 id="将其他数据类型转换为字符串"><a href="#将其他数据类型转换为字符串" class="headerlink" title="将其他数据类型转换为字符串"></a><strong>将其他数据类型转换为字符串</strong></h4><p>public static String valueOf(boolean b)<br>public static String valueOf(char c)<br>public static String valueOf(int i)<br>public static String valueOf(long L)<br>public static String valueOf(float f)<br>public static String valueOf(double d) </p>
+<h4 id="字符串大小写转换"><a href="#字符串大小写转换" class="headerlink" title="字符串大小写转换"></a><strong>字符串大小写转换</strong></h4><p>public String toUpperCase()<br>public String toLowerCase()</p>
+<h4 id="字符串内容的替换："><a href="#字符串内容的替换：" class="headerlink" title="字符串内容的替换："></a><strong>字符串内容的替换：</strong></h4><p>public String replace(char oldChar,char newChar) </p>
+<h4 id="删除字符串的前导空白和尾部空白："><a href="#删除字符串的前导空白和尾部空白：" class="headerlink" title="删除字符串的前导空白和尾部空白："></a><strong>删除字符串的前导空白和尾部空白：</strong></h4><p>  public String trim() </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String args[])&#123;</span><br><span class="line">	    String s = new String(&quot;武汉理工大学计算机学院&quot;);</span><br><span class="line">	    String s1 = &quot;&quot;;</span><br><span class="line">	    String s2 = &quot;ABCDEFG&quot;;</span><br><span class="line">	    char a[] = s.toCharArray() ;</span><br><span class="line">	    int i =1000;</span><br><span class="line">	    System.out.println(&quot;字符串转换为字符数组并输出第一位:  &quot;+a[0]);</span><br><span class="line">	    System.out.println(s1.valueOf(i));</span><br><span class="line">	    System.out.println(s2.toLowerCase());</span><br><span class="line">	   &#125;</span><br><span class="line">字符串转换为字符数组并输出第一位:  武</span><br><span class="line">1000</span><br><span class="line">abcdefg</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-3字符串缓冲区"><a href="#4-3-3字符串缓冲区" class="headerlink" title="4.3.3字符串缓冲区"></a>4.3.3字符串缓冲区</h3><h4 id="StringBuffer的构造"><a href="#StringBuffer的构造" class="headerlink" title="StringBuffer的构造"></a><strong>StringBuffer的构造</strong></h4><p>public StringBuffer() </p>
+<p>构造一个其中不带字符的字符串缓冲区，其初始容量为 16 个字符。 </p>
+<p>public StringBuffer(int capacity) </p>
+<p>构造一个不带字符，但具有指定初始容量的字符串缓冲区。 </p>
+<p>public StringBuffer(String str)<br>构造一个字符串缓冲区，并将其内容初始化为指定的字符串内容。该字符串的初始容量为 16 加上字符串参数的长度。 </p>
+<p><strong>有关方法：</strong></p>
+<p>字符串缓冲区数据转换为字符串：public String toString() </p>
+<p>添加字符：public StringBuffer append(int iv)</p>
+<p>插入字符：public StringBuffer insert(int insertP,char cv)</p>
+<p>替换字符：public StringBuffer replace(int start, int end, String stringv)</p>
+<p>删除字符：public StringBuffer delete(int start,int end)<br>                    public StringBuffer deleteCharAt(int index)<br>清空字符串：public void setLength(int newLength)<br>取子串：1.public String substring(int start)</p>
+<p>返回一个新的 String，它包含此字符序列当前所包含的字符子序列。该子字符串始于指定索引处的字符，一直到此字符串末尾。<br>2.public String substring(int start, int end)</p>
+<p>返回一个新的 String，它包含此序列当前所包含的字符子序列。该子字符串从指定的 start 处开始，一直到索引 end - 1 处的字符。 </p>
+<p>字符串反转：public StringBuffer reverse() </p>
+<h4 id="String与StringBuffer的区别"><a href="#String与StringBuffer的区别" class="headerlink" title="String与StringBuffer的区别"></a><strong>String与StringBuffer的区别</strong></h4><p>String:<br>是对象不是原始类型.<br>为不可变对象,一旦被创建,就不能修改它的值.<br>对于已经存在的String对象的修改都是重新创建一个新的对象,然后把新的值保存进去.<br>String 是final类,即不能被继承.</p>
+<p>StringBuffer:<br>是一个可变对象,当对他进行修改的时候不会像String那样重新建立对象<br>它只能通过构造函数来建立,<br>StringBuffer sb = new StringBuffer();<br>不能通过赋值符号对他进行赋值.<br>sb = “welcome to here!”;//error<br>对象被建立以后,在内存中就会分配内存空间,并初始保存一个null.向StringBuffer中赋值的时候可以通过它的append方法sb.append(“hello”);</p>
+<p>字符串连接操作中StringBuffer的效率要比String高。String的连接操作就比StringBuffer多出了一些附加操作,效率低一些.</p>
+<p>由于String 对象是不可变对象,每次操作Sting 都会重新建立新的对象来保存新的值.这样原来的对象就没用了,就要被垃圾回收.这也是要影响性能的. </p>
+<h4 id="判断回文对联"><a href="#判断回文对联" class="headerlink" title="判断回文对联"></a>判断回文对联</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import javax.swing.JOptionPane;</span><br><span class="line"></span><br><span class="line">public class Hello &#123;</span><br><span class="line">	static boolean palindromeCouplet (String s)   &#123;</span><br><span class="line">		   StringBuffer s1 = new StringBuffer(s);</span><br><span class="line">		   return((s.compareTo(new String(s1.reverse()))==0) ? true :false)  ;</span><br><span class="line">		 &#125;	</span><br><span class="line">	public static void main(String[] args) &#123;	</span><br><span class="line">	 	while(true)&#123;</span><br><span class="line">	    String str=JOptionPane.showInputDialog( null,  </span><br><span class="line">		&quot;请输入一行汉字！\n结束程序按取消。&quot;,</span><br><span class="line">		&quot;判断是否可作回文联&quot;,</span><br><span class="line">		JOptionPane.QUESTION_MESSAGE);    </span><br><span class="line">	    </span><br><span class="line">		if (str == null) &#123;</span><br><span class="line">	    	System.out.println(&quot;再见！&quot;);</span><br><span class="line">	    	break;</span><br><span class="line">	    	&#125; </span><br><span class="line">	System.out.println(&quot;是否可作回文联：&quot; +palindromeCouplet(str));</span><br><span class="line">	     &#125;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dylan-cs.github.io/2021/12/09/3%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Dylan">
+      <meta itemprop="description" content="stay hungry stay foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dylanの博客">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/09/3%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-12-09 14:56:30 / 修改时间：14:55:33" itemprop="dateCreated datePublished" datetime="2021-12-09T14:56:30+08:00">2021-12-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>title:3程序流程控制<br>tags:</p>
+<ul>
+<li>Java基础</li>
+</ul>
+<p>categories:  #分类</p>
+<p>​           -Java基础</p>
+<h2 id="3-1-程序流程控制"><a href="#3-1-程序流程控制" class="headerlink" title="3.1  程序流程控制"></a>3.1  程序流程控制</h2><p>程序可分为三种基本结构——顺序性结构、分支结构和循环结构。</p>
+<h2 id="3-2-选择结构"><a href="#3-2-选择结构" class="headerlink" title="3.2  选择结构"></a>3.2  选择结构</h2><p>1.if-else语句。其中的else子句不是必须的</p>
+<p>2.switch语句。<img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1636186516663.png" alt="1636186516663"></p>
+<p>3.条件表达式程序格式：</p>
+<p>Expression？Expression2:expression3</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=30;</span><br><span class="line"></span><br><span class="line">b=a&gt;16?160:150</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-3-循环结构"><a href="#3-3-循环结构" class="headerlink" title="3.3  循环结构"></a>3.3  循环结构</h2><p>1.for 循环</p>
+<p>2.while 循环</p>
+<p>3.do-while 循环</p>
+<p>4.for-each循环</p>
+<h2 id="3-4-跳转语句"><a href="#3-4-跳转语句" class="headerlink" title="3.4  跳转语句"></a>3.4  跳转语句</h2><p>1.break</p>
+<p>语句的作用是终止所在的switch语句或循环语句的运行。</p>
+<p>2.continue</p>
+<p>语句用于结束所在的循环语句的本次运行，即跳过其后的循环体语句，开始下一次循环。</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dylan-cs.github.io/2021/12/09/2JAVA%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Dylan">
+      <meta itemprop="description" content="stay hungry stay foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dylanの博客">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/09/2JAVA%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-12-09 14:56:30 / 修改时间：14:55:04" itemprop="dateCreated datePublished" datetime="2021-12-09T14:56:30+08:00">2021-12-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>title:2Java基础<br>tags:</p>
+<ul>
+<li> Java基础</li>
+</ul>
+<p>categories:  #分类</p>
+<p>​           -Java基础</p>
+<h2 id="2-1面向对象的基础概念"><a href="#2-1面向对象的基础概念" class="headerlink" title="2.1面向对象的基础概念"></a>2.1面向对象的基础概念</h2><p>是一种程序设计方法和设计规范。从对象出发来构造软件系统，并在系统架构过程中京可能的运用热泪的自然思维方式。</p>
+<h3 id="2-1-1类和对象"><a href="#2-1-1类和对象" class="headerlink" title="2.1.1类和对象"></a>2.1.1类和对象</h3><p>•把相似的对象划归成一个类。</p>
+<p>•在软件中，类就是一个模板，定义了通用于一个特定种类的所有对象的状态（变量）和行为（方法）。对象是实际存在的该类事物的每个个体。</p>
+<p>•类是创建对象的模板，对象是类的实例。</p>
+<h3 id="2-1-2属性和方法"><a href="#2-1-2属性和方法" class="headerlink" title="2.1.2属性和方法"></a>2.1.2属性和方法</h3><h3 id="2-1-3对象的继承"><a href="#2-1-3对象的继承" class="headerlink" title="2.1.3对象的继承"></a>2.1.3对象的继承</h3><p>•理解继承是理解面向对象程序设计的关键。</p>
+<p>•在Java中，通过关键字extends继承一个已有的类，被继承的类称为父类（超类，基类），新的类称为子类（派生类）。</p>
+<p>•在Java中，不允许多继承。</p>
+<h3 id="2-1-4对象的重用"><a href="#2-1-4对象的重用" class="headerlink" title="2.1.4对象的重用"></a>2.1.4对象的重用</h3><p>1.创建新对象的时候，应该以继承现有对象为前提，而不是创建新对象</p>
+<p>2.尽量以现有对象来架构程序。</p>
+<h3 id="2-1-5对象的封装"><a href="#2-1-5对象的封装" class="headerlink" title="2.1.5对象的封装"></a>2.1.5对象的封装</h3><p>Java中通过将数据封装、声明为私有的(private),再提供一个或多个公开的(public)方法实现对该属性的操作，以实现下述目的:</p>
+<p>1.隐藏一个类的实现细节；</p>
+<p>2.使用者只能通过事先定制好的方法来访问数据，可以方便地加入控制逻辑，限制对属性的不合理操作；</p>
+<p>3.便于修改，增强代码的可维护性；</p>
+<h3 id="2-1-6对象的多态性"><a href="#2-1-6对象的多态性" class="headerlink" title="2.1.6对象的多态性"></a>2.1.6对象的多态性</h3><p>在一般类中定义的属性或者方法被特殊类继承后，可以具有不同的数据类型或者表现出不同的行为。</p>
+<h2 id="2-2Java语言中类的定义"><a href="#2-2Java语言中类的定义" class="headerlink" title="2.2Java语言中类的定义"></a>2.2Java语言中类的定义</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class Person </span><br><span class="line">&#123;</span><br><span class="line">	public int age ;</span><br><span class="line">	public String name;</span><br><span class="line">	public String sex;</span><br><span class="line"></span><br><span class="line">	public void show()</span><br><span class="line">	&#123;</span><br><span class="line">	System.out.println(&quot;name=&quot;+name);</span><br><span class="line">	System.out.println(&quot;age=&quot;+age);</span><br><span class="line">	System.out.println(&quot;sex=&quot;+sex);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-1类的属性"><a href="#2-2-1类的属性" class="headerlink" title="2.2.1类的属性"></a>2.2.1类的属性</h3><p>属性成员是具有某种数据类型的变量或者常量，当创建一个对象是，它会包含类中定义的所有变量。</p>
+<h3 id="2-2-2类的方法"><a href="#2-2-2类的方法" class="headerlink" title="2.2.2类的方法"></a>2.2.2类的方法</h3><p>1.方法的定义</p>
+<p>2.main()方法，包含主方法的类称为主类，它是程序执行的入口点。<strong>java文件中，可以有多个类，但只能有一个public类，且与java文件同名。</strong></p>
+<p>3.方法的调用</p>
+<h2 id="2-3常量与变量"><a href="#2-3常量与变量" class="headerlink" title="2.3常量与变量"></a>2.3常量与变量</h2><h3 id="2-3-1-常量"><a href="#2-3-1-常量" class="headerlink" title="2.3.1  常量"></a>2.3.1  常量</h3><p>在程序运行过程中其值保持不变的量，如1，true,  “WHUT”,  6.5等等。</p>
+<p><strong>1.用final定义的符号常量位于方法定义之内，只能在方法内使用，</strong></p>
+<p><strong>2.如果希望一个符号常量被本类的其他方法使用，就必须用static</strong><br><strong>final声明，并将声明语句放到main()方法外部。</strong></p>
+<p><strong>3.如果用public static final 来声明，该符号常量还可以被其他类使用</strong></p>
+<h3 id="2-3-2-变量"><a href="#2-3-2-变量" class="headerlink" title="2.3.2  变量"></a>2.3.2  变量</h3><p>①<strong>定义</strong>：变量(Variable)用于表示其值在程序运行过程中可以改变的数据。变量就是系统为程序分配的一块内存单元，用来存储各种类型的数据。根据所存储的数据类型的不同，有各种不同类型的变量。变量名代表这块内存中的数据。</p>
+<p>②<strong>分类：</strong></p>
+<p>1.按所属数据类型划分：基本类型变量和引用类型变量</p>
+<p>2.按声明的位置划分：</p>
+<p>  局部变量——方法或语句块内部定义的变量</p>
+<p>  成员变量——方法外部、类的内部定义的变量</p>
+<p>③<strong>变量的生存期</strong></p>
+<p><u>局部变量的生存期就是其所在方法或语句块单次执行的期间——在程序每一次调用方法或运行进入到一个语句块中时，其中的局部变量才被创建并可用，随方法/语句块的退出，局部变量将被销毁。</u></p>
+<p><u>成员变量的生存期与其所属的对象相同，随着对象的创建而创建、随对象的销毁而销毁。</u></p>
+<h3 id="2-3-3-标识符与关键字"><a href="#2-3-3-标识符与关键字" class="headerlink" title="2.3.3 标识符与关键字"></a>2.3.3 标识符与关键字</h3><p>java中的包、类、方法、参数和变量的名字，可由任意顺序的大小写字母、数字、下划线(_)和美元符号($)组成，但标识符不能以数字开头，不能是关键字。</p>
+<h2 id="2-4数据类型"><a href="#2-4数据类型" class="headerlink" title="2.4数据类型"></a>2.4数据类型</h2><h3 id="2-4-1基本数据类型"><a href="#2-4-1基本数据类型" class="headerlink" title="2.4.1基本数据类型"></a>2.4.1基本数据类型</h3><h4 id="Java中定义了四类-八种基本数据类型"><a href="#Java中定义了四类-八种基本数据类型" class="headerlink" title="Java中定义了四类/八种基本数据类型"></a>Java中定义了四类/八种基本数据类型</h4><p>Ø逻辑型 – boolean</p>
+<p>Ø文本型 – char</p>
+<p>Ø整数型 – byte, short, int, long</p>
+<p>Ø浮点型 – float, double</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">//整数拓展： 二进制0b 八进制0 十进制 十六进制0x</span><br><span class="line">int i = 10;</span><br><span class="line">int i2 = 010; //八进制0</span><br><span class="line">int i3 = 0x10;  //十六进制0x</span><br><span class="line">10</span><br><span class="line">8</span><br><span class="line">16</span><br><span class="line"></span><br><span class="line">//浮点数拓展：银行业务怎么表示</span><br><span class="line">//使用BigDecimal 数学工具类</span><br><span class="line"></span><br><span class="line">//float 有限 离散 舍入误差 大约 接近但不等于</span><br><span class="line">//double</span><br><span class="line">//最好完全避免使用浮点数进行比较</span><br><span class="line"></span><br><span class="line">float f = 0.1f; //0.1</span><br><span class="line">double d = 0.1; //0.1</span><br><span class="line">System.out.println(f==d); // false</span><br><span class="line">float d1 = 23131312312312313f;</span><br><span class="line">float d2 = d1 + 1;</span><br><span class="line">System.out.println(d1==d2); //True</span><br><span class="line"></span><br><span class="line">//字符拓展</span><br><span class="line">char c1 = &#x27;a&#x27;;</span><br><span class="line">char c2 = &#x27;中&#x27;;</span><br><span class="line">System.out.println(c1);   //a</span><br><span class="line">System.out.println((int)c1); //97</span><br><span class="line">System.out.println(c2);   //中</span><br><span class="line">System.out.println((int)c2);  //20013</span><br><span class="line">//所有的字符本质还是数字</span><br><span class="line">//编码 Unicode 表：（97=a  65=A） 2字节 65536</span><br><span class="line">char c3 =&#x27;\u0061&#x27;;</span><br><span class="line">//char c3 =&#x27;\141&#x27;;</span><br><span class="line">System.out.println(c3); //a</span><br><span class="line"></span><br><span class="line">//转义字符</span><br><span class="line">//八进制转义序列：\ + 1到3位5数字；范围&#x27;\000&#x27;~&#x27;\377&#x27;    \0：空字符</span><br><span class="line">//Unicode转义字符：\u + 四个十六进制数字；0~65535   \u0000：空字符</span><br><span class="line">//  \t制表符  \n 换行</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-4-2各类型之间的相互转换"><a href="#2-4-2各类型之间的相互转换" class="headerlink" title="2.4.2各类型之间的相互转换"></a>2.4.2各类型之间的相互转换</h3><p>自动类型转换：在某种条件下，系统自动完成类型转换</p>
+<p>1.两种类型兼容              •例如：int 和 double 兼容</p>
+<p>2.目标类型大于源类型          •例如：double 型 大于 int 型 </p>
+<p>强制类型转换：（target_type）value</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int a:</span><br><span class="line">byte b;</span><br><span class="line">b=(byte)a;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-5运算符和表达式"><a href="#2-5运算符和表达式" class="headerlink" title="2.5运算符和表达式"></a>2.5运算符和表达式</h2><p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1636185590914.png" alt="1636185590914"></p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1636185760593.png" alt="1636185760593"></p>
+<p>运算符的优先级：</p>
+<p><img src="C:\Users\CYX\AppData\Roaming\Typora\typora-user-images\1636185849650.png" alt="1636185849650"></p>
+<p>区别：执行顺序不同</p>
+<p>int a=2; int b= a + 3 * a++;      8</p>
+<p>int a=2; int b= (a ++)+ 3 * a;         11</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dylan-cs.github.io/2021/12/09/1JAVA%E7%AE%80%E4%BB%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Dylan">
+      <meta itemprop="description" content="stay hungry stay foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dylanの博客">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/09/1JAVA%E7%AE%80%E4%BB%8B/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-12-09 14:56:30 / 修改时间：14:54:50" itemprop="dateCreated datePublished" datetime="2021-12-09T14:56:30+08:00">2021-12-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>title:1JAVA简介<br>tags:</p>
+<ul>
+<li> Java基础</li>
+</ul>
+<p>categories:  #分类</p>
+<p>​           -Java基础</p>
+<h2 id="1-1java语言特点"><a href="#1-1java语言特点" class="headerlink" title="1.1java语言特点"></a>1.1java语言特点</h2><p>1.<strong>JAVA是简单的</strong>。无C和c++中复杂的操作符重载，多继承，自动的强制类型转换。 没有指针，还提供自动的内存收集。</p>
+<p>2.<strong>面向对象</strong>。只支持类之间的单继承，但支持接口之间的多继承，并支持类和接口之间的实现机制。</p>
+<p>3.<strong>分布式的</strong>。JAVA.net提供了网络编程库，包括URL,URLconnection,socket,serversocket等。</p>
+<p>JAVA的RMI机制也是开发分布式应用的重要手段。</p>
+<p>PS:Java RMI：Java远程方法调用，即Java RMI（Java Remote Method Invocation）是Java编程语言里，一种用于实现远程过程调用的应用程序编程接口。它使客户机上运行的程序可以调用远程服务器上的对象。远程方法调用特性使Java编程人员能够在网络环境中分布操作。RMI全部的宗旨就是尽可能简化远程接口对象的使用。</p>
+<p>4.<strong>健壮性</strong>。Java的强类型机制、异常处理、内存空间的自动收集、安全检查机制等是健壮性的重要保证。</p>
+<p>5.<strong>安全性</strong>。JAVA除了有许多安全特性，java对通过网络下载的类有安全防范机制（ClassLoader），比如分配不同的名字空间以防替代本地的同名类、字节代码检查，还提供安全管理机制（SecurityManager）设置安全哨兵。</p>
+<p>6.<strong>可移植性</strong>。硬件无关。<u>一次编译，到处运行。</u></p>
+<p>7.<strong>编译解释型</strong>。java源文件—java平台—》字节码—JAVA解释器（JVM）—》解释执行</p>
+<p>8.<strong>高性能的，动态的</strong>。</p>
+<p>9.<strong>多线程的</strong>。java支持多个线程的同时运行，还提供多线程之间的同步机制。</p>
+<h2 id="1-2Java平台和应用方向"><a href="#1-2Java平台和应用方向" class="headerlink" title="1.2Java平台和应用方向"></a>1.2Java平台和应用方向</h2><p>Java平台：<strong>1.Java SE</strong>         2.Java EE       3.Java ME</p>
+<p>开发领域：</p>
+<p><strong>1.web网页动态设计、网站管理</strong></p>
+<p>2.嵌入式系统开发与应用</p>
+<p>3.交互式、可视化图形软件的开发</p>
+<p><strong>4.分布式计算系统的开发与应用</strong></p>
+<p>5.电子商务系统的开发与应用</p>
+<p>6.多媒体系统的设计与实现</p>
+<h2 id="1-3Java的运行机制和JVM"><a href="#1-3Java的运行机制和JVM" class="headerlink" title="1.3Java的运行机制和JVM"></a>1.3Java的运行机制和JVM</h2><p><strong>hello.java–&gt;编译–&gt;hello.class–&gt;解释–&gt;二进制指令集</strong></p>
+<p><strong>JVM:定义Java字节代码在给定的计算机系统中如何被处理的一组规范。</strong></p>
+<p>1.Java解释器功能是用JVM来实现的，Java的解释器是在JVM中运行的</p>
+<p><strong>2.JVM存在的意义实际上就是屏蔽掉底层平台的差异,实现字节码跨平台</strong></p>
+<p>3.字节码不与当前OS相关，结构中立的，是二进制文件。任何平台编译生成的字节码都是一样的。字节码文件不能直接执行，必须需要JVM的差异，为上层结构中立的字节码统一运行的环境，而JVM会将字节码转化成相应的底层平台的机器码执行</p>
+<h2 id="1-4Java相关术语"><a href="#1-4Java相关术语" class="headerlink" title="1.4Java相关术语"></a>1.4Java相关术语</h2><p>•JDK：Java Development Kit，是开发Java程序的开发环境，包括Java 运行环境(JRE)、Java工具库</p>
+<p>• JRE:  JavaRuntime Environment, 是运行Java程序所必需的环境集合，包括JVM、Java的核心类库(API)。</p>
+<p><strong>•JDK包含JRE，JRE包含JVM</strong></p>
+<h2 id="1-6Java程序的编写和运行"><a href="#1-6Java程序的编写和运行" class="headerlink" title="1.6Java程序的编写和运行"></a>1.6Java程序的编写和运行</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">hello</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello world!&quot;</span>)；</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>PS: 一个Java源文件中可以有多个类，但只能有一个public类</p>
+<h2 id="1-7Java程序的一些特殊语句"><a href="#1-7Java程序的一些特殊语句" class="headerlink" title="1.7Java程序的一些特殊语句"></a>1.7Java程序的一些特殊语句</h2><p>1.输出语句System.out.println(“d”,age);</p>
+<p>d十进制，x十六进制，o八进制，s字符串，c字符，b布尔，f定点浮点数，e指数浮点数，tx日期时间</p>
+<p>2.注释语句</p>
+<p>1./*  */</p>
+<p>2.// 单行</p>
+<p>3./**   */ 文档注释</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://dylan-cs.github.io/2021/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%8D%81%E4%BA%94%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -277,7 +962,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-07-31 11:51:33" itemprop="dateModified" datetime="2021-07-31T11:51:33+08:00">2021-07-31</time>
+        <time title="修改时间：2021-12-09 14:52:35" itemprop="dateModified" datetime="2021-12-09T14:52:35+08:00">2021-12-09</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -299,15 +984,40 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>4.1程序设计语言简介 **4.2程序设计语言的分类及编程模式**   4.3高级编程语言介绍4.4并行程序设计**5.1数据**5.2数据结构**5.3算法**5.4数据库**  5.5数据中心</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%8D%81%E4%BA%94%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <h2 id="计算机导论第十五周课后总结"><a href="#计算机导论第十五周课后总结" class="headerlink" title="计算机导论第十五周课后总结"></a>计算机导论第十五周课后总结</h2><p><strong>4.1程序设计语言简介</strong>  </p>
+<blockquote>
+<p> 定义：程序设计语言是一组用来定义计算机程序的语法规则<br>1.三元素：语法、语义、语用<br>2.基本成分：数据成分、运算成分、控制成分、传输成分</p>
+</blockquote>
+<p><strong>4.2程序设计语言的分类及编程模式</strong>   </p>
+<blockquote>
+<p>(1)分类：<br>  a.机器语言：用二进制代码表示的计算机能直接识别和执行的机器指令的集合<br>  注意：计算机唯一能识别的语言是机器语言<br>  b.汇编语言：采用助记符来编写程序，是机器语言的符号化。用指令助记符来代替指令的二进制操作码，用符号代替二进制地址码。<br>      特点：通用性差，但占用内存空间少，运行速度快<br>  c.高级语言：面向用户，与自然语言更接近，而与硬件功能相分离（彻底脱离了具体的指令系统）<br>高级语言程序的处理过程：<br><img src="https://img-blog.csdnimg.cn/20191216171458548.png" alt="在这里插入图片描述"> 编译程序：<br><img src="https://img-blog.csdnimg.cn/20191216171524159.png" alt="在这里插入图片描述"><br>汇编程序：将编译程序运行得到的目标程序翻译成二进制机器代码 </p>
+<p>（2）编程模式：a.过程式编程：模块化、结构化  顺序很重要<br>              特征：以函数为中心，用函数来作为划分程序的基本单位<br>             b.面向对象编程：软件系统设计与实现的新方法 封装继承多态<br>             c.函数式编程：输入&gt;&gt;&gt;函数&gt;&gt;&gt;输出<br>             d.说明式编程：依据逻辑推理 </p>
+</blockquote>
+<p><strong>4.3高级编程语言介绍</strong></p>
+<blockquote>
+<p>  1.BASIC语言：入门语言，其他高级语言的基础<br>2.PASCAL语言：一种结构程序设计语言<br>3.C语言：适用于作为系统描述语言，也是同用的程序设计语言<br>4.C++语言：改进了C语言中的不足<br>5.Java语言：简单，与机硬件无关，具有较强的可移植性、安全性、鲁棒性<br>6.Ada语言：美国国防部指定唯一一种可用于军用系统开发的语言<br>7.Logo语言：绘图是其主要功能<br>8.脚本语言：又称扩建的语言或动态语言，以纯文本方式来保存的程序  </p>
+</blockquote>
+<p><strong>4.4并行程序设计</strong></p>
+<blockquote>
+<p>一种用于并行程序设计的语言<br>(1)分类：<br>a.显式并行语言<br>b.具有并行编译功能的串行语言<br> （2）并行编译的过程：词法和语法分析、优化、并行代码生成<br> （3）并行程序设计语言的编译过程：<br><img src="https://img-blog.csdnimg.cn/20191216171540892.png" alt="在这里插入图片描述"></p>
+</blockquote>
+<p><strong>5.1数据</strong></p>
+<p>（1）定义：用文字、数字、图形、图像、声音的方式对人、事件、事物等进行的描的数据是指能输入计算机并能被计算机程序处理的符号的总称<br>（2）形式：数字、文本、音频、图形、视频<br>（3）与信息的区别：数据是供计算机处理的，信息是供用户使用的<br>（4）计算机常用的编码方式：<br>    ASCII、扩展ASCII、Unicode、UTF-8、GB-2312、音频编码、图像编码</p>
+<p><strong>5.2数据结构：</strong></p>
+<blockquote>
+<p>由元素数据依据某种逻辑联系组织起来的<br>（1）分类：逻辑上的数据结构和物理上的逻辑结构<br>（2）主要研究对象：数据表示、数据逻辑结构、数据存储方式、对数据的操作方法<br>（3）数据的逻辑结构：<br>     a.集合：与数学中集合的概念一致<br>     b.线性结构：数据元素一对一关系<br>     c.树形结构：数据元素一对多关系<br>     d.图形结构：数据元素多对多关系<br>（4）数据的物理结构：<br>     a.顺序存储：一组地址<br>     b.链式存储：数据存放的没有连续性的要求<br>     c.索引存储：数据元素存储在连续的地址，且需建立索引表<br>（5）常见的数据结构<br>     a.线性表：顺序存储、链式存储<br>     b.栈：顺序栈、链栈<br>     c.队列：先进先出的线性表<br>     d.树：UINX、DOS许多长荣操作系统的目录结构<br>     e.图：由一组顶点和一组顶点之间的连线构成的一种抽象数据类型</p>
+</blockquote>
+<p><strong>5.3算法</strong>    </p>
+<blockquote>
+<p>  (1）定义：由基本的运算及规定的运算顺序所构成的完整解题步骤<br>  (2）特性：输入、输出、有穷性、确定性、可行性</p>
+</blockquote>
+<p><strong>5.4数据库</strong>  </p>
+<blockquote>
+<p> （1）定义：一个组织内被应用程序使用的逻辑相一致的相关数据的集合<br> （2）特点：数据结构化、数据共享性高，冗余度低，易扩充、数据独立性高、数据由数据库管理系统统一管理和控制<br> （3）体系结构：<br> a.三级模式：一个数据库只有一个内模式<br>               b.二级映射：外模式/概念模式映射、概念模式内模式映射<br> （4）数据库模型：<br> a.层次模型<br> b.网状模型<br> c.关系模型<br> （5）关系的操作及结构化查询语句<br> （6）数据库管理系统：是定义、创建、维护数据库得的一种工具<br> （7）主流数据库   </p>
+<p> <strong>5.5数据中心</strong></p>
+<p> （1）定义：是在一个物理空间内实现数据集中处理、存储、传输、交换、管理的一整套复杂的设施<br> （2）主要目的：通过运行应用程序来处理组织的数据<br> （3）组成：核心计算机机房和其他支持空间<br> （4）传统数据中心的困惑<br> （5）新一代数据中心</p>
+</blockquote>
+
       
     </div>
 
@@ -609,7 +1319,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%8D%81%E5%9B%9B%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">计算机导论第十四周课后总结</a>
+            <a href="/2021/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%8D%81%E5%9B%9B%E5%91%A8%E8%AF%BE%E5%90%8E%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -619,19 +1329,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-06-07 13:31:14 / 修改时间：13:44:27" itemprop="dateCreated datePublished" datetime="2021-06-07T13:31:14+08:00">2021-06-07</time>
+      <time title="创建时间：2021-06-07 13:31:14" itemprop="dateCreated datePublished" datetime="2021-06-07T13:31:14+08:00">2021-06-07</time>
     </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">计算机导论</span></a>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
         </span>
-    </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-12-09 14:52:17" itemprop="dateModified" datetime="2021-12-09T14:52:17+08:00">2021-12-09</time>
+      </span>
 
   
 </div>
@@ -643,7 +1350,14 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="第十四周课后总结"><a href="#第十四周课后总结" class="headerlink" title="第十四周课后总结"></a>第十四周课后总结</h2><p><strong>软件的定义</strong></p>
+          <hr>
+<p>title: 计算机导论第十四周课后总结<br>tags:</p>
+<ul>
+<li>计算机导论</li>
+</ul>
+<p>categories:  #分类</p>
+<p>​           -计算机导论</p>
+<h2 id="第十四周课后总结"><a href="#第十四周课后总结" class="headerlink" title="第十四周课后总结"></a>第十四周课后总结</h2><p><strong>软件的定义</strong></p>
 <blockquote>
 <p>软件是用户与硬件之间的接口    软件=程序+数据+文档<br>软件是计算机系统设计的重要依据，在设计计算机系统时必须统筹规则好软件与硬件的层次关系，兼顾用户的要求。</p>
 </blockquote>
@@ -698,183 +1412,11 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://dylan-cs.github.io/2021/06/07/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Dylan">
-      <meta itemprop="description" content="stay hungry stay foolish">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dylanの博客">
-    </span>
-
-    
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/07/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" class="post-title-link" itemprop="url">leetcode之两数之和</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-06-07 13:12:57 / 修改时间：13:46:05" itemprop="dateCreated datePublished" datetime="2021-06-07T13:12:57+08:00">2021-06-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
-        </span>
-    </span>
 
   
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><font>
-本文是leetcode 第一题两数之和c++解法
-</font>
-
-<h1 id="一、两数之和题目"><a href="#一、两数之和题目" class="headerlink" title="一、两数之和题目"></a>一、两数之和题目</h1><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
-<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。</p>
-<p>示例:<br>给定 nums = [2, 7, 11, 15], target = 9<br>因为 nums[0] + nums[1] = 2 + 7 = 9，所以返回 [0, 1]</p>
-<h1 id="二、解题"><a href="#二、解题" class="headerlink" title="二、解题"></a>二、解题</h1><h2 id="1-c-暴力法解决"><a href="#1-c-暴力法解决" class="headerlink" title="1.c++暴力法解决"></a>1.c++暴力法解决</h2><p><font>代码如下：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> i, j;</span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; nums.size(); i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span> (j = i + <span class="number">1</span>; j &lt; nums.size();j++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (nums[i] + nums[j] == target)</span><br><span class="line">					<span class="keyword">return</span> &#123; i,j &#125;;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> &#123; i,j &#125;;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum = &#123; <span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span> &#125;;</span><br><span class="line">	<span class="keyword">int</span> n = <span class="number">9</span>;</span><br><span class="line">	<span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt;  k;</span><br><span class="line">	Solution x;</span><br><span class="line">	k = x.twoSum(twoSum, n);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">1</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; k[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>注意这里的解题过程是在编译器中的运行代码，来leetcode上提交只需要提交solution类即可。</p>
-<p>注：vector是c++容器，某种意义上可以当作数组来用</p>
-<h2 id="2-两遍哈希表"><a href="#2-两遍哈希表" class="headerlink" title="2.两遍哈希表"></a>2.两遍哈希表</h2><p><font color>代码如下：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">		<span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; a;</span><br><span class="line">		<span class="keyword">int</span> r1, r2;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)</span><br><span class="line">			a.insert(<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;::value_type(nums[i], i));</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (a.count(target - nums[i]) &gt; <span class="number">0</span> &amp;&amp; (a[target - nums[i]] != i))</span><br><span class="line">			&#123;<span class="comment">//count函数是判断该数是否在这个哈希表中，若在，返回值大于0</span></span><br><span class="line">				r1 = i;</span><br><span class="line">				r2 = a[target - nums[i]];</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> &#123; r1,r2 &#125;;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum = &#123; <span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span> &#125;;</span><br><span class="line">	<span class="keyword">int</span> n = <span class="number">9</span>;</span><br><span class="line">	<span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt;  k;</span><br><span class="line">	Solution x;</span><br><span class="line">	k = x.twoSum(twoSum, n);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">1</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; k[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<font>
-
-<p>1.map是STL的一个关联容器，它提供一对一的hash。具体用法，可以看看这<a target="_blank" rel="noopener" href="https://blog.csdn.net/sevenjoin/article/details/81943864">https://blog.csdn.net/sevenjoin/article/details/81943864</a><br>2.文中有关迭代器的知识自寻</p>
-<h2 id="3-一遍哈希表"><a href="#3-一遍哈希表" class="headerlink" title="3.一遍哈希表"></a>3.一遍哈希表</h2><p><font>代码如下：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">		<span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; a;</span><br><span class="line">		<span class="keyword">int</span> r1, r2;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (a.count(target - nums[i]) &gt; <span class="number">0</span> &amp;&amp; (a[target - nums[i]] != i))</span><br><span class="line">			&#123;<span class="comment">//count函数是判断该数是否在这个哈希表中，若在，返回值大于0</span></span><br><span class="line">				r1 = a[target - nums[i]];</span><br><span class="line">				r2 = i;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			a[nums[i]] = i;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> &#123; r1,r2 &#125;;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum = &#123; <span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span> &#125;;</span><br><span class="line">	<span class="keyword">int</span> n = <span class="number">9</span>;</span><br><span class="line">	<span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt;  k;</span><br><span class="line">	Solution x;</span><br><span class="line">	k = x.twoSum(twoSum, n);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">1</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; k[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<font>
-该方法在使用迭代方法，在两遍哈希表的基础上再次优化
-
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><font >
-这道题学习算法还在其次，主要是学会了如何使用leetcode，并成功提交了第一题，记录一下进步。
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://dylan-cs.github.io/2021/06/06/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Dylan">
-      <meta itemprop="description" content="stay hungry stay foolish">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dylanの博客">
-    </span>
-
-    
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/06/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-06-06 22:48:04 / 修改时间：23:00:06" itemprop="dateCreated datePublished" datetime="2021-06-06T22:48:04+08:00">2021-06-06</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Hello-Hexo"><a href="#Hello-Hexo" class="headerlink" title="Hello Hexo"></a>Hello Hexo</h2><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-  
-  
-  
-
-
-  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
