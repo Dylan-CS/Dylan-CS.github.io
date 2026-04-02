@@ -28,9 +28,9 @@ body {
 }
 
 .container {
-  max-width: 680px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 40px;
 }
 
 .nav {
@@ -88,7 +88,7 @@ body {
   font-size: 17px;
   line-height: 1.7;
   color: var(--text-secondary);
-  max-width: 520px;
+  max-width: 680px;
   margin-bottom: 28px;
 }
 
