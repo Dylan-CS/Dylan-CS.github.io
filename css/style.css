@@ -28,9 +28,9 @@ body {
 }
 
 .container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 48px;
 }
 
 .nav {
@@ -85,16 +85,16 @@ body {
 }
 
 .hero-description {
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.7;
   color: var(--text-secondary);
-  max-width: 680px;
-  margin-bottom: 28px;
+  max-width: 800px;
+  margin-bottom: 32px;
 }
 
 .hero-links {
   display: flex;
-  gap: 20px;
+  gap: 28px;
 }
 
 .hero-links a {
@@ -117,7 +117,7 @@ body {
 }
 
 .section {
-  padding: 60px 0;
+  padding: 80px 0;
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -148,7 +148,7 @@ body {
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  gap: 48px;
 }
 
 .skill-group-title {
@@ -175,8 +175,8 @@ body {
 
 .timeline-item {
   display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: 24px;
+  grid-template-columns: 180px 1fr;
+  gap: 40px;
 }
 
 .timeline-date {
