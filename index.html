@@ -9,240 +9,219 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>D</text></svg>">
 </head>
 <body>
-  <main class="container">
-    <nav class="nav">
-      <a href="#" class="nav-link">Dylan</a>
-      <div class="nav-links">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="images/avatar.jpg" alt="Dylan Chen" class="avatar">
+        <div>
+          <h1 class="sidebar-name">Dylan Chen</h1>
+          <p class="sidebar-title">Data & LLM Engineer</p>
+        </div>
+      </div>
+      <nav class="nav-links">
         <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
         <a href="#experience" class="nav-link">Experience</a>
-        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#education" class="nav-link">Education</a>
         <a href="#blog" class="nav-link">Blog</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="social-links">
+          <a href="https://github.com/Dylan-CS" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/dylanchen-684a52249" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="mailto:yuxichen749@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </a>
+        </div>
       </div>
-    </nav>
+    </aside>
 
-    <section class="hero">
-      <img src="images/avatar.jpg" alt="Dylan Chen" class="avatar">
-      <h1 class="hero-title">Dylan Chen</h1>
-      <p class="hero-subtitle">Data | LLM | Fintech | Crypto</p>
-      <p class="hero-description">
-        Databricks Certified Data Engineer with strong programming skills in Java and Python.
-        Passionate about blockchain, fintech, and data engineering. Known for quick adaptation,
-        cross-functional collaboration, and delivering high-quality results.
-      </p>
-      <div class="hero-links">
-        <a href="https://github.com/Dylan-CS" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
-          </svg>
-          GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/dylanchen-684a52249" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-          </svg>
-          LinkedIn
-        </a>
-        <a href="mailto:yuxichen749@gmail.com">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,13 2,6"/>
-          </svg>
-          Email
-        </a>
-      </div>
-    </section>
-
-    <section id="about" class="section">
-      <h2 class="section-title">About</h2>
-      <div class="section-content">
-        <p>
-          Hello, my name is Dylan Chen. I am a highly motivated and adaptable individual with a strong background in computer science and finance.
+    <main class="main">
+      <section id="about" class="section">
+        <h2 class="section-title">About</h2>
+        <h1 class="hero-name">Dylan Chen</h1>
+        <p class="hero-subtitle">Data | LLM | Fintech | Crypto</p>
+        <p class="hero-description">
+          Databricks Certified Data Engineer with strong programming skills in Java and Python.
+          Passionate about blockchain, fintech, and data engineering. Known for quick adaptation,
+          cross-functional collaboration, and delivering high-quality results.
         </p>
-        <p>
+        <p class="hero-description">
+          Hello, my name is Dylan Chen. I am a highly motivated and adaptable individual with a strong background in computer science and finance.
           I have honed my programming skills in languages like Java and Python, allowing me to develop robust and efficient software applications. My passion for technology extends to areas such as blockchain, fintech, and data engineering, where I have actively contributed to various projects.
         </p>
-        <p>
+        <p class="hero-description">
           What sets me apart is my ability to quickly grasp new technologies, adapt to different development environments, and deliver high-quality results. I thrive in collaborative, cross-functional teams and am known for my strong communication and interpersonal skills.
         </p>
-      </div>
-    </section>
+      </section>
 
-    <section id="skills" class="section">
-      <h2 class="section-title">Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-group">
-          <h3 class="skill-group-title">Top Skills</h3>
-          <ul class="skill-list">
-            <li>Spring Cloud</li>
-            <li>Nacos</li>
-            <li>Feign</li>
-          </ul>
+      <section id="skills" class="section">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3 class="skill-group-title">Top Skills</h3>
+            <ul class="skill-list">
+              <li>Spring Cloud</li>
+              <li>Nacos</li>
+              <li>Feign</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group-title">Languages</h3>
+            <ul class="skill-list">
+              <li>Java</li>
+              <li>Python</li>
+              <li>Solidity</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group-title">Languages</h3>
+            <ul class="skill-list">
+              <li>Mandarin (Native)</li>
+              <li>English (Full Professional)</li>
+              <li>Cantonese (Professional)</li>
+            </ul>
+          </div>
         </div>
-        <div class="skill-group">
-          <h3 class="skill-group-title">Languages</h3>
-          <ul class="skill-list">
-            <li>Java</li>
-            <li>Python</li>
-            <li>Solidity</li>
-          </ul>
-        </div>
-        <div class="skill-group">
-          <h3 class="skill-group-title">Languages</h3>
-          <ul class="skill-list">
-            <li>Mandarin (Native)</li>
-            <li>English (Full Professional)</li>
-            <li>Cantonese (Professional)</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="certifications" class="section">
-      <h2 class="section-title">Certifications</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-date">2024</div>
-          <div class="timeline-content">
-            <h3 class="timeline-title">Databricks Certified Data Engineer</h3>
-            <p class="timeline-company">Databricks</p>
+      <section id="certifications" class="section">
+        <h2 class="section-title">Certifications</h2>
+        <div class="cert-grid">
+          <div class="cert-card">
+            <h3 class="cert-title">Databricks Certified Data Engineer</h3>
+            <p class="cert-company">Databricks</p>
+          </div>
+          <div class="cert-card">
+            <h3 class="cert-title">Bloomberg Market Concepts</h3>
+            <p class="cert-company">Bloomberg</p>
+          </div>
+          <div class="cert-card">
+            <h3 class="cert-title">HKSTP Virtual Job Simulation</h3>
+            <p class="cert-company">HKSTP</p>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-date">2023</div>
-          <div class="timeline-content">
-            <h3 class="timeline-title">Bloomberg Market Concepts</h3>
-            <p class="timeline-company">Bloomberg</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-date">2023</div>
-          <div class="timeline-content">
-            <h3 class="timeline-title">HKSTP Virtual Job Simulation</h3>
-            <p class="timeline-company">HKSTP</p>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="experience" class="section">
-      <h2 class="section-title">Experience</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-date">June 2025 - Present</div>
-          <div class="timeline-content">
-            <h3 class="timeline-title">Data Engineer</h3>
-            <p class="timeline-company">Aspex Management</p>
-            <p class="timeline-description">
-              Alternative Data
-            </p>
+      <section id="experience" class="section">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">Jun 2025 - Present</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Data Engineer</h3>
+              <p class="timeline-company">Aspex Management</p>
+              <p class="timeline-description">Alternative Data</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Feb 2024 - Jun 2025</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Data Engineer</h3>
+              <p class="timeline-company">The Hong Kong Jockey Club</p>
+              <p class="timeline-description">
+                Data and Machine Learning Engineer team<br>
+                - CVOC 1&2 LLM KnowledgeBase and RAG Solution (Poc)<br>
+                - Mobile Dashboard and Production Health Check<br>
+                - Customer Feature Store Data Pipeline<br>
+                - Customer Value Management Data Pipeline
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Oct 2023 - Dec 2023</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Software Engineer Intern</h3>
+              <p class="timeline-company">CICC</p>
+              <p class="timeline-description">
+                Global Markets Tech team covering systems for Equity Derivatives Pricing, Valuation and Risk Management.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Jul 2023 - Aug 2023</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Data Engineer Summer Intern</h3>
+              <p class="timeline-company">The Hong Kong Jockey Club</p>
+              <p class="timeline-description">Data and machine learning team</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Oct 2022 - May 2023</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Blockchain Developer</h3>
+              <p class="timeline-company">Pesto Green</p>
+              <p class="timeline-description">
+                Developed robust smart contracts for NFTs, cryptocurrencies, and DeFi platforms using Solidity and Brownie. Deployed contracts on Ethereum Nodes via Alchemy.
+                Used Spring Boot for backend API endpoints.
+                Implemented ESG x Web3 website with carbon credit redemption and DeFi yield farming using React and Web3.js.
+              </p>
+            </div>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-date">February 2024 - June 2025</div>
-          <div class="timeline-content">
-            <h3 class="timeline-title">Data Engineer</h3>
-            <p class="timeline-company">The Hong Kong Jockey Club</p>
-            <p class="timeline-description">
-              Data and Machine Learning Engineer team<br>
-              - CVOC 1&2 LLM KnowledgeBase and RAG Solution (Poc)<br>
-              - Mobile Dashboard and Production Health Check<br>
-              - Customer Feature Store Data Pipeline<br>
-              - Customer Value Management Data Pipeline
-            </p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-date">October 2023 - December 2023</div>
-          <div class="timeline-content">
-            <h3 class="timeline-title">Software Engineer Intern</h3>
-            <p class="timeline-company">CICC</p>
-            <p class="timeline-description">
-              Global Markets Tech team covering systems for Equity Derivatives Pricing, Valuation and Risk Management.
-            </p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-date">July 2023 - August 2023</div>
-          <div class="timeline-content">
-            <h3 class="timeline-title">Data Engineer Summer Intern</h3>
-            <p class="timeline-company">The Hong Kong Jockey Club</p>
-            <p class="timeline-description">
-              Data and machine learning team
-            </p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-date">October 2022 - May 2023</div>
-          <div class="timeline-content">
-            <h3 class="timeline-title">Blockchain Developer</h3>
-            <p class="timeline-company">Pesto Green</p>
-            <p class="timeline-description">
-              Developed robust smart contracts for NFTs, cryptocurrencies, and DeFi platforms using Solidity and Brownie. Deployed contracts on Ethereum Nodes via Alchemy.
-              Used Spring Boot for backend API endpoints.
-              Implemented ESG x Web3 website with carbon credit redemption and DeFi yield farming using React and Web3.js.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="education" class="section">
-      <h2 class="section-title">Education</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-date">Oct 2025 - Oct 2027</div>
-          <div class="timeline-content">
-            <h3 class="timeline-title">MSc, Financial Engineering</h3>
-            <p class="timeline-company">WorldQuant University</p>
+      <section id="education" class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">Oct 2025 - Oct 2027</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">MSc, Financial Engineering</h3>
+              <p class="timeline-company">WorldQuant University</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Sep 2022 - Jun 2024</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">MEng, Computer Science (IDT)</h3>
+              <p class="timeline-company">The University of Hong Kong</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Sep 2018 - Jun 2022</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">BEng, Software Engineering</h3>
+              <p class="timeline-company">Wuhan University of Technology</p>
+            </div>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-date">Sep 2022 - June 2024</div>
-          <div class="timeline-content">
-            <h3 class="timeline-title">MEng, Computer Science (IDT)</h3>
-            <p class="timeline-company">The University of Hong Kong</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-date">Sep 2018 - June 2022</div>
-          <div class="timeline-content">
-            <h3 class="timeline-title">BEng, Software Engineering</h3>
-            <p class="timeline-company">Wuhan University of Technology</p>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="blog" class="section">
-      <h2 class="section-title">Blog</h2>
-      <div class="blog-list">
-        <a href="/2022/10/25/Week1.3_Storage%20Factory%20And%20Fund%20me/" class="blog-item">
-          <span class="blog-date">Oct 2022</span>
-          <span class="blog-title">Week1.3: Storage Factory And Fund me</span>
-        </a>
-        <a href="/2022/10/25/Week1.2_Remix%20and%20Simple%20Storage/" class="blog-item">
-          <span class="blog-date">Oct 2022</span>
-          <span class="blog-title">Week1.2: Remix and Simple Storage</span>
-        </a>
-        <a href="/2022/10/25/Week1.1_Basic%20Blockchain/" class="blog-item">
-          <span class="blog-date">Oct 2022</span>
-          <span class="blog-title">Week1.1: Basic Blockchain</span>
-        </a>
-        <a href="/archives/" class="blog-item blog-all">
-          View all posts →
-        </a>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <p class="footer-text">
-        Built with simplicity. No trackers, no cookies.
-      </p>
-      <p class="footer-copyright">
-        © 2018-2026 Dylan Chen
-      </p>
-    </footer>
-  </main>
+      <section id="blog" class="section">
+        <h2 class="section-title">Blog</h2>
+        <div class="blog-list">
+          <a href="/2022/10/25/Week1.3_Storage%20Factory%20And%20Fund%20me/" class="blog-item">
+            <span class="blog-date">Oct 2022</span>
+            <span class="blog-title">Week1.3: Storage Factory And Fund me</span>
+          </a>
+          <a href="/2022/10/25/Week1.2_Remix%20and%20Simple%20Storage/" class="blog-item">
+            <span class="blog-date">Oct 2022</span>
+            <span class="blog-title">Week1.2: Remix and Simple Storage</span>
+          </a>
+          <a href="/2022/10/25/Week1.1_Basic%20Blockchain/" class="blog-item">
+            <span class="blog-date">Oct 2022</span>
+            <span class="blog-title">Week1.1: Basic Blockchain</span>
+          </a>
+          <a href="/archives/" class="blog-item blog-all">
+            View all posts →
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
 
   <script>
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
