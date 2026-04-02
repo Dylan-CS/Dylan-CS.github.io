@@ -373,8 +373,13 @@ body {
     display: none;
   }
 
+  .rightbar {
+    display: none;
+  }
+
   .main {
     margin-left: 0;
+    margin-right: 0;
     padding: 40px 32px;
   }
 
@@ -399,6 +404,10 @@ body {
     padding: 16px 20px;
   }
 
+  .sidebar-name {
+    font-size: 18px;
+  }
+
   .nav-links {
     gap: 12px;
   }
@@ -408,12 +417,51 @@ body {
   }
 
   .main {
-    padding: 32px 20px;
+    padding: 24px 20px;
+  }
+
+  .section-title {
+    font-size: 10px;
   }
 
   .skills-grid,
   .cert-grid {
     grid-template-columns: 1fr;
+  }
+
+  .blog-list {
+    gap: 0;
+  }
+
+  .blog-item {
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 0;
+  }
+
+  .blog-date {
+    width: auto;
+    font-size: 11px;
+  }
+
+  .blog-title {
+    font-size: 13px;
+  }
+
+  .timeline-title {
+    font-size: 14px;
+  }
+
+  .timeline-description {
+    font-size: 12px;
+  }
+
+  .post-content {
+    font-size: 15px;
+  }
+
+  .post-title {
+    font-size: 24px;
   }
 }
 
