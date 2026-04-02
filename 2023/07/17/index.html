@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HK365找工周记26 | Dylan Chen</title>
+  <meta name="description" content="HK365找工周记26">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>D</text></svg>">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="/images/avatar.jpg" alt="Dylan Chen" class="avatar">
+        <div>
+          <h1 class="sidebar-name">Dylan Chen</h1>
+          <p class="sidebar-title">Data & LLM Engineer</p>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="/#experience" class="nav-link">Experience</a>
+        <a href="/#education" class="nav-link">Education</a>
+        <a href="/#skills" class="nav-link">Skills</a>
+        <a href="/#about" class="nav-link">About</a>
+        <a href="/#blog" class="nav-link">Blog</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="social-links">
+          <a href="https://github.com/Dylan-CS" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/dylan-chen-684a52249" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:yuxichen749@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <article class="section" style="padding-top: 0;">
+        <p class="blog-date">2023-07-17</p>
+        <h1 class="post-title">HK365找工周记26</h1>
+        <div class="post-content">
+<p>本周总结：充实且快乐的一周！</p>
+<p>2023/07/17:
+1. 八号风球，快乐，不用上班，好耶！在家里快乐肥宅一整天</p>
+<p>2023/07/18:
+1. 测试update_match()的代码.Success
+2. 测试run_match()的代码。 错误的
+3. 完成update_openingand opening()的代码。 完毕
+4. 将代码上传到gitea。 完毕
+5. 完成workshop和2个e-learning。 完毕</p>
+<p>2023/07/19:
+1. 测试run_match()的代码。 成功
+2. 团队会议。 完毕
+3. 在程序中添加多线程。 还没有</p>
+<p>2023/07/20:
+1. 测试update_profit_and_loss的代码。 运行超过10,000条消息后，该帐户被禁止
+2. 在程序中添加多线程。 <br />
+Problem: 在python中，sqlalchemy提供的session方法不是线程安全的。当你在一个线程中提交时，所有线程都会提交（看起来是这样，不是100%确定），文档建议使用scoped_session<br />
+Question: 如果我们想继续使用多线程，我应该如何改进自己封装的sqlalchemy类?<br />
+Thinking: 是应该使用数据库连接池，还是可以多建几个会话，一个引擎可以同时创建多个会话？ </p>
+<p>2023/07/21:
+1. 连接explortory zone。 无法下载openssh
+2. 弄清楚airflow和jenkins是如何工作的。 airflow懂了，jenkins不太熟</p>
+<p>2023/07/22:
+1. 起了个大早跑去学校写Report，收个尾，nice!(顺手延了签证)
+2. 卧槽，看朋友圈，我的同学结婚了，我还在阿巴阿巴，有点炸裂。
+3. 晚上跑去看了《怪物》，日本电影，真的狠狠致郁了。不过不知道为什么，让我感觉像两个小学五年级的Gay, 对不起，我心脏！</p>
+<p>2023/07/23:
+1. 去智华为我的Final year project制作PPT（学术垃圾
+2. 今天天气好好啊，好想出去玩！: (
+3. 一个星期没上线，王者荣耀莫名其妙拿了三个区标。不行，我膨胀了，彻底疯狂！（bushi</p>
+        </div>
+        <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border-color);">
+          <a href="/archives/" style="color: var(--accent-color); text-decoration: none; font-size: 14px;">← Back to Archives</a>
+        </div>
+      </article>
+    </main>
+  </div>
+</body>
+</html>
