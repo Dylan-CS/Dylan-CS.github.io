@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HK365找工周记12 | Dylan Chen</title>
-  <meta name="description" content="HK365找工周记12">
+  <title>Loading... | Dylan Chen</title>
+  <meta name="description" content="Blog post">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>D</text></svg>">
 </head>
@@ -42,54 +42,47 @@
 
     <main class="main">
       <article class="section" style="padding-top: 0;">
-        <p class="blog-date">2023-04-03</p>
-        <h1 class="post-title">HK365找工周记12</h1>
-        <div class="post-content">
-<p>本周总结：写作业，做总结，刷题，准备面试。</p>
-<p>2023/4/3</p>
-<ol>
-<li>big data作业交了</li>
-<li>黑马SSM框架P32-P75 SpringMVC</li>
-</ol>
-<p>2023/4/4</p>
-<ol>
-<li>big data作业交了。</li>
-<li>dl作业，不想浪费时间了，性能上不去，调参调了50小时，效率提升5%，毁灭吧。</li>
-</ol>
-<p>2023/4/5</p>
-<ol>
-<li>黑马SSM框架P76-90 Maven进阶</li>
-<li>黑马SSM框架P91-103 SpingBoot</li>
-</ol>
-<p>2023/4/6</p>
-<ol>
-<li>黑马SSM框架P104-113 SpingBoot，黑马SSM终于看完了，做了一些思维导图总结。源文件和图片都放在Github-https://github.com/Dylan-CS/Java_learning</li>
-<li>开始研究dm作业，和队友讨论，寻找合适数据集。</li>
-</ol>
-<p>2023/4/7</p>
-<ol>
-<li>写完了dm作业代码。</li>
-<li>快乐深圳，串串真的香，内地比香港好吃太多！</li>
-</ol>
-<p>2023/4/8</p>
-<ol>
-<li>去看了香港国际电影节-智齿场，血腥又暴力，lol。</li>
-<li>写完dm作业readme并上传Github.</li>
-<li>晚上美团笔试，四道题。第一题A了。第二题是图相关，没复习到，直接跳了。第三题dp，过了18%用例，不想想了。第四题题目太长，不想看。30分钟结束，反正美团没HC了。</li>
-</ol>
-<p>2023/4/9</p>
-<ol>
-<li>观摩Jane street官网上programmer的Mock interview视频,讲道理，算法没看懂，哈哈哈哈哈</li>
-<li>跟Chatgpt 实现Mock interview, 被它虐菜了</li>
-<li>看youtube上英文面试视频，准备一点behavioral questions.</li>
-<li>以后不用国内版leetcode了，换美国站刷题了，要全面适应英语环境。今天刷了3道双指针</li>
-</ol>
-        </div>
+        <p class="blog-date" id="post-date"></p>
+        <h1 class="post-title" id="post-title"></h1>
+        <div class="post-content" id="post-content"></div>
         <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border-color);">
           <a href="/archives/" style="color: var(--accent-color); text-decoration: none; font-size: 14px;">← Back to Archives</a>
         </div>
       </article>
     </main>
   </div>
+
+  <script>
+    async function loadPost() {
+      const params = new URLSearchParams(window.location.search);
+      const dateStr = params.get('date');
+      
+      if (!dateStr) {
+        document.getElementById('post-title').textContent = 'Post not found';
+        return;
+      }
+      
+      try {
+        const response = await fetch('/posts.json');
+        const posts = await response.json();
+        const post = posts.find(p => p.date === dateStr);
+        
+        if (!post) {
+          document.getElementById('post-title').textContent = 'Post not found';
+          return;
+        }
+        
+        document.title = `${post.title} | Dylan Chen`;
+        document.getElementById('post-date').textContent = post.date;
+        document.getElementById('post-title').textContent = post.title;
+        document.getElementById('post-content').innerHTML = post.content;
+      } catch (err) {
+        console.error('Failed to load post:', err);
+        document.getElementById('post-title').textContent = 'Failed to load post';
+      }
+    }
+    
+    loadPost();
+  </script>
 </body>
 </html>
